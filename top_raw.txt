@@ -1,0 +1,79 @@
+﻿11272 u0_a238      15  -5  14G 453M 222M S  5.8   5.8   0:41.05 1.raster        com.goldapp.gold
+11230 u0_a238      10 -10  14G 453M 222M S  5.8   5.8   1:05.53 om.goldapp.gold com.goldapp.gold
+17751 u0_a238      10 -10  14G 453M 222M S  0.0   5.8   0:00.00 DartWorker      com.goldapp.gold
+17716 u0_a238      20   0  14G 453M 222M S  0.0   5.8   0:00.02 DartWorker      com.goldapp.gold
+11359 u0_a238      18  -2  14G 453M 222M S  0.0   5.8   0:00.00 hwuiTask0       com.goldapp.gold
+11360 u0_a238      18  -2  14G 453M 222M S  0.0   5.8   0:00.00 hwuiTask1       com.goldapp.gold
+11358 u0_a238      18  -2  14G 453M 222M S  0.0   5.8   0:00.00 queued-work-loo com.goldapp.gold
+11356 u0_a238      20   0  14G 453M 222M S  0.0   5.8   0:00.00 ConnectivityThr com.goldapp.gold
+11333 u0_a238       0 -20  14G 453M 222M S  0.0   5.8   0:00.16 Binder:11230_4  com.goldapp.gold
+11291 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.34 ged-swd         com.goldapp.gold
+11289 u0_a238       0 -20  14G 453M 222M S  0.0   5.8   0:03.54 mali-cmar-backe com.goldapp.gold
+11287 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11288 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11285 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11286 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11280 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:02.66 mali-mem-purge  com.goldapp.gold
+11281 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11282 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11283 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11284 u0_a238      15  -5  14G 453M 222M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11273 u0_a238      20   0  14G 453M 222M S  0.0   5.8   0:00.00 1.io            com.goldapp.gold
+11274 u0_a238      21   1  14G 453M 222M S  0.0   5.8   0:00.00 io.worker.1     com.goldapp.gold
+11275 u0_a238      21   1  14G 453M 222M S  0.0   5.8   0:00.00 io.worker.2     com.goldapp.gold
+11276 u0_a238      21   1  14G 453M 222M S  0.0   5.8   0:00.00 io.worker.3     com.goldapp.gold
+11277 u0_a238      10 -10  14G 453M 222M S  0.0   5.8   0:01.16 dart:io EventHa com.goldapp.gold
+11256 u0_a238      10 -10  14G 453M 222M S  0.0   5.8   0:00.02 RenderThread    com.goldapp.gold
+11254 u0_a238      29   9  14G 453M 222M S  0.0   5.8   0:00.09 Profile Saver   com.goldapp.gold
+11252 u0_a238       0 -20  14G 453M 222M S  0.0   5.8   0:00.00 Binder:11230_3  com.goldapp.gold
+11249 u0_a238       0 -20  14G 453M 222M S  0.0   5.8   0:00.00 Binder:11230_1  com.goldapp.gold
+11251 u0_a238       0 -20  14G 453M 222M S  0.0   5.8   0:00.01 Binder:11230_2  com.goldapp.gold
+11241 u0_a238       0 -20  14G 453M 222M S  0.0   5.8   0:00.00 Signal Catcher  com.goldapp.gold
+11244 u0_a238      20   0  14G 453M 222M S  0.0   5.8   0:00.38 Jit thread pool com.goldapp.gold
+11245 u0_a238      24   4  14G 453M 222M S  0.0   5.8   0:00.01 HeapTaskDaemon  com.goldapp.gold
+11246 u0_a238      24   4  14G 453M 222M S  0.0   5.8   0:00.00 ReferenceQueueD com.goldapp.gold
+11247 u0_a238      24   4  14G 453M 222M S  0.0   5.8   0:00.00 FinalizerDaemon com.goldapp.gold
+11248 u0_a238      24   4  14G 453M 222M S  0.0   5.8   0:00.00 FinalizerWatchd com.goldapp.gold
+11242 u0_a238       0 -20  14G 453M 222M S  0.0   5.8   0:00.00 perfetto_hprof_ com.goldapp.gold
+11243 u0_a238       0 -20  14G 453M 222M S  0.0   5.8   0:00.00 ADB-JDWP Connec com.goldapp.gold
+
+
+
+11272 u0_a238      15  -5  14G 455M 223M S  4.0   5.8   0:41.07 1.raster        com.goldapp.gold
+11230 u0_a238      10 -10  14G 455M 223M S  3.0   5.8   1:05.55 om.goldapp.gold com.goldapp.gold
+17751 u0_a238      10 -10  14G 455M 223M S  1.6   5.8   0:00.00 DartWorker      com.goldapp.gold
+17716 u0_a238      20   0  14G 455M 223M S  0.3   5.8   0:00.02 DartWorker      com.goldapp.gold
+11289 u0_a238       0 -20  14G 455M 223M S  0.3   5.8   0:03.54 mali-cmar-backe com.goldapp.gold
+11280 u0_a238      15  -5  14G 455M 223M S  0.3   5.8   0:02.66 mali-mem-purge  com.goldapp.gold
+11277 u0_a238      10 -10  14G 455M 223M S  0.3   5.8   0:01.16 dart:io EventHa com.goldapp.gold
+11359 u0_a238      18  -2  14G 455M 223M S  0.0   5.8   0:00.00 hwuiTask0       com.goldapp.gold
+11360 u0_a238      18  -2  14G 455M 223M S  0.0   5.8   0:00.00 hwuiTask1       com.goldapp.gold
+11358 u0_a238      18  -2  14G 455M 223M S  0.0   5.8   0:00.00 queued-work-loo com.goldapp.gold
+11356 u0_a238      20   0  14G 455M 223M S  0.0   5.8   0:00.00 ConnectivityThr com.goldapp.gold
+11333 u0_a238       0 -20  14G 455M 223M S  0.0   5.8   0:00.16 Binder:11230_4  com.goldapp.gold
+11291 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.34 ged-swd         com.goldapp.gold
+11287 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11288 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11284 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11281 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11282 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11283 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11285 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11286 u0_a238      15  -5  14G 455M 223M S  0.0   5.8   0:00.00 mali-utility-wo com.goldapp.gold
+11274 u0_a238      21   1  14G 455M 223M S  0.0   5.8   0:00.00 io.worker.1     com.goldapp.gold
+11275 u0_a238      21   1  14G 455M 223M S  0.0   5.8   0:00.00 io.worker.2     com.goldapp.gold
+11276 u0_a238      21   1  14G 455M 223M S  0.0   5.8   0:00.00 io.worker.3     com.goldapp.gold
+11273 u0_a238      20   0  14G 455M 223M S  0.0   5.8   0:00.00 1.io            com.goldapp.gold
+11256 u0_a238      10 -10  14G 455M 223M S  0.0   5.8   0:00.02 RenderThread    com.goldapp.gold
+11254 u0_a238      29   9  14G 455M 223M S  0.0   5.8   0:00.09 Profile Saver   com.goldapp.gold
+11252 u0_a238       0 -20  14G 455M 223M S  0.0   5.8   0:00.00 Binder:11230_3  com.goldapp.gold
+11249 u0_a238       0 -20  14G 455M 223M S  0.0   5.8   0:00.00 Binder:11230_1  com.goldapp.gold
+11251 u0_a238       0 -20  14G 455M 223M S  0.0   5.8   0:00.01 Binder:11230_2  com.goldapp.gold
+11241 u0_a238       0 -20  14G 455M 223M S  0.0   5.8   0:00.00 Signal Catcher  com.goldapp.gold
+11244 u0_a238      20   0  14G 455M 223M S  0.0   5.8   0:00.38 Jit thread pool com.goldapp.gold
+11245 u0_a238      24   4  14G 455M 223M S  0.0   5.8   0:00.01 HeapTaskDaemon  com.goldapp.gold
+11246 u0_a238      24   4  14G 455M 223M S  0.0   5.8   0:00.00 ReferenceQueueD com.goldapp.gold
+11247 u0_a238      24   4  14G 455M 223M S  0.0   5.8   0:00.00 FinalizerDaemon com.goldapp.gold
+11248 u0_a238      24   4  14G 455M 223M S  0.0   5.8   0:00.00 FinalizerWatchd com.goldapp.gold
+11242 u0_a238       0 -20  14G 455M 223M S  0.0   5.8   0:00.00 perfetto_hprof_ com.goldapp.gold
+11243 u0_a238       0 -20  14G 455M 223M S  0.0   5.8   0:00.00 ADB-JDWP Connec com.goldapp.gold

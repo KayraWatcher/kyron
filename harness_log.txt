@@ -1,0 +1,128 @@
+﻿harness v2 basliyor (max 6 round)
+---- round 1 : 20 hizli pan ----
+---- round 1 : hizli imlec surukleme stresi ----
+---- round 1 : kontrol testi (700 -> 300) ----
+  S1=989E1F511A S2=76279570D5 farkli -> canli
+  [round FRZ son 15]
+    10-03 06:46:56.301 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:46:56.301 27333 27333 I flutter : FRZ pick time=null close=null
+    10-03 06:46:57.110 27333 27333 I flutter : FRZ ptrDown #22 kind=PointerDeviceKind.unknown
+    10-03 06:46:57.611 27333 27333 I flutter : FRZ longStart
+    10-03 06:46:57.611 27333 27333 I flutter : FRZ emit false->true tool:DrawingTool.none->DrawingTool.none idx=84
+    10-03 06:46:57.611 27333 27333 I flutter : FRZ parent show:false->true idx=84 tool=DrawingTool.none
+    10-03 06:46:57.612 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:46:59.085 27333 27333 I flutter : FRZ pick time=1784615400000 close=15914.2001953125
+    10-03 06:47:04.853 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:47:10.641 27333 27333 I flutter : FRZ ptrUp #22
+    10-03 06:47:10.642 27333 27333 I flutter : FRZ longEnd
+    10-03 06:47:10.642 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+    10-03 06:47:10.642 27333 27333 I flutter : FRZ emit true->false tool:DrawingTool.none->DrawingTool.none idx=null
+    10-03 06:47:10.642 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:47:10.643 27333 27333 I flutter : FRZ pick time=null close=null
+  [round tamam - ekran goruntuleri siliniyor]
+---- round 2 : 20 hizli pan ----
+---- round 2 : hizli imlec surukleme stresi ----
+---- round 2 : kontrol testi (700 -> 300) ----
+  S1=459ADA7759 S2=C1F778D744 farkli -> canli
+  [round FRZ son 15]
+    10-03 06:47:27.160 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+    10-03 06:47:27.160 27333 27333 I flutter : FRZ emit true->false tool:DrawingTool.none->DrawingTool.none idx=null
+    10-03 06:47:27.160 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:47:27.160 27333 27333 I flutter : FRZ pick time=null close=null
+    10-03 06:47:27.169 27333 27333 I flutter : FRZ build #260 show=false first=0 vis=59
+    10-03 06:47:33.349 27333 27333 I flutter : FRZ ptrMove #810
+    10-03 06:47:38.541 27333 27333 I flutter : FRZ scaleUpdate #850
+    10-03 06:47:42.978 27333 27333 I flutter : FRZ build #280 show=false first=0 vis=59
+    10-03 06:47:51.247 27333 27333 I flutter : FRZ ptrUp #51
+    10-03 06:47:51.248 27333 27333 I flutter : FRZ scaleEnd
+    10-03 06:47:52.046 27333 27333 I flutter : FRZ ptrDown #52 kind=PointerDeviceKind.unknown
+    10-03 06:47:52.046 27333 27333 I flutter : FRZ scaleStart
+    10-03 06:47:52.046 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+    10-03 06:48:05.444 27333 27333 I flutter : FRZ ptrUp #52
+    10-03 06:48:05.444 27333 27333 I flutter : FRZ scaleEnd
+  [round tamam - ekran goruntuleri siliniyor]
+---- round 3 : 20 hizli pan ----
+---- round 3 : hizli imlec surukleme stresi ----
+---- round 3 : kontrol testi (700 -> 300) ----
+  S1=346EFA98D8 S2=364FC3E743 farkli -> canli
+  [round FRZ son 15]
+    10-03 06:48:45.712 27333 27333 I flutter : FRZ ptrUp #73
+    10-03 06:48:45.713 27333 27333 I flutter : FRZ scaleEnd
+    10-03 06:48:46.522 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.unknown
+    10-03 06:48:47.024 27333 27333 I flutter : FRZ longStart
+    10-03 06:48:47.025 27333 27333 I flutter : FRZ emit null->true tool:null->DrawingTool.none idx=84
+    10-03 06:48:47.025 27333 27333 I flutter : FRZ parent show:false->true idx=84 tool=DrawingTool.none
+    10-03 06:48:47.025 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:48:48.489 27333 27333 I flutter : FRZ pick time=1784615400000 close=15914.2001953125
+    10-03 06:48:54.163 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:48:59.930 27333 27333 I flutter : FRZ ptrUp #1
+    10-03 06:48:59.930 27333 27333 I flutter : FRZ longEnd
+    10-03 06:48:59.930 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+    10-03 06:48:59.930 27333 27333 I flutter : FRZ emit true->false tool:DrawingTool.none->DrawingTool.none idx=null
+    10-03 06:48:59.930 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:48:59.931 27333 27333 I flutter : FRZ pick time=null close=null
+  [round tamam - ekran goruntuleri siliniyor]
+---- round 4 : 20 hizli pan ----
+---- round 4 : hizli imlec surukleme stresi ----
+---- round 4 : kontrol testi (700 -> 300) ----
+  S1=8971B6C599 S2=3433C1FBF7 farkli -> canli
+  [round FRZ son 15]
+    10-03 06:49:39.102 27333 27333 I flutter : FRZ build #120 show=false first=0 vis=251
+    10-03 06:49:40.021 27333 27333 I flutter : FRZ ptrDown #23 kind=PointerDeviceKind.unknown
+    10-03 06:49:40.522 27333 27333 I flutter : FRZ longStart
+    10-03 06:49:40.522 27333 27333 I flutter : FRZ emit false->true tool:DrawingTool.none->DrawingTool.none idx=84
+    10-03 06:49:40.522 27333 27333 I flutter : FRZ parent show:false->true idx=84 tool=DrawingTool.none
+    10-03 06:49:40.523 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:49:41.957 27333 27333 I flutter : FRZ longMove #420
+    10-03 06:49:41.958 27333 27333 I flutter : FRZ pick time=1784615400000 close=15914.2001953125
+    10-03 06:49:47.724 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:49:53.468 27333 27333 I flutter : FRZ ptrUp #23
+    10-03 06:49:53.468 27333 27333 I flutter : FRZ longEnd
+    10-03 06:49:53.468 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+    10-03 06:49:53.468 27333 27333 I flutter : FRZ emit true->false tool:DrawingTool.none->DrawingTool.none idx=null
+    10-03 06:49:53.468 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:49:53.469 27333 27333 I flutter : FRZ pick time=null close=null
+  [round tamam - ekran goruntuleri siliniyor]
+---- round 5 : 20 hizli pan ----
+---- round 5 : hizli imlec surukleme stresi ----
+---- round 5 : kontrol testi (700 -> 300) ----
+  S1=C94B5CB8DD S2=6DDABE453A farkli -> canli
+  [round FRZ son 15]
+    10-03 06:50:32.484 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:50:32.484 27333 27333 I flutter : FRZ pick time=null close=null
+    10-03 06:50:33.277 27333 27333 I flutter : FRZ ptrDown #45 kind=PointerDeviceKind.unknown
+    10-03 06:50:33.779 27333 27333 I flutter : FRZ longStart
+    10-03 06:50:33.779 27333 27333 I flutter : FRZ emit false->true tool:DrawingTool.none->DrawingTool.none idx=84
+    10-03 06:50:33.779 27333 27333 I flutter : FRZ parent show:false->true idx=84 tool=DrawingTool.none
+    10-03 06:50:33.779 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:50:35.242 27333 27333 I flutter : FRZ pick time=1784615400000 close=15914.2001953125
+    10-03 06:50:41.007 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:50:46.789 27333 27333 I flutter : FRZ ptrUp #45
+    10-03 06:50:46.790 27333 27333 I flutter : FRZ longEnd
+    10-03 06:50:46.790 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+    10-03 06:50:46.790 27333 27333 I flutter : FRZ emit true->false tool:DrawingTool.none->DrawingTool.none idx=null
+    10-03 06:50:46.790 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:50:46.790 27333 27333 I flutter : FRZ pick time=null close=null
+  [round tamam - ekran goruntuleri siliniyor]
+---- round 6 : 20 hizli pan ----
+---- round 6 : hizli imlec surukleme stresi ----
+---- round 6 : kontrol testi (700 -> 300) ----
+  S1=D864BFF450 S2=573BB87F1E farkli -> canli
+  [round FRZ son 15]
+    10-03 06:51:25.519 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:51:25.520 27333 27333 I flutter : FRZ pick time=null close=null
+    10-03 06:51:26.307 27333 27333 I flutter : FRZ ptrDown #67 kind=PointerDeviceKind.unknown
+    10-03 06:51:26.808 27333 27333 I flutter : FRZ longStart
+    10-03 06:51:26.808 27333 27333 I flutter : FRZ emit false->true tool:DrawingTool.none->DrawingTool.none idx=84
+    10-03 06:51:26.808 27333 27333 I flutter : FRZ parent show:false->true idx=84 tool=DrawingTool.none
+    10-03 06:51:26.808 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:51:28.272 27333 27333 I flutter : FRZ pick time=1784615400000 close=15914.2001953125
+    10-03 06:51:34.016 27333 27333 I flutter : FRZ pick time=1770013800000 close=14911.7001953125
+    10-03 06:51:39.784 27333 27333 I flutter : FRZ ptrUp #67
+    10-03 06:51:39.785 27333 27333 I flutter : FRZ longEnd
+    10-03 06:51:39.785 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+    10-03 06:51:39.785 27333 27333 I flutter : FRZ emit true->false tool:DrawingTool.none->DrawingTool.none idx=null
+    10-03 06:51:39.785 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+    10-03 06:51:39.785 27333 27333 I flutter : FRZ pick time=null close=null
+  [round tamam - ekran goruntuleri siliniyor]
+harness bitti - freeze yakalanamadi

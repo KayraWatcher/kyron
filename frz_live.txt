@@ -1,0 +1,1431 @@
+﻿10-03 06:52:20.167 27333 27333 I flutter : FRZ ptrDown #29 kind=PointerDeviceKind.touch
+10-03 06:52:20.259 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:20.259 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:20.269 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:20.269 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:20.315 27333 27333 I flutter : FRZ ptrUp #29
+10-03 06:52:20.315 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:20.407 27333 27333 I flutter : FRZ ptrDown #30 kind=PointerDeviceKind.touch
+10-03 06:52:20.435 27333 27333 I flutter : FRZ ptrDown #31 kind=PointerDeviceKind.touch
+10-03 06:52:20.501 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:20.501 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:20.503 27333 27333 I flutter : FRZ ptrMove #1530
+10-03 06:52:20.506 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:20.506 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:20.547 27333 27333 I flutter : FRZ scaleUpdate #1400
+10-03 06:52:20.553 27333 27333 I flutter : FRZ ptrMove #1560
+10-03 06:52:20.591 27333 27333 I flutter : FRZ build #240 show=false first=0 vis=251
+10-03 06:52:20.608 27333 27333 I flutter : FRZ ptrMove #1590
+10-03 06:52:20.614 27333 27333 I flutter : FRZ ptrUp #31
+10-03 06:52:20.614 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:20.614 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:20.614 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:20.638 27333 27333 I flutter : FRZ ptrUp #31
+10-03 06:52:20.638 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:21.035 27333 27333 I flutter : FRZ ptrDown #32 kind=PointerDeviceKind.touch
+10-03 06:52:21.086 27333 27333 I flutter : FRZ ptrUp #32
+10-03 06:52:21.086 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:21.086 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:21.141 27333 27333 I flutter : FRZ ptrDown #33 kind=PointerDeviceKind.touch
+10-03 06:52:21.204 27333 27333 I flutter : FRZ ptrUp #33
+10-03 06:52:21.506 27333 27333 I flutter : FRZ ptrDown #34 kind=PointerDeviceKind.touch
+10-03 06:52:21.508 27333 27333 I flutter : FRZ ptrUp #34
+10-03 06:52:21.508 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:21.508 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:21.622 27333 27333 I flutter : FRZ ptrDown #35 kind=PointerDeviceKind.touch
+10-03 06:52:21.717 27333 27333 I flutter : FRZ ptrUp #35
+10-03 06:52:21.945 27333 27333 I flutter : FRZ ptrDown #36 kind=PointerDeviceKind.touch
+10-03 06:52:21.989 27333 27333 I flutter : FRZ ptrUp #36
+10-03 06:52:21.989 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:21.989 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:22.133 27333 27333 I flutter : FRZ ptrDown #37 kind=PointerDeviceKind.touch
+10-03 06:52:22.194 27333 27333 I flutter : FRZ ptrUp #37
+10-03 06:52:22.279 27333 27333 I flutter : FRZ ptrDown #38 kind=PointerDeviceKind.touch
+10-03 06:52:22.359 27333 27333 I flutter : FRZ ptrUp #38
+10-03 06:52:22.360 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:22.360 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:22.408 27333 27333 I flutter : FRZ ptrDown #39 kind=PointerDeviceKind.touch
+10-03 06:52:22.496 27333 27333 I flutter : FRZ ptrUp #39
+10-03 06:52:22.660 27333 27333 I flutter : FRZ ptrDown #40 kind=PointerDeviceKind.touch
+10-03 06:52:22.703 27333 27333 I flutter : FRZ ptrDown #41 kind=PointerDeviceKind.touch
+10-03 06:52:22.837 27333 27333 I flutter : FRZ ptrMove #1620
+10-03 06:52:22.840 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:22.840 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:22.848 27333 27333 I flutter : FRZ scaleUpdate #1450
+10-03 06:52:22.881 27333 27333 I flutter : FRZ ptrMove #1650
+10-03 06:52:22.920 27333 27333 I flutter : FRZ scaleUpdate #1500
+10-03 06:52:22.931 27333 27333 I flutter : FRZ ptrMove #1680
+10-03 06:52:22.974 27333 27333 I flutter : FRZ build #260 show=false first=0 vis=251
+10-03 06:52:22.980 27333 27333 I flutter : FRZ ptrMove #1710
+10-03 06:52:23.003 27333 27333 I flutter : FRZ scaleUpdate #1550
+10-03 06:52:23.019 27333 27333 I flutter : FRZ ptrUp #41
+10-03 06:52:23.019 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:23.020 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:23.020 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:23.035 27333 27333 I flutter : FRZ ptrMove #1740
+10-03 06:52:23.049 27333 27333 I flutter : FRZ ptrUp #41
+10-03 06:52:23.050 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:23.136 27333 27333 I flutter : FRZ ptrDown #42 kind=PointerDeviceKind.touch
+10-03 06:52:23.244 27333 27333 I flutter : FRZ ptrUp #42
+10-03 06:52:23.245 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:23.245 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:23.310 27333 27333 I flutter : FRZ ptrDown #43 kind=PointerDeviceKind.touch
+10-03 06:52:23.504 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:23.504 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:23.507 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:23.507 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:23.521 27333 27333 I flutter : FRZ ptrUp #43
+10-03 06:52:23.521 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:23.526 27333 27333 I flutter : FRZ ptrDown #44 kind=PointerDeviceKind.touch
+10-03 06:52:23.546 27333 27333 I flutter : FRZ ptrDown #45 kind=PointerDeviceKind.touch
+10-03 06:52:23.622 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:23.622 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:23.626 27333 27333 I flutter : FRZ paint #1200 Size(392.7, 327.7)
+10-03 06:52:23.629 27333 27333 I flutter : FRZ ptrMove #1770
+10-03 06:52:23.630 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:23.630 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:23.679 27333 27333 I flutter : FRZ ptrMove #1800
+10-03 06:52:23.680 27333 27333 I flutter : FRZ scaleUpdate #1600
+10-03 06:52:23.729 27333 27333 I flutter : FRZ ptrMove #1830
+10-03 06:52:23.763 27333 27333 I flutter : FRZ scaleUpdate #1650
+10-03 06:52:23.779 27333 27333 I flutter : FRZ ptrMove #1860
+10-03 06:52:23.824 27333 27333 I flutter : FRZ ptrMove #1890
+10-03 06:52:23.824 27333 27333 I flutter : FRZ build #280 show=false first=0 vis=251
+10-03 06:52:23.845 27333 27333 I flutter : FRZ scaleUpdate #1700
+10-03 06:52:23.868 27333 27333 I flutter : FRZ ptrMove #1920
+10-03 06:52:23.903 27333 27333 I flutter : FRZ ptrUp #45
+10-03 06:52:23.903 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:23.904 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:23.904 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:23.920 27333 27333 I flutter : FRZ ptrUp #45
+10-03 06:52:23.920 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:24.084 27333 27333 I flutter : FRZ ptrDown #46 kind=PointerDeviceKind.touch
+10-03 06:52:24.146 27333 27333 I flutter : FRZ ptrUp #46
+10-03 06:52:24.146 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:24.146 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:24.285 27333 27333 I flutter : FRZ ptrDown #47 kind=PointerDeviceKind.touch
+10-03 06:52:24.415 27333 27333 I flutter : FRZ ptrUp #47
+10-03 06:52:32.451 27333 27333 I flutter : FRZ ptrDown #48 kind=PointerDeviceKind.touch
+10-03 06:52:32.569 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:32.569 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:32.574 27333 27333 I flutter : FRZ ptrMove #1950
+10-03 06:52:32.575 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:32.575 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:32.588 27333 27333 I flutter : FRZ scaleUpdate #1750
+10-03 06:52:32.682 27333 27333 I flutter : FRZ ptrMove #1980
+10-03 06:52:32.712 27333 27333 I flutter : FRZ ptrUp #48
+10-03 06:52:32.713 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:32.813 27333 27333 I flutter : FRZ ptrDown #49 kind=PointerDeviceKind.touch
+10-03 06:52:32.914 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:32.914 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:32.919 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:32.919 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:32.955 27333 27333 I flutter : FRZ build #300 show=false first=0 vis=251
+10-03 06:52:32.969 27333 27333 I flutter : FRZ ptrMove #2010
+10-03 06:52:32.969 27333 27333 I flutter : FRZ scaleUpdate #1800
+10-03 06:52:32.994 27333 27333 I flutter : FRZ ptrUp #49
+10-03 06:52:32.994 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:33.198 27333 27333 I flutter : FRZ ptrDown #50 kind=PointerDeviceKind.touch
+10-03 06:52:33.266 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:33.266 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:33.276 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:33.276 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:33.342 27333 27333 I flutter : FRZ ptrMove #2040
+10-03 06:52:33.433 27333 27333 I flutter : FRZ scaleUpdate #1850
+10-03 06:52:33.452 27333 27333 I flutter : FRZ ptrMove #2070
+10-03 06:52:33.506 27333 27333 I flutter : FRZ paint #1250 Size(392.7, 327.7)
+10-03 06:52:33.538 27333 27333 I flutter : FRZ build #320 show=false first=0 vis=251
+10-03 06:52:33.576 27333 27333 I flutter : FRZ ptrMove #2100
+10-03 06:52:33.618 27333 27333 I flutter : FRZ scaleUpdate #1900
+10-03 06:52:33.677 27333 27333 I flutter : FRZ ptrMove #2130
+10-03 06:52:33.797 27333 27333 I flutter : FRZ ptrMove #2160
+10-03 06:52:33.811 27333 27333 I flutter : FRZ scaleUpdate #1950
+10-03 06:52:33.888 27333 27333 I flutter : FRZ build #340 show=false first=0 vis=251
+10-03 06:52:33.896 27333 27333 I flutter : FRZ ptrMove #2190
+10-03 06:52:33.930 27333 27333 I flutter : FRZ ptrUp #50
+10-03 06:52:33.930 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:34.469 27333 27333 I flutter : FRZ ptrCancel #73
+10-03 06:52:39.881 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:52:40.010 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:40.010 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:52:40.010 27333 27333 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:52:40.010 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:52:40.015 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:40.015 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:40.092 27333 27333 I flutter : FRZ ptrMove #30
+10-03 06:52:40.241 27333 27333 I flutter : FRZ ptrUp #1
+10-03 06:52:40.241 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:40.342 27333 27333 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 06:52:40.436 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:40.436 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:40.439 27333 27333 I flutter : FRZ ptrMove #60
+10-03 06:52:40.441 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:40.441 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:40.441 27333 27333 I flutter : FRZ scaleUpdate #50
+10-03 06:52:40.534 27333 27333 I flutter : FRZ ptrMove #90
+10-03 06:52:40.569 27333 27333 I flutter : FRZ build #20 show=false first=0 vis=261
+10-03 06:52:40.617 27333 27333 I flutter : FRZ scaleUpdate #100
+10-03 06:52:40.650 27333 27333 I flutter : FRZ ptrMove #120
+10-03 06:52:40.673 27333 27333 I flutter : FRZ paint #1300 Size(392.7, 361.7)
+10-03 06:52:40.790 27333 27333 I flutter : FRZ ptrMove #150
+10-03 06:52:40.810 27333 27333 I flutter : FRZ ptrUp #2
+10-03 06:52:40.810 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:40.890 27333 27333 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+10-03 06:52:40.951 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:40.951 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:40.959 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:40.959 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:40.975 27333 27333 I flutter : FRZ scaleUpdate #150
+10-03 06:52:41.027 27333 27333 I flutter : FRZ ptrMove #180
+10-03 06:52:41.052 27333 27333 I flutter : FRZ build #40 show=false first=0 vis=261
+10-03 06:52:41.141 27333 27333 I flutter : FRZ ptrMove #210
+10-03 06:52:41.151 27333 27333 I flutter : FRZ scaleUpdate #200
+10-03 06:52:41.175 27333 27333 I flutter : FRZ ptrUp #3
+10-03 06:52:41.175 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:41.260 27333 27333 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+10-03 06:52:41.347 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:41.347 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:41.357 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:41.357 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:41.399 27333 27333 I flutter : FRZ ptrMove #240
+10-03 06:52:41.476 27333 27333 I flutter : FRZ ptrUp #4
+10-03 06:52:41.477 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:41.550 27333 27333 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+10-03 06:52:41.679 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:41.679 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:41.690 27333 27333 I flutter : FRZ ptrUp #5
+10-03 06:52:41.766 27333 27333 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+10-03 06:52:41.856 27333 27333 I flutter : FRZ ptrUp #6
+10-03 06:52:41.924 27333 27333 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+10-03 06:52:42.005 27333 27333 I flutter : FRZ ptrMove #270
+10-03 06:52:42.011 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:42.011 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:42.017 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:42.017 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:42.019 27333 27333 I flutter : FRZ build #60 show=false first=0 vis=261
+10-03 06:52:42.041 27333 27333 I flutter : FRZ scaleUpdate #250
+10-03 06:52:42.107 27333 27333 I flutter : FRZ ptrMove #300
+10-03 06:52:42.180 27333 27333 I flutter : FRZ ptrUp #7
+10-03 06:52:42.180 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:42.267 27333 27333 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+10-03 06:52:42.336 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:42.336 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:42.342 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:42.342 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:42.367 27333 27333 I flutter : FRZ ptrMove #330
+10-03 06:52:42.381 27333 27333 I flutter : FRZ scaleUpdate #300
+10-03 06:52:42.414 27333 27333 I flutter : FRZ ptrUp #8
+10-03 06:52:42.415 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:42.421 27333 27333 I flutter : FRZ paint #1350 Size(392.7, 361.7)
+10-03 06:52:44.742 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:52:44.860 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:44.860 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:52:44.860 27333 27333 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:52:44.860 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:52:44.863 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:44.863 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:44.940 27333 27333 I flutter : FRZ ptrMove #30
+10-03 06:52:45.025 27333 27333 I flutter : FRZ scaleUpdate #50
+10-03 06:52:45.067 27333 27333 I flutter : FRZ ptrMove #60
+10-03 06:52:45.091 27333 27333 I flutter : FRZ ptrUp #1
+10-03 06:52:45.091 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:45.151 27333 27333 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 06:52:45.261 27333 27333 I flutter : FRZ ptrUp #2
+10-03 06:52:45.262 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:45.262 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:45.332 27333 27333 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+10-03 06:52:45.424 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:45.424 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:45.429 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:45.430 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:45.502 27333 27333 I flutter : FRZ build #20 show=false first=0 vis=261
+10-03 06:52:45.527 27333 27333 I flutter : FRZ ptrMove #90
+10-03 06:52:45.544 27333 27333 I flutter : FRZ ptrUp #3
+10-03 06:52:45.544 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:45.643 27333 27333 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+10-03 06:52:45.700 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:45.700 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:45.709 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:45.709 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:45.772 27333 27333 I flutter : FRZ scaleUpdate #100
+10-03 06:52:45.790 27333 27333 I flutter : FRZ ptrMove #120
+10-03 06:52:45.791 27333 27333 I flutter : FRZ ptrUp #4
+10-03 06:52:45.791 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:45.873 27333 27333 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+10-03 06:52:45.941 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:45.941 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:45.947 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:45.947 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:46.029 27333 27333 I flutter : FRZ ptrMove #150
+10-03 06:52:46.096 27333 27333 I flutter : FRZ ptrUp #5
+10-03 06:52:46.096 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:46.169 27333 27333 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+10-03 06:52:46.310 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:46.310 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:46.314 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:46.314 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:46.314 27333 27333 I flutter : FRZ scaleUpdate #150
+10-03 06:52:46.318 27333 27333 I flutter : FRZ build #40 show=false first=0 vis=261
+10-03 06:52:46.339 27333 27333 I flutter : FRZ ptrMove #180
+10-03 06:52:46.439 27333 27333 I flutter : FRZ ptrMove #210
+10-03 06:52:46.479 27333 27333 I flutter : FRZ scaleUpdate #200
+10-03 06:52:46.486 27333 27333 I flutter : FRZ paint #1400 Size(392.7, 361.7)
+10-03 06:52:46.555 27333 27333 I flutter : FRZ ptrMove #240
+10-03 06:52:46.578 27333 27333 I flutter : FRZ ptrUp #6
+10-03 06:52:46.578 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:46.617 27333 27333 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+10-03 06:52:46.731 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:46.731 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:46.739 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:46.739 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:46.784 27333 27333 I flutter : FRZ build #60 show=false first=0 vis=261
+10-03 06:52:46.795 27333 27333 I flutter : FRZ ptrMove #270
+10-03 06:52:46.822 27333 27333 I flutter : FRZ scaleUpdate #250
+10-03 06:52:46.924 27333 27333 I flutter : FRZ ptrMove #300
+10-03 06:52:46.939 27333 27333 I flutter : FRZ ptrUp #7
+10-03 06:52:46.940 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:52:46.949 27333 27333 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+10-03 06:52:47.047 27333 27333 I flutter : FRZ longCancel
+10-03 06:52:47.047 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:47.056 27333 27333 I flutter : FRZ scaleStart
+10-03 06:52:47.056 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:52:47.075 27333 27333 I flutter : FRZ ptrUp #8
+10-03 06:52:47.075 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:07.822 27333 27333 I flutter : FRZ ptrDown #9 kind=PointerDeviceKind.touch
+10-03 06:53:07.927 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:07.927 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:07.933 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:07.933 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:07.949 27333 27333 I flutter : FRZ ptrMove #330
+10-03 06:53:07.993 27333 27333 I flutter : FRZ scaleUpdate #300
+10-03 06:53:08.009 27333 27333 I flutter : FRZ ptrUp #9
+10-03 06:53:08.009 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:08.020 27333 27333 I flutter : FRZ build #80 show=false first=0 vis=261
+10-03 06:53:08.124 27333 27333 I flutter : FRZ ptrDown #10 kind=PointerDeviceKind.touch
+10-03 06:53:08.226 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:08.226 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:08.231 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:08.231 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:08.258 27333 27333 I flutter : FRZ ptrMove #360
+10-03 06:53:08.358 27333 27333 I flutter : FRZ ptrUp #10
+10-03 06:53:08.358 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:08.424 27333 27333 I flutter : FRZ ptrDown #11 kind=PointerDeviceKind.touch
+10-03 06:53:08.497 27333 27333 I flutter : FRZ ptrMove #390
+10-03 06:53:08.507 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:08.507 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:08.511 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:08.511 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:08.533 27333 27333 I flutter : FRZ scaleUpdate #350
+10-03 06:53:08.592 27333 27333 I flutter : FRZ ptrUp #11
+10-03 06:53:08.592 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:11.336 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:53:11.455 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:11.455 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:53:11.455 27333 27333 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:53:11.455 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:53:11.466 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:11.466 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:11.527 27333 27333 I flutter : FRZ paint #1450 Size(392.7, 345.7)
+10-03 06:53:11.540 27333 27333 I flutter : FRZ ptrMove #30
+10-03 06:53:11.574 27333 27333 I flutter : FRZ ptrUp #1
+10-03 06:53:11.575 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:11.698 27333 27333 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 06:53:11.774 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:11.774 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:11.781 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:11.781 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:11.840 27333 27333 I flutter : FRZ ptrMove #60
+10-03 06:53:11.840 27333 27333 I flutter : FRZ scaleUpdate #50
+10-03 06:53:11.899 27333 27333 I flutter : FRZ ptrUp #2
+10-03 06:53:11.899 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:12.004 27333 27333 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+10-03 06:53:12.088 27333 27333 I flutter : FRZ ptrUp #3
+10-03 06:53:12.088 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:12.088 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:12.149 27333 27333 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+10-03 06:53:12.257 27333 27333 I flutter : FRZ ptrUp #4
+10-03 06:53:12.259 27333 27333 I flutter : FRZ build #20 show=false first=0 vis=252
+10-03 06:53:12.280 27333 27333 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+10-03 06:53:12.363 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:12.363 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:12.368 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:12.368 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:12.398 27333 27333 I flutter : FRZ ptrMove #90
+10-03 06:53:12.489 27333 27333 I flutter : FRZ scaleUpdate #100
+10-03 06:53:12.515 27333 27333 I flutter : FRZ ptrMove #120
+10-03 06:53:12.597 27333 27333 I flutter : FRZ ptrUp #5
+10-03 06:53:12.598 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:12.689 27333 27333 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+10-03 06:53:12.818 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:12.818 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:12.830 27333 27333 I flutter : FRZ ptrUp #6
+10-03 06:53:12.932 27333 27333 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+10-03 06:53:13.035 27333 27333 I flutter : FRZ ptrMove #150
+10-03 06:53:13.036 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:13.036 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:13.048 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:13.048 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:13.121 27333 27333 I flutter : FRZ scaleUpdate #150
+10-03 06:53:13.135 27333 27333 I flutter : FRZ ptrMove #180
+10-03 06:53:13.142 27333 27333 I flutter : FRZ build #40 show=false first=0 vis=252
+10-03 06:53:13.248 27333 27333 I flutter : FRZ ptrMove #210
+10-03 06:53:13.264 27333 27333 I flutter : FRZ ptrUp #7
+10-03 06:53:13.264 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:13.369 27333 27333 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+10-03 06:53:13.513 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:13.513 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:13.523 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:13.523 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:13.564 27333 27333 I flutter : FRZ scaleUpdate #200
+10-03 06:53:13.581 27333 27333 I flutter : FRZ ptrMove #240
+10-03 06:53:13.638 27333 27333 I flutter : FRZ ptrUp #8
+10-03 06:53:13.639 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:13.644 27333 27333 I flutter : FRZ paint #1500 Size(392.7, 345.7)
+10-03 06:53:13.728 27333 27333 I flutter : FRZ ptrDown #9 kind=PointerDeviceKind.touch
+10-03 06:53:13.832 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:13.832 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:13.837 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:13.837 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:13.863 27333 27333 I flutter : FRZ ptrMove #270
+10-03 06:53:13.865 27333 27333 I flutter : FRZ ptrUp #9
+10-03 06:53:13.865 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:13.912 27333 27333 I flutter : FRZ ptrDown #10 kind=PointerDeviceKind.touch
+10-03 06:53:14.052 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:14.052 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:14.059 27333 27333 I flutter : FRZ build #60 show=false first=0 vis=252
+10-03 06:53:14.063 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:14.063 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:14.107 27333 27333 I flutter : FRZ ptrUp #10
+10-03 06:53:14.107 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:14.192 27333 27333 I flutter : FRZ ptrDown #11 kind=PointerDeviceKind.touch
+10-03 06:53:14.387 27333 27333 I flutter : FRZ ptrMove #300
+10-03 06:53:14.387 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:14.387 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:14.461 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:14.461 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:14.472 27333 27333 I flutter : FRZ ptrMove #330
+10-03 06:53:14.472 27333 27333 I flutter : FRZ scaleUpdate #250
+10-03 06:53:14.519 27333 27333 I flutter : FRZ ptrUp #11
+10-03 06:53:14.519 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:14.603 27333 27333 I flutter : FRZ ptrDown #12 kind=PointerDeviceKind.touch
+10-03 06:53:14.746 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:14.746 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:14.751 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:14.751 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:14.784 27333 27333 I flutter : FRZ ptrMove #360
+10-03 06:53:14.803 27333 27333 I flutter : FRZ ptrUp #12
+10-03 06:53:14.804 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:14.909 27333 27333 I flutter : FRZ ptrDown #13 kind=PointerDeviceKind.touch
+10-03 06:53:15.018 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:15.018 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:15.024 27333 27333 I flutter : FRZ ptrUp #13
+10-03 06:53:15.115 27333 27333 I flutter : FRZ ptrDown #14 kind=PointerDeviceKind.touch
+10-03 06:53:15.202 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:15.202 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:15.207 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:15.208 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:15.254 27333 27333 I flutter : FRZ ptrMove #390
+10-03 06:53:15.273 27333 27333 I flutter : FRZ scaleUpdate #300
+10-03 06:53:15.308 27333 27333 I flutter : FRZ build #80 show=false first=0 vis=252
+10-03 06:53:15.313 27333 27333 I flutter : FRZ ptrUp #14
+10-03 06:53:15.313 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:15.394 27333 27333 I flutter : FRZ ptrDown #15 kind=PointerDeviceKind.touch
+10-03 06:53:15.601 27333 27333 I flutter : FRZ ptrMove #420
+10-03 06:53:15.607 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:15.607 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:15.672 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:15.672 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:15.683 27333 27333 I flutter : FRZ ptrUp #15
+10-03 06:53:15.683 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:15.774 27333 27333 I flutter : FRZ ptrDown #16 kind=PointerDeviceKind.touch
+10-03 06:53:15.903 27333 27333 I flutter : FRZ ptrMove #450
+10-03 06:53:15.906 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:15.907 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:15.915 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:15.915 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:15.979 27333 27333 I flutter : FRZ ptrUp #16
+10-03 06:53:15.979 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:25.644 27333 27333 I flutter : FRZ ptrDown #17 kind=PointerDeviceKind.touch
+10-03 06:53:25.789 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:25.789 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:25.798 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:25.798 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:25.805 27333 27333 I flutter : FRZ ptrMove #480
+10-03 06:53:25.854 27333 27333 I flutter : FRZ scaleUpdate #350
+10-03 06:53:25.904 27333 27333 I flutter : FRZ ptrMove #510
+10-03 06:53:25.972 27333 27333 I flutter : FRZ build #100 show=false first=0 vis=252
+10-03 06:53:25.977 27333 27333 I flutter : FRZ ptrUp #17
+10-03 06:53:25.977 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:26.115 27333 27333 I flutter : FRZ ptrDown #18 kind=PointerDeviceKind.touch
+10-03 06:53:26.244 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:26.244 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:26.249 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:26.249 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:26.263 27333 27333 I flutter : FRZ ptrMove #540
+10-03 06:53:26.296 27333 27333 I flutter : FRZ scaleUpdate #400
+10-03 06:53:26.340 27333 27333 I flutter : FRZ paint #1550 Size(392.7, 345.7)
+10-03 06:53:26.363 27333 27333 I flutter : FRZ ptrMove #570
+10-03 06:53:26.448 27333 27333 I flutter : FRZ ptrUp #18
+10-03 06:53:26.448 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:26.568 27333 27333 I flutter : FRZ ptrDown #19 kind=PointerDeviceKind.touch
+10-03 06:53:26.636 27333 27333 I flutter : FRZ ptrUp #19
+10-03 06:53:26.636 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:26.636 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:26.727 27333 27333 I flutter : FRZ ptrDown #20 kind=PointerDeviceKind.touch
+10-03 06:53:26.818 27333 27333 I flutter : FRZ ptrUp #20
+10-03 06:53:26.907 27333 27333 I flutter : FRZ ptrDown #21 kind=PointerDeviceKind.touch
+10-03 06:53:27.060 27333 27333 I flutter : FRZ ptrMove #600
+10-03 06:53:27.060 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:27.060 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:27.068 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:27.068 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:27.081 27333 27333 I flutter : FRZ scaleUpdate #450
+10-03 06:53:27.138 27333 27333 I flutter : FRZ build #120 show=false first=0 vis=252
+10-03 06:53:27.159 27333 27333 I flutter : FRZ ptrMove #630
+10-03 06:53:27.186 27333 27333 I flutter : FRZ ptrUp #21
+10-03 06:53:27.186 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:27.354 27333 27333 I flutter : FRZ ptrDown #22 kind=PointerDeviceKind.touch
+10-03 06:53:27.365 27333 27333 I flutter : FRZ ptrDown #23 kind=PointerDeviceKind.touch
+10-03 06:53:27.447 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:27.447 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:27.459 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:27.460 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:27.469 27333 27333 I flutter : FRZ ptrMove #660
+10-03 06:53:27.494 27333 27333 I flutter : FRZ scaleUpdate #500
+10-03 06:53:27.525 27333 27333 I flutter : FRZ ptrMove #690
+10-03 06:53:27.575 27333 27333 I flutter : FRZ ptrMove #720
+10-03 06:53:27.576 27333 27333 I flutter : FRZ scaleUpdate #550
+10-03 06:53:27.612 27333 27333 I flutter : FRZ ptrUp #23
+10-03 06:53:27.612 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:27.626 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:27.626 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:27.634 27333 27333 I flutter : FRZ ptrUp #23
+10-03 06:53:27.634 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:27.746 27333 27333 I flutter : FRZ ptrDown #24 kind=PointerDeviceKind.touch
+10-03 06:53:27.866 27333 27333 I flutter : FRZ ptrUp #24
+10-03 06:53:27.866 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:27.866 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:27.951 27333 27333 I flutter : FRZ ptrDown #25 kind=PointerDeviceKind.touch
+10-03 06:53:28.055 27333 27333 I flutter : FRZ ptrUp #25
+10-03 06:53:28.105 27333 27333 I flutter : FRZ ptrDown #26 kind=PointerDeviceKind.touch
+10-03 06:53:28.276 27333 27333 I flutter : FRZ ptrMove #750
+10-03 06:53:28.301 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:28.301 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:28.339 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:28.339 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:28.363 27333 27333 I flutter : FRZ ptrMove #780
+10-03 06:53:28.371 27333 27333 I flutter : FRZ build #140 show=false first=0 vis=252
+10-03 06:53:28.413 27333 27333 I flutter : FRZ scaleUpdate #600
+10-03 06:53:28.449 27333 27333 I flutter : FRZ ptrUp #26
+10-03 06:53:28.449 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:28.574 27333 27333 I flutter : FRZ ptrDown #27 kind=PointerDeviceKind.touch
+10-03 06:53:28.717 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:28.717 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:28.720 27333 27333 I flutter : FRZ ptrMove #810
+10-03 06:53:28.727 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:28.727 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:28.819 27333 27333 I flutter : FRZ ptrMove #840
+10-03 06:53:28.852 27333 27333 I flutter : FRZ ptrUp #27
+10-03 06:53:28.852 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:28.930 27333 27333 I flutter : FRZ ptrDown #28 kind=PointerDeviceKind.touch
+10-03 06:53:29.029 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:29.029 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:29.042 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:29.042 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:29.042 27333 27333 I flutter : FRZ scaleUpdate #650
+10-03 06:53:29.055 27333 27333 I flutter : FRZ paint #1600 Size(392.7, 345.7)
+10-03 06:53:29.083 27333 27333 I flutter : FRZ ptrMove #870
+10-03 06:53:29.103 27333 27333 I flutter : FRZ ptrUp #28
+10-03 06:53:29.103 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:29.257 27333 27333 I flutter : FRZ ptrDown #29 kind=PointerDeviceKind.touch
+10-03 06:53:29.532 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:29.532 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:29.537 27333 27333 I flutter : FRZ build #160 show=false first=0 vis=252
+10-03 06:53:29.549 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:29.549 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:29.559 27333 27333 I flutter : FRZ ptrMove #900
+10-03 06:53:29.615 27333 27333 I flutter : FRZ ptrUp #29
+10-03 06:53:29.615 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:29.928 27333 27333 I flutter : FRZ ptrDown #30 kind=PointerDeviceKind.touch
+10-03 06:53:30.141 27333 27333 I flutter : FRZ ptrMove #930
+10-03 06:53:30.150 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:30.150 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:30.168 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:30.168 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:30.208 27333 27333 I flutter : FRZ scaleUpdate #700
+10-03 06:53:30.241 27333 27333 I flutter : FRZ ptrMove #960
+10-03 06:53:30.260 27333 27333 I flutter : FRZ ptrUp #30
+10-03 06:53:30.260 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:30.383 27333 27333 I flutter : FRZ ptrDown #31 kind=PointerDeviceKind.touch
+10-03 06:53:30.530 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:30.530 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:30.534 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:30.534 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:30.594 27333 27333 I flutter : FRZ ptrMove #990
+10-03 06:53:30.637 27333 27333 I flutter : FRZ build #180 show=false first=0 vis=252
+10-03 06:53:30.646 27333 27333 I flutter : FRZ scaleUpdate #750
+10-03 06:53:30.693 27333 27333 I flutter : FRZ ptrMove #1020
+10-03 06:53:30.725 27333 27333 I flutter : FRZ ptrUp #31
+10-03 06:53:30.726 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:30.844 27333 27333 I flutter : FRZ ptrDown #32 kind=PointerDeviceKind.touch
+10-03 06:53:30.912 27333 27333 I flutter : FRZ ptrUp #32
+10-03 06:53:30.913 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:30.913 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:30.992 27333 27333 I flutter : FRZ ptrDown #33 kind=PointerDeviceKind.touch
+10-03 06:53:31.071 27333 27333 I flutter : FRZ ptrUp #33
+10-03 06:53:31.145 27333 27333 I flutter : FRZ ptrDown #34 kind=PointerDeviceKind.touch
+10-03 06:53:31.214 27333 27333 I flutter : FRZ ptrUp #34
+10-03 06:53:31.214 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:31.214 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:31.300 27333 27333 I flutter : FRZ ptrDown #35 kind=PointerDeviceKind.touch
+10-03 06:53:31.356 27333 27333 I flutter : FRZ ptrUp #35
+10-03 06:53:31.490 27333 27333 I flutter : FRZ ptrDown #36 kind=PointerDeviceKind.touch
+10-03 06:53:31.562 27333 27333 I flutter : FRZ ptrUp #36
+10-03 06:53:31.562 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:31.563 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:31.653 27333 27333 I flutter : FRZ ptrDown #37 kind=PointerDeviceKind.touch
+10-03 06:53:31.748 27333 27333 I flutter : FRZ ptrUp #37
+10-03 06:53:31.827 27333 27333 I flutter : FRZ ptrDown #38 kind=PointerDeviceKind.touch
+10-03 06:53:31.930 27333 27333 I flutter : FRZ ptrUp #38
+10-03 06:53:31.930 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:31.930 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:32.028 27333 27333 I flutter : FRZ ptrDown #39 kind=PointerDeviceKind.touch
+10-03 06:53:32.163 27333 27333 I flutter : FRZ ptrUp #39
+10-03 06:53:32.365 27333 27333 I flutter : FRZ ptrDown #40 kind=PointerDeviceKind.touch
+10-03 06:53:32.402 27333 27333 I flutter : FRZ ptrDown #41 kind=PointerDeviceKind.touch
+10-03 06:53:32.451 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:32.451 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:32.458 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:32.458 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:32.475 27333 27333 I flutter : FRZ ptrMove #1050
+10-03 06:53:32.500 27333 27333 I flutter : FRZ scaleUpdate #800
+10-03 06:53:32.525 27333 27333 I flutter : FRZ ptrMove #1080
+10-03 06:53:32.535 27333 27333 I flutter : FRZ build #200 show=false first=0 vis=252
+10-03 06:53:32.573 27333 27333 I flutter : FRZ ptrMove #1110
+10-03 06:53:32.580 27333 27333 I flutter : FRZ scaleUpdate #850
+10-03 06:53:32.613 27333 27333 I flutter : FRZ ptrMove #1140
+10-03 06:53:32.637 27333 27333 I flutter : FRZ paint #1650 Size(392.7, 345.7)
+10-03 06:53:32.649 27333 27333 I flutter : FRZ scaleUpdate #900
+10-03 06:53:32.656 27333 27333 I flutter : FRZ ptrMove #1170
+10-03 06:53:32.679 27333 27333 I flutter : FRZ ptrUp #41
+10-03 06:53:32.679 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:32.679 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:32.679 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:32.695 27333 27333 I flutter : FRZ ptrUp #41
+10-03 06:53:32.696 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:32.855 27333 27333 I flutter : FRZ ptrDown #42 kind=PointerDeviceKind.touch
+10-03 06:53:32.969 27333 27333 I flutter : FRZ ptrUp #42
+10-03 06:53:32.970 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:32.970 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:33.049 27333 27333 I flutter : FRZ ptrDown #43 kind=PointerDeviceKind.touch
+10-03 06:53:33.144 27333 27333 I flutter : FRZ ptrUp #43
+10-03 06:53:33.239 27333 27333 I flutter : FRZ ptrDown #44 kind=PointerDeviceKind.touch
+10-03 06:53:33.313 27333 27333 I flutter : FRZ ptrUp #44
+10-03 06:53:33.313 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:33.313 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:33.404 27333 27333 I flutter : FRZ ptrDown #45 kind=PointerDeviceKind.touch
+10-03 06:53:33.476 27333 27333 I flutter : FRZ ptrUp #45
+10-03 06:53:33.529 27333 27333 I flutter : FRZ ptrDown #46 kind=PointerDeviceKind.touch
+10-03 06:53:33.649 27333 27333 I flutter : FRZ ptrUp #46
+10-03 06:53:33.650 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:33.650 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:33.668 27333 27333 I flutter : FRZ ptrDown #47 kind=PointerDeviceKind.touch
+10-03 06:53:33.803 27333 27333 I flutter : FRZ ptrUp #47
+10-03 06:53:33.878 27333 27333 I flutter : FRZ ptrDown #48 kind=PointerDeviceKind.touch
+10-03 06:53:33.962 27333 27333 I flutter : FRZ ptrUp #48
+10-03 06:53:33.962 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:33.962 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:34.052 27333 27333 I flutter : FRZ ptrDown #49 kind=PointerDeviceKind.touch
+10-03 06:53:34.152 27333 27333 I flutter : FRZ ptrUp #49
+10-03 06:53:34.248 27333 27333 I flutter : FRZ ptrDown #50 kind=PointerDeviceKind.touch
+10-03 06:53:34.367 27333 27333 I flutter : FRZ ptrUp #50
+10-03 06:53:34.367 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:34.367 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:34.421 27333 27333 I flutter : FRZ ptrDown #51 kind=PointerDeviceKind.touch
+10-03 06:53:34.524 27333 27333 I flutter : FRZ ptrUp #51
+10-03 06:53:34.536 27333 27333 I flutter : FRZ build #220 show=false first=0 vis=252
+10-03 06:53:34.616 27333 27333 I flutter : FRZ ptrDown #52 kind=PointerDeviceKind.touch
+10-03 06:53:34.780 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:34.780 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:34.785 27333 27333 I flutter : FRZ ptrMove #1200
+10-03 06:53:34.798 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:34.798 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:34.897 27333 27333 I flutter : FRZ scaleUpdate #950
+10-03 06:53:34.910 27333 27333 I flutter : FRZ ptrUp #52
+10-03 06:53:34.910 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:35.044 27333 27333 I flutter : FRZ ptrDown #53 kind=PointerDeviceKind.touch
+10-03 06:53:35.178 27333 27333 I flutter : FRZ ptrMove #1230
+10-03 06:53:35.179 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:35.179 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:35.184 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:35.184 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:35.278 27333 27333 I flutter : FRZ ptrMove #1260
+10-03 06:53:35.300 27333 27333 I flutter : FRZ ptrUp #53
+10-03 06:53:35.300 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:35.474 27333 27333 I flutter : FRZ ptrDown #54 kind=PointerDeviceKind.touch
+10-03 06:53:35.616 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:35.616 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:35.623 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:35.623 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:35.627 27333 27333 I flutter : FRZ ptrUp #54
+10-03 06:53:35.627 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:35.796 27333 27333 I flutter : FRZ ptrDown #55 kind=PointerDeviceKind.touch
+10-03 06:53:35.910 27333 27333 I flutter : FRZ ptrUp #55
+10-03 06:53:35.911 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:35.911 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:36.054 27333 27333 I flutter : FRZ ptrDown #56 kind=PointerDeviceKind.touch
+10-03 06:53:36.192 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:36.192 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:36.197 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:36.197 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:36.203 27333 27333 I flutter : FRZ build #240 show=false first=0 vis=252
+10-03 06:53:36.230 27333 27333 I flutter : FRZ ptrUp #56
+10-03 06:53:36.230 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:37.670 27333 27333 I flutter : FRZ ptrDown #57 kind=PointerDeviceKind.touch
+10-03 06:53:37.678 27333 27333 I flutter : FRZ ptrDown #58 kind=PointerDeviceKind.touch
+10-03 06:53:37.774 27333 27333 I flutter : FRZ ptrMove #1290
+10-03 06:53:37.777 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:37.777 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:37.783 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:37.783 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:37.794 27333 27333 I flutter : FRZ scaleUpdate #1000
+10-03 06:53:37.824 27333 27333 I flutter : FRZ ptrMove #1320
+10-03 06:53:37.873 27333 27333 I flutter : FRZ ptrMove #1350
+10-03 06:53:37.876 27333 27333 I flutter : FRZ scaleUpdate #1050
+10-03 06:53:37.924 27333 27333 I flutter : FRZ ptrMove #1380
+10-03 06:53:37.959 27333 27333 I flutter : FRZ scaleUpdate #1100
+10-03 06:53:37.973 27333 27333 I flutter : FRZ ptrMove #1410
+10-03 06:53:38.002 27333 27333 I flutter : FRZ paint #1700 Size(392.7, 345.7)
+10-03 06:53:38.014 27333 27333 I flutter : FRZ ptrMove #1440
+10-03 06:53:38.031 27333 27333 I flutter : FRZ scaleUpdate #1150
+10-03 06:53:38.055 27333 27333 I flutter : FRZ ptrMove #1470
+10-03 06:53:38.069 27333 27333 I flutter : FRZ build #260 show=false first=0 vis=252
+10-03 06:53:38.074 27333 27333 I flutter : FRZ ptrUp #58
+10-03 06:53:38.074 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:38.074 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:38.074 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:38.083 27333 27333 I flutter : FRZ ptrUp #58
+10-03 06:53:38.083 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:38.216 27333 27333 I flutter : FRZ ptrDown #59 kind=PointerDeviceKind.touch
+10-03 06:53:38.306 27333 27333 I flutter : FRZ ptrUp #59
+10-03 06:53:38.306 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:38.306 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:38.400 27333 27333 I flutter : FRZ ptrDown #60 kind=PointerDeviceKind.touch
+10-03 06:53:38.481 27333 27333 I flutter : FRZ ptrUp #60
+10-03 06:53:38.539 27333 27333 I flutter : FRZ ptrDown #61 kind=PointerDeviceKind.touch
+10-03 06:53:38.639 27333 27333 I flutter : FRZ ptrUp #61
+10-03 06:53:38.640 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:38.640 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:38.813 27333 27333 I flutter : FRZ ptrDown #62 kind=PointerDeviceKind.touch
+10-03 06:53:38.913 27333 27333 I flutter : FRZ ptrUp #62
+10-03 06:53:38.997 27333 27333 I flutter : FRZ ptrDown #63 kind=PointerDeviceKind.touch
+10-03 06:53:39.081 27333 27333 I flutter : FRZ ptrUp #63
+10-03 06:53:39.082 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:39.082 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:39.156 27333 27333 I flutter : FRZ ptrDown #64 kind=PointerDeviceKind.touch
+10-03 06:53:39.239 27333 27333 I flutter : FRZ ptrUp #64
+10-03 06:53:39.324 27333 27333 I flutter : FRZ ptrDown #65 kind=PointerDeviceKind.touch
+10-03 06:53:39.392 27333 27333 I flutter : FRZ ptrUp #65
+10-03 06:53:39.392 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:39.392 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:39.504 27333 27333 I flutter : FRZ ptrDown #66 kind=PointerDeviceKind.touch
+10-03 06:53:39.643 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:39.643 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:39.648 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:39.648 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:39.697 27333 27333 I flutter : FRZ ptrMove #1500
+10-03 06:53:39.728 27333 27333 I flutter : FRZ scaleUpdate #1200
+10-03 06:53:39.777 27333 27333 I flutter : FRZ ptrUp #66
+10-03 06:53:39.777 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:39.925 27333 27333 I flutter : FRZ ptrDown #67 kind=PointerDeviceKind.touch
+10-03 06:53:40.085 27333 27333 I flutter : FRZ ptrDown #68 kind=PointerDeviceKind.touch
+10-03 06:53:40.136 27333 27333 I flutter : FRZ ptrUp #68
+10-03 06:53:40.136 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:40.136 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:40.205 27333 27333 I flutter : FRZ ptrMove #1530
+10-03 06:53:40.206 27333 27333 I flutter : FRZ ptrDown #69 kind=PointerDeviceKind.touch
+10-03 06:53:40.246 27333 27333 I flutter : FRZ ptrUp #69
+10-03 06:53:40.390 27333 27333 I flutter : FRZ ptrDown #70 kind=PointerDeviceKind.touch
+10-03 06:53:40.395 27333 27333 I flutter : FRZ ptrMove #1560
+10-03 06:53:40.436 27333 27333 I flutter : FRZ ptrMove #1590
+10-03 06:53:40.442 27333 27333 I flutter : FRZ ptrUp #70
+10-03 06:53:40.443 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:40.443 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:40.447 27333 27333 I flutter : FRZ ptrUp #70
+10-03 06:53:40.447 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:40.536 27333 27333 I flutter : FRZ ptrDown #71 kind=PointerDeviceKind.touch
+10-03 06:53:40.581 27333 27333 I flutter : FRZ ptrDown #72 kind=PointerDeviceKind.touch
+10-03 06:53:40.604 27333 27333 I flutter : FRZ ptrUp #72
+10-03 06:53:40.605 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:40.605 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:40.618 27333 27333 I flutter : FRZ build #280 show=false first=0 vis=252
+10-03 06:53:40.690 27333 27333 I flutter : FRZ ptrUp #72
+10-03 06:53:40.909 27333 27333 I flutter : FRZ tapUp tool=DrawingTool.none
+10-03 06:53:41.033 27333 27333 I flutter : FRZ ptrDown #73 kind=PointerDeviceKind.touch
+10-03 06:53:41.083 27333 27333 I flutter : FRZ ptrUp #73
+10-03 06:53:41.083 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:41.083 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:41.201 27333 27333 I flutter : FRZ ptrDown #74 kind=PointerDeviceKind.touch
+10-03 06:53:41.263 27333 27333 I flutter : FRZ ptrUp #74
+10-03 06:53:41.361 27333 27333 I flutter : FRZ ptrDown #75 kind=PointerDeviceKind.touch
+10-03 06:53:41.428 27333 27333 I flutter : FRZ ptrUp #75
+10-03 06:53:41.428 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:41.428 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:41.730 27333 27333 I flutter : FRZ tapUp tool=DrawingTool.none
+10-03 06:53:41.813 27333 27333 I flutter : FRZ ptrDown #76 kind=PointerDeviceKind.touch
+10-03 06:53:41.874 27333 27333 I flutter : FRZ ptrUp #76
+10-03 06:53:41.875 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:41.875 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:41.955 27333 27333 I flutter : FRZ ptrDown #77 kind=PointerDeviceKind.touch
+10-03 06:53:42.071 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:42.071 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:42.076 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:42.076 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:42.157 27333 27333 I flutter : FRZ ptrMove #1620
+10-03 06:53:42.180 27333 27333 I flutter : FRZ ptrUp #77
+10-03 06:53:42.180 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:42.315 27333 27333 I flutter : FRZ ptrDown #78 kind=PointerDeviceKind.touch
+10-03 06:53:42.406 27333 27333 I flutter : FRZ ptrDown #79 kind=PointerDeviceKind.touch
+10-03 06:53:42.459 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:42.459 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:42.471 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:42.471 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:42.488 27333 27333 I flutter : FRZ ptrMove #1650
+10-03 06:53:42.492 27333 27333 I flutter : FRZ scaleUpdate #1250
+10-03 06:53:42.537 27333 27333 I flutter : FRZ ptrMove #1680
+10-03 06:53:42.574 27333 27333 I flutter : FRZ scaleUpdate #1300
+10-03 06:53:42.587 27333 27333 I flutter : FRZ ptrMove #1710
+10-03 06:53:42.616 27333 27333 I flutter : FRZ build #300 show=false first=0 vis=252
+10-03 06:53:42.627 27333 27333 I flutter : FRZ ptrMove #1740
+10-03 06:53:42.646 27333 27333 I flutter : FRZ scaleUpdate #1350
+10-03 06:53:42.670 27333 27333 I flutter : FRZ ptrMove #1770
+10-03 06:53:42.709 27333 27333 I flutter : FRZ ptrMove #1800
+10-03 06:53:42.715 27333 27333 I flutter : FRZ scaleUpdate #1400
+10-03 06:53:42.717 27333 27333 I flutter : FRZ paint #1750 Size(392.7, 345.7)
+10-03 06:53:42.731 27333 27333 I flutter : FRZ ptrUp #79
+10-03 06:53:42.731 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:42.732 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:42.732 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:42.742 27333 27333 I flutter : FRZ ptrUp #79
+10-03 06:53:42.742 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:53:49.539 27333 27333 I flutter : FRZ ptrDown #80 kind=PointerDeviceKind.touch
+10-03 06:53:49.746 27333 27333 I flutter : FRZ ptrMove #1830
+10-03 06:53:49.760 27333 27333 I flutter : FRZ longCancel
+10-03 06:53:49.760 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:49.806 27333 27333 I flutter : FRZ scaleStart
+10-03 06:53:49.806 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:53:49.834 27333 27333 I flutter : FRZ ptrMove #1860
+10-03 06:53:49.927 27333 27333 I flutter : FRZ scaleUpdate #1450
+10-03 06:53:49.933 27333 27333 I flutter : FRZ ptrMove #1890
+10-03 06:53:49.987 27333 27333 I flutter : FRZ build #320 show=false first=0 vis=252
+10-03 06:53:50.032 27333 27333 I flutter : FRZ ptrMove #1920
+10-03 06:53:50.093 27333 27333 I flutter : FRZ scaleUpdate #1500
+10-03 06:53:50.131 27333 27333 I flutter : FRZ ptrMove #1950
+10-03 06:53:50.230 27333 27333 I flutter : FRZ ptrMove #1980
+10-03 06:53:50.258 27333 27333 I flutter : FRZ scaleUpdate #1550
+10-03 06:53:50.320 27333 27333 I flutter : FRZ build #340 show=false first=0 vis=252
+10-03 06:53:50.327 27333 27333 I flutter : FRZ ptrMove #2010
+10-03 06:53:50.418 27333 27333 I flutter : FRZ scaleUpdate #1600
+10-03 06:53:50.426 27333 27333 I flutter : FRZ ptrMove #2040
+10-03 06:53:50.528 27333 27333 I flutter : FRZ ptrMove #2070
+10-03 06:53:50.575 27333 27333 I flutter : FRZ ptrUp #80
+10-03 06:53:50.575 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:17.616 27333 27333 I flutter : FRZ ptrDown #81 kind=PointerDeviceKind.touch
+10-03 06:54:17.736 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:17.736 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:17.738 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:17.738 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:17.751 27333 27333 I flutter : FRZ paint #1800 Size(392.7, 345.7)
+10-03 06:54:17.757 27333 27333 I flutter : FRZ scaleUpdate #1650
+10-03 06:54:17.784 27333 27333 I flutter : FRZ ptrMove #2100
+10-03 06:54:17.807 27333 27333 I flutter : FRZ build #360 show=false first=0 vis=252
+10-03 06:54:17.883 27333 27333 I flutter : FRZ ptrMove #2130
+10-03 06:54:17.927 27333 27333 I flutter : FRZ scaleUpdate #1700
+10-03 06:54:17.952 27333 27333 I flutter : FRZ ptrUp #81
+10-03 06:54:17.953 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:18.047 27333 27333 I flutter : FRZ ptrDown #82 kind=PointerDeviceKind.touch
+10-03 06:54:18.109 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:18.109 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:18.115 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:18.115 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:18.134 27333 27333 I flutter : FRZ ptrMove #2160
+10-03 06:54:18.233 27333 27333 I flutter : FRZ ptrMove #2190
+10-03 06:54:18.250 27333 27333 I flutter : FRZ scaleUpdate #1750
+10-03 06:54:18.277 27333 27333 I flutter : FRZ ptrUp #82
+10-03 06:54:18.277 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:18.316 27333 27333 I flutter : FRZ ptrDown #83 kind=PointerDeviceKind.touch
+10-03 06:54:18.514 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:18.514 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:18.522 27333 27333 I flutter : FRZ build #380 show=false first=0 vis=252
+10-03 06:54:18.535 27333 27333 I flutter : FRZ ptrMove #2220
+10-03 06:54:18.543 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:18.543 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:18.631 27333 27333 I flutter : FRZ ptrMove #2250
+10-03 06:54:18.694 27333 27333 I flutter : FRZ scaleUpdate #1800
+10-03 06:54:18.736 27333 27333 I flutter : FRZ ptrUp #83
+10-03 06:54:18.736 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:23.320 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:54:23.452 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:23.452 27333 27333 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:54:23.452 27333 27333 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:54:23.452 27333 27333 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:54:23.461 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:23.461 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:23.535 27333 27333 I flutter : FRZ ptrUp #1
+10-03 06:54:23.535 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:23.610 27333 27333 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 06:54:23.715 27333 27333 I flutter : FRZ ptrMove #30
+10-03 06:54:23.721 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:23.721 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:23.726 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:23.726 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:23.808 27333 27333 I flutter : FRZ ptrMove #60
+10-03 06:54:23.808 27333 27333 I flutter : FRZ scaleUpdate #50
+10-03 06:54:23.838 27333 27333 I flutter : FRZ paint #1850 Size(392.7, 361.7)
+10-03 06:54:23.883 27333 27333 I flutter : FRZ ptrUp #2
+10-03 06:54:23.883 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:23.956 27333 27333 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+10-03 06:54:24.060 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:24.060 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:24.068 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:24.068 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:24.074 27333 27333 I flutter : FRZ ptrMove #90
+10-03 06:54:24.103 27333 27333 I flutter : FRZ build #20 show=false first=0 vis=261
+10-03 06:54:24.129 27333 27333 I flutter : FRZ ptrUp #3
+10-03 06:54:24.129 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:24.288 27333 27333 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+10-03 06:54:24.412 27333 27333 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+10-03 06:54:24.472 27333 27333 I flutter : FRZ ptrMove #120
+10-03 06:54:24.494 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:24.494 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:24.511 27333 27333 I flutter : FRZ scaleUpdate #100
+10-03 06:54:24.516 27333 27333 I flutter : FRZ ptrMove #150
+10-03 06:54:24.557 27333 27333 I flutter : FRZ ptrMove #180
+10-03 06:54:24.580 27333 27333 I flutter : FRZ scaleUpdate #150
+10-03 06:54:24.599 27333 27333 I flutter : FRZ ptrMove #210
+10-03 06:54:24.641 27333 27333 I flutter : FRZ ptrMove #240
+10-03 06:54:24.649 27333 27333 I flutter : FRZ scaleUpdate #200
+10-03 06:54:24.684 27333 27333 I flutter : FRZ ptrMove #270
+10-03 06:54:24.729 27333 27333 I flutter : FRZ scaleUpdate #250
+10-03 06:54:24.734 27333 27333 I flutter : FRZ ptrMove #300
+10-03 06:54:24.784 27333 27333 I flutter : FRZ ptrMove #330
+10-03 06:54:24.802 27333 27333 I flutter : FRZ build #40 show=false first=0 vis=261
+10-03 06:54:24.811 27333 27333 I flutter : FRZ scaleUpdate #300
+10-03 06:54:24.833 27333 27333 I flutter : FRZ ptrMove #360
+10-03 06:54:24.853 27333 27333 I flutter : FRZ ptrUp #5
+10-03 06:54:24.853 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:24.853 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:24.853 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:24.864 27333 27333 I flutter : FRZ ptrUp #5
+10-03 06:54:24.864 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:24.996 27333 27333 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+10-03 06:54:25.115 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:25.115 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:25.125 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:25.125 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:25.151 27333 27333 I flutter : FRZ ptrMove #390
+10-03 06:54:25.192 27333 27333 I flutter : FRZ scaleUpdate #350
+10-03 06:54:25.250 27333 27333 I flutter : FRZ ptrMove #420
+10-03 06:54:25.258 27333 27333 I flutter : FRZ ptrUp #6
+10-03 06:54:25.259 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:25.369 27333 27333 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+10-03 06:54:25.448 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:25.448 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:25.458 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:25.458 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:25.528 27333 27333 I flutter : FRZ ptrMove #450
+10-03 06:54:25.536 27333 27333 I flutter : FRZ build #60 show=false first=0 vis=261
+10-03 06:54:25.557 27333 27333 I flutter : FRZ scaleUpdate #400
+10-03 06:54:25.605 27333 27333 I flutter : FRZ paint #1900 Size(392.7, 361.7)
+10-03 06:54:25.627 27333 27333 I flutter : FRZ ptrMove #480
+10-03 06:54:25.718 27333 27333 I flutter : FRZ scaleUpdate #450
+10-03 06:54:25.726 27333 27333 I flutter : FRZ ptrMove #510
+10-03 06:54:25.784 27333 27333 I flutter : FRZ ptrUp #7
+10-03 06:54:25.785 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:25.965 27333 27333 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+10-03 06:54:26.069 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:26.069 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:26.075 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:26.075 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:26.099 27333 27333 I flutter : FRZ ptrMove #540
+10-03 06:54:26.136 27333 27333 I flutter : FRZ build #80 show=false first=0 vis=261
+10-03 06:54:26.174 27333 27333 I flutter : FRZ scaleUpdate #500
+10-03 06:54:26.191 27333 27333 I flutter : FRZ ptrUp #8
+10-03 06:54:26.191 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:26.287 27333 27333 I flutter : FRZ ptrDown #9 kind=PointerDeviceKind.touch
+10-03 06:54:26.351 27333 27333 I flutter : FRZ ptrMove #570
+10-03 06:54:26.352 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:26.352 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:26.358 27333 27333 I flutter : FRZ ptrUp #9
+10-03 06:54:26.582 27333 27333 I flutter : FRZ ptrDown #10 kind=PointerDeviceKind.touch
+10-03 06:54:26.656 27333 27333 I flutter : FRZ ptrDown #11 kind=PointerDeviceKind.touch
+10-03 06:54:26.697 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:26.697 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:26.698 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:26.698 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:26.733 27333 27333 I flutter : FRZ ptrMove #600
+10-03 06:54:26.766 27333 27333 I flutter : FRZ scaleUpdate #550
+10-03 06:54:26.774 27333 27333 I flutter : FRZ ptrMove #630
+10-03 06:54:26.816 27333 27333 I flutter : FRZ ptrMove #660
+10-03 06:54:26.835 27333 27333 I flutter : FRZ scaleUpdate #600
+10-03 06:54:26.860 27333 27333 I flutter : FRZ ptrMove #690
+10-03 06:54:26.901 27333 27333 I flutter : FRZ ptrMove #720
+10-03 06:54:26.907 27333 27333 I flutter : FRZ scaleUpdate #650
+10-03 06:54:26.931 27333 27333 I flutter : FRZ ptrUp #11
+10-03 06:54:26.931 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:26.931 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:26.931 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:26.936 27333 27333 I flutter : FRZ build #100 show=false first=0 vis=261
+10-03 06:54:26.941 27333 27333 I flutter : FRZ ptrUp #11
+10-03 06:54:26.941 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:27.069 27333 27333 I flutter : FRZ ptrDown #12 kind=PointerDeviceKind.touch
+10-03 06:54:27.142 27333 27333 I flutter : FRZ ptrUp #12
+10-03 06:54:27.142 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:27.143 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:27.201 27333 27333 I flutter : FRZ ptrDown #13 kind=PointerDeviceKind.touch
+10-03 06:54:27.304 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:27.304 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:27.309 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:27.309 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:27.314 27333 27333 I flutter : FRZ ptrMove #750
+10-03 06:54:27.392 27333 27333 I flutter : FRZ ptrUp #13
+10-03 06:54:27.392 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:27.459 27333 27333 I flutter : FRZ ptrDown #14 kind=PointerDeviceKind.touch
+10-03 06:54:27.554 27333 27333 I flutter : FRZ ptrUp #14
+10-03 06:54:27.554 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:27.554 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:27.648 27333 27333 I flutter : FRZ ptrDown #15 kind=PointerDeviceKind.touch
+10-03 06:54:27.732 27333 27333 I flutter : FRZ ptrUp #15
+10-03 06:54:27.812 27333 27333 I flutter : FRZ ptrDown #16 kind=PointerDeviceKind.touch
+10-03 06:54:27.912 27333 27333 I flutter : FRZ ptrUp #16
+10-03 06:54:27.913 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:27.913 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:27.965 27333 27333 I flutter : FRZ ptrDown #17 kind=PointerDeviceKind.touch
+10-03 06:54:28.074 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:28.074 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:28.082 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:28.082 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:28.133 27333 27333 I flutter : FRZ ptrMove #780
+10-03 06:54:28.145 27333 27333 I flutter : FRZ scaleUpdate #700
+10-03 06:54:28.155 27333 27333 I flutter : FRZ paint #1950 Size(392.7, 361.7)
+10-03 06:54:28.253 27333 27333 I flutter : FRZ build #120 show=false first=0 vis=261
+10-03 06:54:28.264 27333 27333 I flutter : FRZ ptrUp #17
+10-03 06:54:28.264 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:28.323 27333 27333 I flutter : FRZ ptrDown #18 kind=PointerDeviceKind.touch
+10-03 06:54:28.424 27333 27333 I flutter : FRZ ptrUp #18
+10-03 06:54:28.424 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:28.424 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:28.497 27333 27333 I flutter : FRZ ptrDown #19 kind=PointerDeviceKind.touch
+10-03 06:54:28.572 27333 27333 I flutter : FRZ ptrMove #810
+10-03 06:54:28.578 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:28.579 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:28.581 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:28.581 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:28.694 27333 27333 I flutter : FRZ scaleUpdate #750
+10-03 06:54:28.699 27333 27333 I flutter : FRZ ptrMove #840
+10-03 06:54:28.711 27333 27333 I flutter : FRZ ptrUp #19
+10-03 06:54:28.711 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:28.824 27333 27333 I flutter : FRZ ptrDown #20 kind=PointerDeviceKind.touch
+10-03 06:54:28.894 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:28.894 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:28.897 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:28.897 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:28.976 27333 27333 I flutter : FRZ ptrMove #870
+10-03 06:54:29.040 27333 27333 I flutter : FRZ ptrUp #20
+10-03 06:54:29.040 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:29.053 27333 27333 I flutter : FRZ build #140 show=false first=0 vis=261
+10-03 06:54:29.110 27333 27333 I flutter : FRZ ptrDown #21 kind=PointerDeviceKind.touch
+10-03 06:54:29.182 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:29.182 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:29.191 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:29.191 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:29.194 27333 27333 I flutter : FRZ scaleUpdate #800
+10-03 06:54:29.208 27333 27333 I flutter : FRZ ptrMove #900
+10-03 06:54:29.307 27333 27333 I flutter : FRZ ptrMove #930
+10-03 06:54:29.344 27333 27333 I flutter : FRZ ptrUp #21
+10-03 06:54:29.344 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:29.441 27333 27333 I flutter : FRZ ptrDown #22 kind=PointerDeviceKind.touch
+10-03 06:54:29.542 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:29.542 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:29.546 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:29.546 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:29.563 27333 27333 I flutter : FRZ scaleUpdate #850
+10-03 06:54:29.593 27333 27333 I flutter : FRZ ptrMove #960
+10-03 06:54:29.685 27333 27333 I flutter : FRZ build #160 show=false first=0 vis=261
+10-03 06:54:29.689 27333 27333 I flutter : FRZ ptrMove #990
+10-03 06:54:29.728 27333 27333 I flutter : FRZ scaleUpdate #900
+10-03 06:54:29.753 27333 27333 I flutter : FRZ paint #2000 Size(392.7, 361.7)
+10-03 06:54:29.789 27333 27333 I flutter : FRZ ptrMove #1020
+10-03 06:54:29.841 27333 27333 I flutter : FRZ ptrUp #22
+10-03 06:54:29.841 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:29.932 27333 27333 I flutter : FRZ ptrDown #23 kind=PointerDeviceKind.touch
+10-03 06:54:30.043 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:30.043 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:30.048 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:30.048 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:30.091 27333 27333 I flutter : FRZ ptrMove #1050
+10-03 06:54:30.116 27333 27333 I flutter : FRZ scaleUpdate #950
+10-03 06:54:30.191 27333 27333 I flutter : FRZ ptrMove #1080
+10-03 06:54:30.201 27333 27333 I flutter : FRZ build #180 show=false first=0 vis=261
+10-03 06:54:30.282 27333 27333 I flutter : FRZ scaleUpdate #1000
+10-03 06:54:30.290 27333 27333 I flutter : FRZ ptrMove #1110
+10-03 06:54:30.373 27333 27333 I flutter : FRZ ptrUp #23
+10-03 06:54:30.374 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:30.431 27333 27333 I flutter : FRZ ptrDown #24 kind=PointerDeviceKind.touch
+10-03 06:54:30.524 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:30.524 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:30.529 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:30.529 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:30.532 27333 27333 I flutter : FRZ ptrMove #1140
+10-03 06:54:30.609 27333 27333 I flutter : FRZ scaleUpdate #1050
+10-03 06:54:30.634 27333 27333 I flutter : FRZ ptrMove #1170
+10-03 06:54:30.648 27333 27333 I flutter : FRZ ptrUp #24
+10-03 06:54:30.648 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:47.524 27333 27333 I flutter : FRZ ptrDown #25 kind=PointerDeviceKind.touch
+10-03 06:54:47.678 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:47.678 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:47.681 27333 27333 I flutter : FRZ build #200 show=false first=0 vis=261
+10-03 06:54:47.686 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:47.686 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:47.760 27333 27333 I flutter : FRZ ptrMove #1200
+10-03 06:54:47.821 27333 27333 I flutter : FRZ scaleUpdate #1100
+10-03 06:54:47.859 27333 27333 I flutter : FRZ ptrMove #1230
+10-03 06:54:47.914 27333 27333 I flutter : FRZ paint #2050 Size(392.7, 361.7)
+10-03 06:54:47.961 27333 27333 I flutter : FRZ ptrMove #1260
+10-03 06:54:47.989 27333 27333 I flutter : FRZ scaleUpdate #1150
+10-03 06:54:48.012 27333 27333 I flutter : FRZ build #220 show=false first=0 vis=261
+10-03 06:54:48.017 27333 27333 I flutter : FRZ ptrUp #25
+10-03 06:54:48.017 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:48.069 27333 27333 I flutter : FRZ ptrDown #26 kind=PointerDeviceKind.touch
+10-03 06:54:48.135 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:48.135 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:48.140 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:48.140 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:48.171 27333 27333 I flutter : FRZ ptrUp #26
+10-03 06:54:48.171 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:55.007 27333 27333 I flutter : FRZ ptrDown #27 kind=PointerDeviceKind.touch
+10-03 06:54:55.072 27333 27333 I flutter : FRZ ptrMove #1290
+10-03 06:54:55.080 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:55.080 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:55.086 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:55.086 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:55.167 27333 27333 I flutter : FRZ ptrMove #1320
+10-03 06:54:55.189 27333 27333 I flutter : FRZ scaleUpdate #1200
+10-03 06:54:55.266 27333 27333 I flutter : FRZ ptrMove #1350
+10-03 06:54:55.281 27333 27333 I flutter : FRZ ptrUp #27
+10-03 06:54:55.282 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:54:55.292 27333 27333 I flutter : FRZ ptrDown #28 kind=PointerDeviceKind.touch
+10-03 06:54:55.388 27333 27333 I flutter : FRZ ptrUp #28
+10-03 06:54:55.388 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:55.388 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:55.477 27333 27333 I flutter : FRZ ptrDown #29 kind=PointerDeviceKind.touch
+10-03 06:54:55.548 27333 27333 I flutter : FRZ longCancel
+10-03 06:54:55.548 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:55.551 27333 27333 I flutter : FRZ scaleStart
+10-03 06:54:55.551 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:54:55.581 27333 27333 I flutter : FRZ ptrUp #29
+10-03 06:54:55.582 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:55:12.371 27333 27333 I flutter : FRZ ptrDown #30 kind=PointerDeviceKind.touch
+10-03 06:55:12.458 27333 27333 I flutter : FRZ longCancel
+10-03 06:55:12.458 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:55:12.461 27333 27333 I flutter : FRZ scaleStart
+10-03 06:55:12.461 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:55:12.475 27333 27333 I flutter : FRZ build #240 show=false first=0 vis=261
+10-03 06:55:12.499 27333 27333 I flutter : FRZ ptrMove #1380
+10-03 06:55:12.504 27333 27333 I flutter : FRZ scaleUpdate #1250
+10-03 06:55:12.598 27333 27333 I flutter : FRZ ptrMove #1410
+10-03 06:55:12.629 27333 27333 I flutter : FRZ ptrUp #30
+10-03 06:55:12.629 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:55:12.735 27333 27333 I flutter : FRZ ptrDown #31 kind=PointerDeviceKind.touch
+10-03 06:55:12.844 27333 27333 I flutter : FRZ longCancel
+10-03 06:55:12.844 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:55:12.849 27333 27333 I flutter : FRZ scaleStart
+10-03 06:55:12.849 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:55:12.893 27333 27333 I flutter : FRZ scaleUpdate #1300
+10-03 06:55:12.902 27333 27333 I flutter : FRZ ptrUp #31
+10-03 06:55:12.902 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:55:39.335 27333 27333 I flutter : FRZ ptrDown #32 kind=PointerDeviceKind.touch
+10-03 06:55:39.400 27333 27333 I flutter : FRZ ptrMove #1440
+10-03 06:55:39.409 27333 27333 I flutter : FRZ longCancel
+10-03 06:55:39.409 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:55:39.412 27333 27333 I flutter : FRZ scaleStart
+10-03 06:55:39.412 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:55:39.497 27333 27333 I flutter : FRZ build #260 show=false first=0 vis=261
+10-03 06:55:39.501 27333 27333 I flutter : FRZ ptrMove #1470
+10-03 06:55:39.521 27333 27333 I flutter : FRZ ptrUp #32
+10-03 06:55:39.521 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:55:39.611 27333 27333 I flutter : FRZ ptrDown #33 kind=PointerDeviceKind.touch
+10-03 06:55:39.698 27333 27333 I flutter : FRZ longCancel
+10-03 06:55:39.698 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:55:39.704 27333 27333 I flutter : FRZ scaleStart
+10-03 06:55:39.704 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:55:39.731 27333 27333 I flutter : FRZ paint #2100 Size(392.7, 361.7)
+10-03 06:55:39.745 27333 27333 I flutter : FRZ scaleUpdate #1350
+10-03 06:55:39.753 27333 27333 I flutter : FRZ ptrUp #33
+10-03 06:55:39.754 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:56:03.249 27333 27333 I flutter : FRZ ptrDown #34 kind=PointerDeviceKind.touch
+10-03 06:56:03.347 27333 27333 I flutter : FRZ ptrMove #1500
+10-03 06:56:03.347 27333 27333 I flutter : FRZ longCancel
+10-03 06:56:03.347 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:03.352 27333 27333 I flutter : FRZ scaleStart
+10-03 06:56:03.352 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:03.445 27333 27333 I flutter : FRZ ptrMove #1530
+10-03 06:56:03.512 27333 27333 I flutter : FRZ scaleUpdate #1400
+10-03 06:56:03.545 27333 27333 I flutter : FRZ ptrMove #1560
+10-03 06:56:03.574 27333 27333 I flutter : FRZ build #280 show=false first=0 vis=261
+10-03 06:56:03.655 27333 27333 I flutter : FRZ ptrMove #1590
+10-03 06:56:03.671 27333 27333 I flutter : FRZ ptrUp #34
+10-03 06:56:03.672 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:56:03.762 27333 27333 I flutter : FRZ ptrDown #35 kind=PointerDeviceKind.touch
+10-03 06:56:03.833 27333 27333 I flutter : FRZ longCancel
+10-03 06:56:03.833 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:03.838 27333 27333 I flutter : FRZ scaleStart
+10-03 06:56:03.838 27333 27333 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:03.854 27333 27333 I flutter : FRZ scaleUpdate #1450
+10-03 06:56:03.863 27333 27333 I flutter : FRZ ptrUp #35
+10-03 06:56:03.863 27333 27333 I flutter : FRZ scaleEnd
+10-03 06:56:12.732  5981  5981 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:56:12.831  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:12.831  5981  5981 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:56:12.832  5981  5981 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:56:12.833  5981  5981 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:12.841  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:12.842  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:13.008  5981  5981 I flutter : FRZ ptrMove #30
+10-03 06:56:13.042  5981  5981 I flutter : FRZ ptrUp #1
+10-03 06:56:13.052  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:13.088  5981  5981 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 06:56:13.180  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:13.180  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:13.185  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:13.185  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:13.268  5981  5981 I flutter : FRZ scaleUpdate #50
+10-03 06:56:13.300  5981  5981 I flutter : FRZ ptrMove #60
+10-03 06:56:13.301  5981  5981 I flutter : FRZ ptrUp #2
+10-03 06:56:13.302  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:13.556  5981  5981 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+10-03 06:56:13.670  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:13.670  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:13.676  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:13.676  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:13.783  5981  5981 I flutter : FRZ ptrUp #3
+10-03 06:56:13.784  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:13.789  5981  5981 I flutter : FRZ build #20 show=false first=0 vis=261
+10-03 06:56:13.978  5981  5981 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+10-03 06:56:14.059  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:14.059  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:14.062  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:14.062  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:14.067  5981  5981 I flutter : FRZ ptrMove #90
+10-03 06:56:14.200  5981  5981 I flutter : FRZ ptrUp #4
+10-03 06:56:14.201  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:14.273  5981  5981 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+10-03 06:56:14.354  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:14.354  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:14.360  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:14.360  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:14.399  5981  5981 I flutter : FRZ ptrMove #120
+10-03 06:56:14.418  5981  5981 I flutter : FRZ scaleUpdate #100
+10-03 06:56:14.435  5981  5981 I flutter : FRZ ptrUp #5
+10-03 06:56:14.435  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:14.547  5981  5981 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+10-03 06:56:14.645  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:14.645  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:14.648  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:14.648  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:14.735  5981  5981 I flutter : FRZ ptrUp #6
+10-03 06:56:14.735  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:15.317  5981  5981 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+10-03 06:56:15.407  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:15.407  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:15.412  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:15.412  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:15.439  5981  5981 I flutter : FRZ build #40 show=false first=0 vis=261
+10-03 06:56:15.450  5981  5981 I flutter : FRZ ptrMove #150
+10-03 06:56:15.553  5981  5981 I flutter : FRZ ptrUp #7
+10-03 06:56:15.553  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:15.643  5981  5981 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+10-03 06:56:15.727  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:15.727  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:15.733  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:15.733  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:15.809  5981  5981 I flutter : FRZ paint #50 Size(392.7, 361.7)
+10-03 06:56:15.814  5981  5981 I flutter : FRZ ptrMove #180
+10-03 06:56:15.876  5981  5981 I flutter : FRZ ptrUp #8
+10-03 06:56:15.876  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:15.908  5981  5981 I flutter : FRZ ptrDown #9 kind=PointerDeviceKind.touch
+10-03 06:56:16.005  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:16.005  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:16.008  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:16.008  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:16.009  5981  5981 I flutter : FRZ scaleUpdate #150
+10-03 06:56:16.043  5981  5981 I flutter : FRZ ptrUp #9
+10-03 06:56:16.043  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:23.435  5981  5981 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:56:23.532  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:23.532  5981  5981 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:56:23.532  5981  5981 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:56:23.532  5981  5981 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:23.546  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:23.547  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:23.547  5981  5981 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:23.621  5981  5981 I flutter : FRZ ptrMove #30
+10-03 06:56:23.690  5981  5981 I flutter : FRZ ptrUp #1
+10-03 06:56:23.691  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:23.897  5981  5981 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 06:56:23.967  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:23.967  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:23.967  5981  5981 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:23.974  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:23.974  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:23.974  5981  5981 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:23.980  5981  5981 I flutter : FRZ scaleUpdate #50
+10-03 06:56:23.983  5981  5981 I flutter : FRZ ptrMove #60
+10-03 06:56:24.069  5981  5981 I flutter : FRZ ptrMove #90
+10-03 06:56:24.107  5981  5981 I flutter : FRZ ptrUp #2
+10-03 06:56:24.108  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:29.346  5981  5981 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:56:29.459  5981  5981 I flutter : FRZ longCancel
+10-03 06:56:29.459  5981  5981 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:56:29.459  5981  5981 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:56:29.459  5981  5981 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:29.463  5981  5981 I flutter : FRZ scaleStart
+10-03 06:56:29.463  5981  5981 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:29.548  5981  5981 I flutter : FRZ ptrMove #30
+10-03 06:56:29.600  5981  5981 I flutter : FRZ ptrUp #1
+10-03 06:56:29.601  5981  5981 I flutter : FRZ scaleEnd
+10-03 06:56:43.879  6260  6260 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:56:43.963  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:43.963  6260  6260 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:56:43.964  6260  6260 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:56:43.965  6260  6260 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:43.974  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:43.974  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:44.110  6260  6260 I flutter : FRZ ptrUp #1
+10-03 06:56:44.120  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:44.173  6260  6260 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 06:56:44.256  6260  6260 I flutter : FRZ ptrMove #30
+10-03 06:56:44.259  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:44.259  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:44.279  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:44.279  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:44.381  6260  6260 I flutter : FRZ ptrUp #2
+10-03 06:56:44.382  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:44.441  6260  6260 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+10-03 06:56:44.540  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:44.540  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:44.558  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:44.558  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:44.577  6260  6260 I flutter : FRZ ptrMove #60
+10-03 06:56:44.588  6260  6260 I flutter : FRZ scaleUpdate #50
+10-03 06:56:44.645  6260  6260 I flutter : FRZ ptrUp #3
+10-03 06:56:44.646  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:44.710  6260  6260 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+10-03 06:56:44.775  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:44.775  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:44.792  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:44.792  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:44.799  6260  6260 I flutter : FRZ build #20 show=false first=0 vis=261
+10-03 06:56:44.846  6260  6260 I flutter : FRZ ptrUp #4
+10-03 06:56:44.847  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:44.920  6260  6260 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+10-03 06:56:45.047  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:45.047  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:45.048  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:45.048  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:45.050  6260  6260 I flutter : FRZ ptrUp #5
+10-03 06:56:45.051  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:45.116  6260  6260 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+10-03 06:56:45.213  6260  6260 I flutter : FRZ ptrMove #90
+10-03 06:56:45.214  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:45.214  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:45.219  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:45.219  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:45.260  6260  6260 I flutter : FRZ ptrUp #6
+10-03 06:56:45.260  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:49.198  6260  6260 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 06:56:49.334  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:49.334  6260  6260 I flutter : FRZ releaseCrosshair (show=true)
+10-03 06:56:49.334  6260  6260 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 06:56:49.334  6260  6260 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:49.351  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:49.351  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:49.471  6260  6260 I flutter : FRZ ptrUp #1
+10-03 06:56:49.471  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:49.545  6260  6260 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 06:56:49.638  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:49.638  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:49.643  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:49.643  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:49.645  6260  6260 I flutter : FRZ ptrMove #30
+10-03 06:56:49.755  6260  6260 I flutter : FRZ ptrUp #2
+10-03 06:56:49.757  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:49.820  6260  6260 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+10-03 06:56:49.892  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:49.892  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:49.894  6260  6260 I flutter : FRZ ptrMove #60
+10-03 06:56:49.897  6260  6260 I flutter : FRZ scaleStart
+10-03 06:56:49.897  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:49.916  6260  6260 I flutter : FRZ scaleUpdate #50
+10-03 06:56:50.002  6260  6260 I flutter : FRZ ptrUp #3
+10-03 06:56:50.002  6260  6260 I flutter : FRZ scaleEnd
+10-03 06:56:51.044  6260  6260 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+10-03 06:56:51.128  6260  6260 I flutter : FRZ ptrUp #7
+10-03 06:56:51.130  6260  6260 I flutter : FRZ longCancel
+10-03 06:56:51.130  6260  6260 I flutter : FRZ releaseCrosshair (show=false)
+10-03 06:56:51.130  6260  6260 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 06:56:51.434  6260  6260 I flutter : FRZ tapUp tool=DrawingTool.none
+10-03 07:04:14.699  8643  8643 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 07:04:14.824  8643  8643 I flutter : FRZ longCancel
+10-03 07:04:14.825  8643  8643 I flutter : FRZ releaseCrosshair (show=true)
+10-03 07:04:14.826  8643  8643 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 07:04:14.826  8643  8643 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 07:04:14.834  8643  8643 I flutter : FRZ scaleStart
+10-03 07:04:14.834  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:15.007  8643  8643 I flutter : FRZ ptrMove #30
+10-03 07:04:15.069  8643  8643 I flutter : FRZ ptrUp #1
+10-03 07:04:15.071  8643  8643 I flutter : FRZ scaleEnd
+10-03 07:04:15.128  8643  8643 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+10-03 07:04:15.245  8643  8643 I flutter : FRZ longCancel
+10-03 07:04:15.245  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:15.250  8643  8643 I flutter : FRZ scaleStart
+10-03 07:04:15.250  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:15.316  8643  8643 I flutter : FRZ ptrMove #60
+10-03 07:04:15.316  8643  8643 I flutter : FRZ scaleUpdate #50
+10-03 07:04:15.389  8643  8643 I flutter : FRZ build #20 show=false first=0 vis=251
+10-03 07:04:15.400  8643  8643 I flutter : FRZ ptrUp #2
+10-03 07:04:15.400  8643  8643 I flutter : FRZ scaleEnd
+10-03 07:04:15.719  8643  8643 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+10-03 07:04:15.780  8643  8643 I flutter : FRZ longCancel
+10-03 07:04:15.780  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:15.785  8643  8643 I flutter : FRZ scaleStart
+10-03 07:04:15.785  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:15.884  8643  8643 I flutter : FRZ ptrMove #90
+10-03 07:04:15.932  8643  8643 I flutter : FRZ ptrUp #3
+10-03 07:04:15.932  8643  8643 I flutter : FRZ scaleEnd
+10-03 07:04:16.061  8643  8643 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+10-03 07:04:16.176  8643  8643 I flutter : FRZ longCancel
+10-03 07:04:16.176  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:16.183  8643  8643 I flutter : FRZ scaleStart
+10-03 07:04:16.183  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:16.284  8643  8643 I flutter : FRZ scaleUpdate #100
+10-03 07:04:16.285  8643  8643 I flutter : FRZ ptrUp #4
+10-03 07:04:16.285  8643  8643 I flutter : FRZ scaleEnd
+10-03 07:04:16.361  8643  8643 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+10-03 07:04:16.428  8643  8643 I flutter : FRZ ptrMove #120
+10-03 07:04:16.435  8643  8643 I flutter : FRZ longCancel
+10-03 07:04:16.435  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:16.451  8643  8643 I flutter : FRZ scaleStart
+10-03 07:04:16.451  8643  8643 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:04:16.471  8643  8643 I flutter : FRZ build #40 show=false first=0 vis=251
+10-03 07:04:16.480  8643  8643 I flutter : FRZ ptrUp #5
+10-03 07:04:16.481  8643  8643 I flutter : FRZ scaleEnd
+10-03 07:14:10.890 11370 11370 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+10-03 07:14:11.043 11370 11370 I flutter : FRZ longCancel
+10-03 07:14:11.043 11370 11370 I flutter : FRZ releaseCrosshair (show=true)
+10-03 07:14:11.044 11370 11370 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 07:14:11.045 11370 11370 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 07:14:11.052 11370 11370 I flutter : FRZ scaleStart
+10-03 07:14:11.053 11370 11370 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:14:11.277 11370 11370 I flutter : FRZ ptrUp #1
+10-03 07:14:11.280 11370 11370 I flutter : FRZ scaleEnd

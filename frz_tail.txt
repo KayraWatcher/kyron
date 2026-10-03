@@ -1,0 +1,8 @@
+﻿10-03 07:14:11.043 11370 11370 I flutter : FRZ longCancel
+10-03 07:14:11.043 11370 11370 I flutter : FRZ releaseCrosshair (show=true)
+10-03 07:14:11.044 11370 11370 I flutter : FRZ emit null->false tool:null->DrawingTool.none idx=null
+10-03 07:14:11.045 11370 11370 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+10-03 07:14:11.052 11370 11370 I flutter : FRZ scaleStart
+10-03 07:14:11.053 11370 11370 I flutter : FRZ releaseCrosshair (show=false)
+10-03 07:14:11.277 11370 11370 I flutter : FRZ ptrUp #1
+10-03 07:14:11.280 11370 11370 I flutter : FRZ scaleEnd

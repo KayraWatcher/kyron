@@ -1,0 +1,404 @@
+﻿06:53:00 izleyici basladi (max 45 dk)
+06:53:00 PDOWN: 10-03 06:52:20.167 27333 27333 I flutter : FRZ ptrDown #29 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:20.315 27333 27333 I flutter : FRZ ptrUp #29
+06:53:00 PDOWN: 10-03 06:52:20.407 27333 27333 I flutter : FRZ ptrDown #30 kind=PointerDeviceKind.touch
+06:53:00 PDOWN: 10-03 06:52:20.435 27333 27333 I flutter : FRZ ptrDown #31 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:20.614 27333 27333 I flutter : FRZ ptrUp #31
+06:53:00 PUP: 10-03 06:52:20.638 27333 27333 I flutter : FRZ ptrUp #31
+06:53:00 PDOWN: 10-03 06:52:21.035 27333 27333 I flutter : FRZ ptrDown #32 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:21.086 27333 27333 I flutter : FRZ ptrUp #32
+06:53:00 PDOWN: 10-03 06:52:21.141 27333 27333 I flutter : FRZ ptrDown #33 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:21.204 27333 27333 I flutter : FRZ ptrUp #33
+06:53:00 PDOWN: 10-03 06:52:21.506 27333 27333 I flutter : FRZ ptrDown #34 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:21.508 27333 27333 I flutter : FRZ ptrUp #34
+06:53:00 PDOWN: 10-03 06:52:21.622 27333 27333 I flutter : FRZ ptrDown #35 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:21.717 27333 27333 I flutter : FRZ ptrUp #35
+06:53:00 PDOWN: 10-03 06:52:21.945 27333 27333 I flutter : FRZ ptrDown #36 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:21.989 27333 27333 I flutter : FRZ ptrUp #36
+06:53:00 PDOWN: 10-03 06:52:22.133 27333 27333 I flutter : FRZ ptrDown #37 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:22.194 27333 27333 I flutter : FRZ ptrUp #37
+06:53:00 PDOWN: 10-03 06:52:22.279 27333 27333 I flutter : FRZ ptrDown #38 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:22.359 27333 27333 I flutter : FRZ ptrUp #38
+06:53:00 PDOWN: 10-03 06:52:22.408 27333 27333 I flutter : FRZ ptrDown #39 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:22.496 27333 27333 I flutter : FRZ ptrUp #39
+06:53:00 PDOWN: 10-03 06:52:22.660 27333 27333 I flutter : FRZ ptrDown #40 kind=PointerDeviceKind.touch
+06:53:00 PDOWN: 10-03 06:52:22.703 27333 27333 I flutter : FRZ ptrDown #41 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:23.019 27333 27333 I flutter : FRZ ptrUp #41
+06:53:00 PUP: 10-03 06:52:23.049 27333 27333 I flutter : FRZ ptrUp #41
+06:53:00 PDOWN: 10-03 06:52:23.136 27333 27333 I flutter : FRZ ptrDown #42 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:23.244 27333 27333 I flutter : FRZ ptrUp #42
+06:53:00 PDOWN: 10-03 06:52:23.310 27333 27333 I flutter : FRZ ptrDown #43 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:23.521 27333 27333 I flutter : FRZ ptrUp #43
+06:53:00 PDOWN: 10-03 06:52:23.526 27333 27333 I flutter : FRZ ptrDown #44 kind=PointerDeviceKind.touch
+06:53:00 PDOWN: 10-03 06:52:23.546 27333 27333 I flutter : FRZ ptrDown #45 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:23.903 27333 27333 I flutter : FRZ ptrUp #45
+06:53:00 PUP: 10-03 06:52:23.920 27333 27333 I flutter : FRZ ptrUp #45
+06:53:00 PDOWN: 10-03 06:52:24.084 27333 27333 I flutter : FRZ ptrDown #46 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:24.146 27333 27333 I flutter : FRZ ptrUp #46
+06:53:00 PDOWN: 10-03 06:52:24.285 27333 27333 I flutter : FRZ ptrDown #47 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:24.415 27333 27333 I flutter : FRZ ptrUp #47
+06:53:00 PDOWN: 10-03 06:52:32.451 27333 27333 I flutter : FRZ ptrDown #48 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:32.712 27333 27333 I flutter : FRZ ptrUp #48
+06:53:00 PDOWN: 10-03 06:52:32.813 27333 27333 I flutter : FRZ ptrDown #49 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:32.994 27333 27333 I flutter : FRZ ptrUp #49
+06:53:00 PDOWN: 10-03 06:52:33.198 27333 27333 I flutter : FRZ ptrDown #50 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:33.930 27333 27333 I flutter : FRZ ptrUp #50
+06:53:00 PUP: 10-03 06:52:34.469 27333 27333 I flutter : FRZ ptrCancel #73
+06:53:00 PDOWN: 10-03 06:52:39.881 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:53:00 IMLEC KAPANDI
+06:53:00 IMLEC KAPANDI
+06:53:00 PUP: 10-03 06:52:40.241 27333 27333 I flutter : FRZ ptrUp #1
+06:53:00 PDOWN: 10-03 06:52:40.342 27333 27333 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:40.810 27333 27333 I flutter : FRZ ptrUp #2
+06:53:00 PDOWN: 10-03 06:52:40.890 27333 27333 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:41.175 27333 27333 I flutter : FRZ ptrUp #3
+06:53:00 PDOWN: 10-03 06:52:41.260 27333 27333 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:41.476 27333 27333 I flutter : FRZ ptrUp #4
+06:53:00 PDOWN: 10-03 06:52:41.550 27333 27333 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:41.690 27333 27333 I flutter : FRZ ptrUp #5
+06:53:00 PDOWN: 10-03 06:52:41.766 27333 27333 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:41.856 27333 27333 I flutter : FRZ ptrUp #6
+06:53:00 PDOWN: 10-03 06:52:41.924 27333 27333 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:42.180 27333 27333 I flutter : FRZ ptrUp #7
+06:53:00 PDOWN: 10-03 06:52:42.267 27333 27333 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:42.414 27333 27333 I flutter : FRZ ptrUp #8
+06:53:00 PDOWN: 10-03 06:52:44.742 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:53:00 IMLEC KAPANDI
+06:53:00 IMLEC KAPANDI
+06:53:00 PUP: 10-03 06:52:45.091 27333 27333 I flutter : FRZ ptrUp #1
+06:53:00 PDOWN: 10-03 06:52:45.151 27333 27333 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:45.261 27333 27333 I flutter : FRZ ptrUp #2
+06:53:00 PDOWN: 10-03 06:52:45.332 27333 27333 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:45.544 27333 27333 I flutter : FRZ ptrUp #3
+06:53:00 PDOWN: 10-03 06:52:45.643 27333 27333 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:45.791 27333 27333 I flutter : FRZ ptrUp #4
+06:53:00 PDOWN: 10-03 06:52:45.873 27333 27333 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:46.096 27333 27333 I flutter : FRZ ptrUp #5
+06:53:00 PDOWN: 10-03 06:52:46.169 27333 27333 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:46.578 27333 27333 I flutter : FRZ ptrUp #6
+06:53:00 PDOWN: 10-03 06:52:46.617 27333 27333 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:46.939 27333 27333 I flutter : FRZ ptrUp #7
+06:53:00 PDOWN: 10-03 06:52:46.949 27333 27333 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+06:53:00 PUP: 10-03 06:52:47.075 27333 27333 I flutter : FRZ ptrUp #8
+06:53:10 PDOWN: 10-03 06:53:07.822 27333 27333 I flutter : FRZ ptrDown #9 kind=PointerDeviceKind.touch
+06:53:10 PUP: 10-03 06:53:08.009 27333 27333 I flutter : FRZ ptrUp #9
+06:53:10 PDOWN: 10-03 06:53:08.124 27333 27333 I flutter : FRZ ptrDown #10 kind=PointerDeviceKind.touch
+06:53:10 PUP: 10-03 06:53:08.358 27333 27333 I flutter : FRZ ptrUp #10
+06:53:10 PDOWN: 10-03 06:53:08.424 27333 27333 I flutter : FRZ ptrDown #11 kind=PointerDeviceKind.touch
+06:53:10 PUP: 10-03 06:53:08.592 27333 27333 I flutter : FRZ ptrUp #11
+06:53:13 PDOWN: 10-03 06:53:11.336 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:53:13 IMLEC KAPANDI
+06:53:13 IMLEC KAPANDI
+06:53:13 PUP: 10-03 06:53:11.574 27333 27333 I flutter : FRZ ptrUp #1
+06:53:13 PDOWN: 10-03 06:53:11.698 27333 27333 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+06:53:13 PUP: 10-03 06:53:11.899 27333 27333 I flutter : FRZ ptrUp #2
+06:53:13 PDOWN: 10-03 06:53:12.004 27333 27333 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+06:53:13 PUP: 10-03 06:53:12.088 27333 27333 I flutter : FRZ ptrUp #3
+06:53:13 PDOWN: 10-03 06:53:12.149 27333 27333 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+06:53:13 PUP: 10-03 06:53:12.257 27333 27333 I flutter : FRZ ptrUp #4
+06:53:13 PDOWN: 10-03 06:53:12.280 27333 27333 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+06:53:13 PUP: 10-03 06:53:12.597 27333 27333 I flutter : FRZ ptrUp #5
+06:53:15 PDOWN: 10-03 06:53:12.689 27333 27333 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+06:53:15 PUP: 10-03 06:53:12.830 27333 27333 I flutter : FRZ ptrUp #6
+06:53:15 PDOWN: 10-03 06:53:12.932 27333 27333 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+06:53:15 PUP: 10-03 06:53:13.264 27333 27333 I flutter : FRZ ptrUp #7
+06:53:15 PDOWN: 10-03 06:53:13.369 27333 27333 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+06:53:15 PUP: 10-03 06:53:13.638 27333 27333 I flutter : FRZ ptrUp #8
+06:53:15 PDOWN: 10-03 06:53:13.728 27333 27333 I flutter : FRZ ptrDown #9 kind=PointerDeviceKind.touch
+06:53:15 PUP: 10-03 06:53:13.865 27333 27333 I flutter : FRZ ptrUp #9
+06:53:15 PDOWN: 10-03 06:53:13.912 27333 27333 I flutter : FRZ ptrDown #10 kind=PointerDeviceKind.touch
+06:53:15 PUP: 10-03 06:53:14.107 27333 27333 I flutter : FRZ ptrUp #10
+06:53:15 PDOWN: 10-03 06:53:14.192 27333 27333 I flutter : FRZ ptrDown #11 kind=PointerDeviceKind.touch
+06:53:16 PUP: 10-03 06:53:14.519 27333 27333 I flutter : FRZ ptrUp #11
+06:53:16 PDOWN: 10-03 06:53:14.603 27333 27333 I flutter : FRZ ptrDown #12 kind=PointerDeviceKind.touch
+06:53:16 PUP: 10-03 06:53:14.803 27333 27333 I flutter : FRZ ptrUp #12
+06:53:16 PDOWN: 10-03 06:53:14.909 27333 27333 I flutter : FRZ ptrDown #13 kind=PointerDeviceKind.touch
+06:53:16 PUP: 10-03 06:53:15.024 27333 27333 I flutter : FRZ ptrUp #13
+06:53:16 PDOWN: 10-03 06:53:15.115 27333 27333 I flutter : FRZ ptrDown #14 kind=PointerDeviceKind.touch
+06:53:16 PUP: 10-03 06:53:15.313 27333 27333 I flutter : FRZ ptrUp #14
+06:53:16 PDOWN: 10-03 06:53:15.394 27333 27333 I flutter : FRZ ptrDown #15 kind=PointerDeviceKind.touch
+06:53:16 PUP: 10-03 06:53:15.683 27333 27333 I flutter : FRZ ptrUp #15
+06:53:16 PDOWN: 10-03 06:53:15.774 27333 27333 I flutter : FRZ ptrDown #16 kind=PointerDeviceKind.touch
+06:53:18 PUP: 10-03 06:53:15.979 27333 27333 I flutter : FRZ ptrUp #16
+06:53:28 PDOWN: 10-03 06:53:25.644 27333 27333 I flutter : FRZ ptrDown #17 kind=PointerDeviceKind.touch
+06:53:28 PUP: 10-03 06:53:25.977 27333 27333 I flutter : FRZ ptrUp #17
+06:53:28 PDOWN: 10-03 06:53:26.115 27333 27333 I flutter : FRZ ptrDown #18 kind=PointerDeviceKind.touch
+06:53:28 PUP: 10-03 06:53:26.448 27333 27333 I flutter : FRZ ptrUp #18
+06:53:28 PDOWN: 10-03 06:53:26.568 27333 27333 I flutter : FRZ ptrDown #19 kind=PointerDeviceKind.touch
+06:53:28 PUP: 10-03 06:53:26.636 27333 27333 I flutter : FRZ ptrUp #19
+06:53:28 PDOWN: 10-03 06:53:26.727 27333 27333 I flutter : FRZ ptrDown #20 kind=PointerDeviceKind.touch
+06:53:28 PUP: 10-03 06:53:26.818 27333 27333 I flutter : FRZ ptrUp #20
+06:53:28 PDOWN: 10-03 06:53:26.907 27333 27333 I flutter : FRZ ptrDown #21 kind=PointerDeviceKind.touch
+06:53:29 PUP: 10-03 06:53:27.186 27333 27333 I flutter : FRZ ptrUp #21
+06:53:29 PDOWN: 10-03 06:53:27.354 27333 27333 I flutter : FRZ ptrDown #22 kind=PointerDeviceKind.touch
+06:53:29 PDOWN: 10-03 06:53:27.365 27333 27333 I flutter : FRZ ptrDown #23 kind=PointerDeviceKind.touch
+06:53:29 PUP: 10-03 06:53:27.612 27333 27333 I flutter : FRZ ptrUp #23
+06:53:29 PUP: 10-03 06:53:27.634 27333 27333 I flutter : FRZ ptrUp #23
+06:53:29 PDOWN: 10-03 06:53:27.746 27333 27333 I flutter : FRZ ptrDown #24 kind=PointerDeviceKind.touch
+06:53:29 PUP: 10-03 06:53:27.866 27333 27333 I flutter : FRZ ptrUp #24
+06:53:29 PDOWN: 10-03 06:53:27.951 27333 27333 I flutter : FRZ ptrDown #25 kind=PointerDeviceKind.touch
+06:53:29 PUP: 10-03 06:53:28.055 27333 27333 I flutter : FRZ ptrUp #25
+06:53:29 PDOWN: 10-03 06:53:28.105 27333 27333 I flutter : FRZ ptrDown #26 kind=PointerDeviceKind.touch
+06:53:29 PUP: 10-03 06:53:28.449 27333 27333 I flutter : FRZ ptrUp #26
+06:53:29 PDOWN: 10-03 06:53:28.574 27333 27333 I flutter : FRZ ptrDown #27 kind=PointerDeviceKind.touch
+06:53:31 PUP: 10-03 06:53:28.852 27333 27333 I flutter : FRZ ptrUp #27
+06:53:31 PDOWN: 10-03 06:53:28.930 27333 27333 I flutter : FRZ ptrDown #28 kind=PointerDeviceKind.touch
+06:53:31 PUP: 10-03 06:53:29.103 27333 27333 I flutter : FRZ ptrUp #28
+06:53:31 PDOWN: 10-03 06:53:29.257 27333 27333 I flutter : FRZ ptrDown #29 kind=PointerDeviceKind.touch
+06:53:31 PUP: 10-03 06:53:29.615 27333 27333 I flutter : FRZ ptrUp #29
+06:53:31 PDOWN: 10-03 06:53:29.928 27333 27333 I flutter : FRZ ptrDown #30 kind=PointerDeviceKind.touch
+06:53:31 PUP: 10-03 06:53:30.260 27333 27333 I flutter : FRZ ptrUp #30
+06:53:33 PDOWN: 10-03 06:53:30.383 27333 27333 I flutter : FRZ ptrDown #31 kind=PointerDeviceKind.touch
+06:53:33 PUP: 10-03 06:53:30.725 27333 27333 I flutter : FRZ ptrUp #31
+06:53:33 PDOWN: 10-03 06:53:30.844 27333 27333 I flutter : FRZ ptrDown #32 kind=PointerDeviceKind.touch
+06:53:33 PUP: 10-03 06:53:30.912 27333 27333 I flutter : FRZ ptrUp #32
+06:53:33 PDOWN: 10-03 06:53:30.992 27333 27333 I flutter : FRZ ptrDown #33 kind=PointerDeviceKind.touch
+06:53:33 PUP: 10-03 06:53:31.071 27333 27333 I flutter : FRZ ptrUp #33
+06:53:33 PDOWN: 10-03 06:53:31.145 27333 27333 I flutter : FRZ ptrDown #34 kind=PointerDeviceKind.touch
+06:53:33 PUP: 10-03 06:53:31.214 27333 27333 I flutter : FRZ ptrUp #34
+06:53:33 PDOWN: 10-03 06:53:31.300 27333 27333 I flutter : FRZ ptrDown #35 kind=PointerDeviceKind.touch
+06:53:33 PUP: 10-03 06:53:31.356 27333 27333 I flutter : FRZ ptrUp #35
+06:53:33 PDOWN: 10-03 06:53:31.490 27333 27333 I flutter : FRZ ptrDown #36 kind=PointerDeviceKind.touch
+06:53:33 PUP: 10-03 06:53:31.562 27333 27333 I flutter : FRZ ptrUp #36
+06:53:33 PDOWN: 10-03 06:53:31.653 27333 27333 I flutter : FRZ ptrDown #37 kind=PointerDeviceKind.touch
+06:53:33 PUP: 10-03 06:53:31.748 27333 27333 I flutter : FRZ ptrUp #37
+06:53:33 PDOWN: 10-03 06:53:31.827 27333 27333 I flutter : FRZ ptrDown #38 kind=PointerDeviceKind.touch
+06:53:33 PUP: 10-03 06:53:31.930 27333 27333 I flutter : FRZ ptrUp #38
+06:53:34 PDOWN: 10-03 06:53:32.028 27333 27333 I flutter : FRZ ptrDown #39 kind=PointerDeviceKind.touch
+06:53:34 PUP: 10-03 06:53:32.163 27333 27333 I flutter : FRZ ptrUp #39
+06:53:34 PDOWN: 10-03 06:53:32.365 27333 27333 I flutter : FRZ ptrDown #40 kind=PointerDeviceKind.touch
+06:53:34 PDOWN: 10-03 06:53:32.402 27333 27333 I flutter : FRZ ptrDown #41 kind=PointerDeviceKind.touch
+06:53:34 PUP: 10-03 06:53:32.679 27333 27333 I flutter : FRZ ptrUp #41
+06:53:34 PUP: 10-03 06:53:32.695 27333 27333 I flutter : FRZ ptrUp #41
+06:53:34 PDOWN: 10-03 06:53:32.855 27333 27333 I flutter : FRZ ptrDown #42 kind=PointerDeviceKind.touch
+06:53:34 PUP: 10-03 06:53:32.969 27333 27333 I flutter : FRZ ptrUp #42
+06:53:34 PDOWN: 10-03 06:53:33.049 27333 27333 I flutter : FRZ ptrDown #43 kind=PointerDeviceKind.touch
+06:53:34 PUP: 10-03 06:53:33.144 27333 27333 I flutter : FRZ ptrUp #43
+06:53:34 PDOWN: 10-03 06:53:33.239 27333 27333 I flutter : FRZ ptrDown #44 kind=PointerDeviceKind.touch
+06:53:34 PUP: 10-03 06:53:33.313 27333 27333 I flutter : FRZ ptrUp #44
+06:53:34 PDOWN: 10-03 06:53:33.404 27333 27333 I flutter : FRZ ptrDown #45 kind=PointerDeviceKind.touch
+06:53:34 PUP: 10-03 06:53:33.476 27333 27333 I flutter : FRZ ptrUp #45
+06:53:34 PDOWN: 10-03 06:53:33.529 27333 27333 I flutter : FRZ ptrDown #46 kind=PointerDeviceKind.touch
+06:53:36 PUP: 10-03 06:53:33.649 27333 27333 I flutter : FRZ ptrUp #46
+06:53:36 PDOWN: 10-03 06:53:33.668 27333 27333 I flutter : FRZ ptrDown #47 kind=PointerDeviceKind.touch
+06:53:36 PUP: 10-03 06:53:33.803 27333 27333 I flutter : FRZ ptrUp #47
+06:53:36 PDOWN: 10-03 06:53:33.878 27333 27333 I flutter : FRZ ptrDown #48 kind=PointerDeviceKind.touch
+06:53:36 PUP: 10-03 06:53:33.962 27333 27333 I flutter : FRZ ptrUp #48
+06:53:36 PDOWN: 10-03 06:53:34.052 27333 27333 I flutter : FRZ ptrDown #49 kind=PointerDeviceKind.touch
+06:53:36 PUP: 10-03 06:53:34.152 27333 27333 I flutter : FRZ ptrUp #49
+06:53:36 PDOWN: 10-03 06:53:34.248 27333 27333 I flutter : FRZ ptrDown #50 kind=PointerDeviceKind.touch
+06:53:36 PUP: 10-03 06:53:34.367 27333 27333 I flutter : FRZ ptrUp #50
+06:53:36 PDOWN: 10-03 06:53:34.421 27333 27333 I flutter : FRZ ptrDown #51 kind=PointerDeviceKind.touch
+06:53:36 PUP: 10-03 06:53:34.524 27333 27333 I flutter : FRZ ptrUp #51
+06:53:36 PDOWN: 10-03 06:53:34.616 27333 27333 I flutter : FRZ ptrDown #52 kind=PointerDeviceKind.touch
+06:53:36 PUP: 10-03 06:53:34.910 27333 27333 I flutter : FRZ ptrUp #52
+06:53:36 PDOWN: 10-03 06:53:35.044 27333 27333 I flutter : FRZ ptrDown #53 kind=PointerDeviceKind.touch
+06:53:37 PUP: 10-03 06:53:35.300 27333 27333 I flutter : FRZ ptrUp #53
+06:53:37 PDOWN: 10-03 06:53:35.474 27333 27333 I flutter : FRZ ptrDown #54 kind=PointerDeviceKind.touch
+06:53:37 PUP: 10-03 06:53:35.627 27333 27333 I flutter : FRZ ptrUp #54
+06:53:37 PDOWN: 10-03 06:53:35.796 27333 27333 I flutter : FRZ ptrDown #55 kind=PointerDeviceKind.touch
+06:53:37 PUP: 10-03 06:53:35.910 27333 27333 I flutter : FRZ ptrUp #55
+06:53:37 PDOWN: 10-03 06:53:36.054 27333 27333 I flutter : FRZ ptrDown #56 kind=PointerDeviceKind.touch
+06:53:37 PUP: 10-03 06:53:36.230 27333 27333 I flutter : FRZ ptrUp #56
+06:53:39 PDOWN: 10-03 06:53:37.670 27333 27333 I flutter : FRZ ptrDown #57 kind=PointerDeviceKind.touch
+06:53:39 PDOWN: 10-03 06:53:37.678 27333 27333 I flutter : FRZ ptrDown #58 kind=PointerDeviceKind.touch
+06:53:39 PUP: 10-03 06:53:38.074 27333 27333 I flutter : FRZ ptrUp #58
+06:53:39 PUP: 10-03 06:53:38.083 27333 27333 I flutter : FRZ ptrUp #58
+06:53:39 PDOWN: 10-03 06:53:38.216 27333 27333 I flutter : FRZ ptrDown #59 kind=PointerDeviceKind.touch
+06:53:39 PUP: 10-03 06:53:38.306 27333 27333 I flutter : FRZ ptrUp #59
+06:53:39 PDOWN: 10-03 06:53:38.400 27333 27333 I flutter : FRZ ptrDown #60 kind=PointerDeviceKind.touch
+06:53:41 PUP: 10-03 06:53:38.481 27333 27333 I flutter : FRZ ptrUp #60
+06:53:41 PDOWN: 10-03 06:53:38.539 27333 27333 I flutter : FRZ ptrDown #61 kind=PointerDeviceKind.touch
+06:53:41 PUP: 10-03 06:53:38.639 27333 27333 I flutter : FRZ ptrUp #61
+06:53:41 PDOWN: 10-03 06:53:38.813 27333 27333 I flutter : FRZ ptrDown #62 kind=PointerDeviceKind.touch
+06:53:41 PUP: 10-03 06:53:38.913 27333 27333 I flutter : FRZ ptrUp #62
+06:53:41 PDOWN: 10-03 06:53:38.997 27333 27333 I flutter : FRZ ptrDown #63 kind=PointerDeviceKind.touch
+06:53:41 PUP: 10-03 06:53:39.081 27333 27333 I flutter : FRZ ptrUp #63
+06:53:41 PDOWN: 10-03 06:53:39.156 27333 27333 I flutter : FRZ ptrDown #64 kind=PointerDeviceKind.touch
+06:53:41 PUP: 10-03 06:53:39.239 27333 27333 I flutter : FRZ ptrUp #64
+06:53:41 PDOWN: 10-03 06:53:39.324 27333 27333 I flutter : FRZ ptrDown #65 kind=PointerDeviceKind.touch
+06:53:41 PUP: 10-03 06:53:39.392 27333 27333 I flutter : FRZ ptrUp #65
+06:53:41 PDOWN: 10-03 06:53:39.504 27333 27333 I flutter : FRZ ptrDown #66 kind=PointerDeviceKind.touch
+06:53:41 PUP: 10-03 06:53:39.777 27333 27333 I flutter : FRZ ptrUp #66
+06:53:41 PDOWN: 10-03 06:53:39.925 27333 27333 I flutter : FRZ ptrDown #67 kind=PointerDeviceKind.touch
+06:53:42 PDOWN: 10-03 06:53:40.085 27333 27333 I flutter : FRZ ptrDown #68 kind=PointerDeviceKind.touch
+06:53:42 PUP: 10-03 06:53:40.136 27333 27333 I flutter : FRZ ptrUp #68
+06:53:42 PDOWN: 10-03 06:53:40.206 27333 27333 I flutter : FRZ ptrDown #69 kind=PointerDeviceKind.touch
+06:53:42 PUP: 10-03 06:53:40.246 27333 27333 I flutter : FRZ ptrUp #69
+06:53:42 PDOWN: 10-03 06:53:40.390 27333 27333 I flutter : FRZ ptrDown #70 kind=PointerDeviceKind.touch
+06:53:42 PUP: 10-03 06:53:40.442 27333 27333 I flutter : FRZ ptrUp #70
+06:53:42 PUP: 10-03 06:53:40.447 27333 27333 I flutter : FRZ ptrUp #70
+06:53:42 PDOWN: 10-03 06:53:40.536 27333 27333 I flutter : FRZ ptrDown #71 kind=PointerDeviceKind.touch
+06:53:42 PDOWN: 10-03 06:53:40.581 27333 27333 I flutter : FRZ ptrDown #72 kind=PointerDeviceKind.touch
+06:53:42 PUP: 10-03 06:53:40.604 27333 27333 I flutter : FRZ ptrUp #72
+06:53:42 PUP: 10-03 06:53:40.690 27333 27333 I flutter : FRZ ptrUp #72
+06:53:42 PDOWN: 10-03 06:53:41.033 27333 27333 I flutter : FRZ ptrDown #73 kind=PointerDeviceKind.touch
+06:53:42 PUP: 10-03 06:53:41.083 27333 27333 I flutter : FRZ ptrUp #73
+06:53:42 PDOWN: 10-03 06:53:41.201 27333 27333 I flutter : FRZ ptrDown #74 kind=PointerDeviceKind.touch
+06:53:42 PUP: 10-03 06:53:41.263 27333 27333 I flutter : FRZ ptrUp #74
+06:53:42 PDOWN: 10-03 06:53:41.361 27333 27333 I flutter : FRZ ptrDown #75 kind=PointerDeviceKind.touch
+06:53:42 PUP: 10-03 06:53:41.428 27333 27333 I flutter : FRZ ptrUp #75
+06:53:44 PDOWN: 10-03 06:53:41.813 27333 27333 I flutter : FRZ ptrDown #76 kind=PointerDeviceKind.touch
+06:53:44 PUP: 10-03 06:53:41.874 27333 27333 I flutter : FRZ ptrUp #76
+06:53:44 PDOWN: 10-03 06:53:41.955 27333 27333 I flutter : FRZ ptrDown #77 kind=PointerDeviceKind.touch
+06:53:44 PUP: 10-03 06:53:42.180 27333 27333 I flutter : FRZ ptrUp #77
+06:53:44 PDOWN: 10-03 06:53:42.315 27333 27333 I flutter : FRZ ptrDown #78 kind=PointerDeviceKind.touch
+06:53:44 PDOWN: 10-03 06:53:42.406 27333 27333 I flutter : FRZ ptrDown #79 kind=PointerDeviceKind.touch
+06:53:44 PUP: 10-03 06:53:42.731 27333 27333 I flutter : FRZ ptrUp #79
+06:53:44 PUP: 10-03 06:53:42.742 27333 27333 I flutter : FRZ ptrUp #79
+06:53:50 PDOWN: 10-03 06:53:49.539 27333 27333 I flutter : FRZ ptrDown #80 kind=PointerDeviceKind.touch
+06:53:52 PUP: 10-03 06:53:50.575 27333 27333 I flutter : FRZ ptrUp #80
+06:54:13 YAVAS UYARI: FRZ akisi 20 sn durdu
+06:54:19 PDOWN: 10-03 06:54:17.616 27333 27333 I flutter : FRZ ptrDown #81 kind=PointerDeviceKind.touch
+06:54:19 PUP: 10-03 06:54:17.952 27333 27333 I flutter : FRZ ptrUp #81
+06:54:19 PDOWN: 10-03 06:54:18.047 27333 27333 I flutter : FRZ ptrDown #82 kind=PointerDeviceKind.touch
+06:54:19 PUP: 10-03 06:54:18.277 27333 27333 I flutter : FRZ ptrUp #82
+06:54:19 PDOWN: 10-03 06:54:18.316 27333 27333 I flutter : FRZ ptrDown #83 kind=PointerDeviceKind.touch
+06:54:21 PUP: 10-03 06:54:18.736 27333 27333 I flutter : FRZ ptrUp #83
+06:54:24 PDOWN: 10-03 06:54:23.320 27333 27333 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:54:24 IMLEC KAPANDI
+06:54:24 IMLEC KAPANDI
+06:54:26 PUP: 10-03 06:54:23.535 27333 27333 I flutter : FRZ ptrUp #1
+06:54:26 PDOWN: 10-03 06:54:23.610 27333 27333 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+06:54:26 PUP: 10-03 06:54:23.883 27333 27333 I flutter : FRZ ptrUp #2
+06:54:26 PDOWN: 10-03 06:54:23.956 27333 27333 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+06:54:26 PUP: 10-03 06:54:24.129 27333 27333 I flutter : FRZ ptrUp #3
+06:54:26 PDOWN: 10-03 06:54:24.288 27333 27333 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+06:54:26 PDOWN: 10-03 06:54:24.412 27333 27333 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+06:54:26 PUP: 10-03 06:54:24.853 27333 27333 I flutter : FRZ ptrUp #5
+06:54:26 PUP: 10-03 06:54:24.864 27333 27333 I flutter : FRZ ptrUp #5
+06:54:26 PDOWN: 10-03 06:54:24.996 27333 27333 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+06:54:27 PUP: 10-03 06:54:25.258 27333 27333 I flutter : FRZ ptrUp #6
+06:54:27 PDOWN: 10-03 06:54:25.369 27333 27333 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+06:54:27 PUP: 10-03 06:54:25.784 27333 27333 I flutter : FRZ ptrUp #7
+06:54:27 PDOWN: 10-03 06:54:25.965 27333 27333 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+06:54:27 PUP: 10-03 06:54:26.191 27333 27333 I flutter : FRZ ptrUp #8
+06:54:27 PDOWN: 10-03 06:54:26.287 27333 27333 I flutter : FRZ ptrDown #9 kind=PointerDeviceKind.touch
+06:54:27 PUP: 10-03 06:54:26.358 27333 27333 I flutter : FRZ ptrUp #9
+06:54:27 PDOWN: 10-03 06:54:26.582 27333 27333 I flutter : FRZ ptrDown #10 kind=PointerDeviceKind.touch
+06:54:27 PDOWN: 10-03 06:54:26.656 27333 27333 I flutter : FRZ ptrDown #11 kind=PointerDeviceKind.touch
+06:54:29 PUP: 10-03 06:54:26.931 27333 27333 I flutter : FRZ ptrUp #11
+06:54:29 PUP: 10-03 06:54:26.941 27333 27333 I flutter : FRZ ptrUp #11
+06:54:29 PDOWN: 10-03 06:54:27.069 27333 27333 I flutter : FRZ ptrDown #12 kind=PointerDeviceKind.touch
+06:54:29 PUP: 10-03 06:54:27.142 27333 27333 I flutter : FRZ ptrUp #12
+06:54:29 PDOWN: 10-03 06:54:27.201 27333 27333 I flutter : FRZ ptrDown #13 kind=PointerDeviceKind.touch
+06:54:29 PUP: 10-03 06:54:27.392 27333 27333 I flutter : FRZ ptrUp #13
+06:54:29 PDOWN: 10-03 06:54:27.459 27333 27333 I flutter : FRZ ptrDown #14 kind=PointerDeviceKind.touch
+06:54:29 PUP: 10-03 06:54:27.554 27333 27333 I flutter : FRZ ptrUp #14
+06:54:29 PDOWN: 10-03 06:54:27.648 27333 27333 I flutter : FRZ ptrDown #15 kind=PointerDeviceKind.touch
+06:54:29 PUP: 10-03 06:54:27.732 27333 27333 I flutter : FRZ ptrUp #15
+06:54:29 PDOWN: 10-03 06:54:27.812 27333 27333 I flutter : FRZ ptrDown #16 kind=PointerDeviceKind.touch
+06:54:29 PUP: 10-03 06:54:27.912 27333 27333 I flutter : FRZ ptrUp #16
+06:54:29 PDOWN: 10-03 06:54:27.965 27333 27333 I flutter : FRZ ptrDown #17 kind=PointerDeviceKind.touch
+06:54:29 PUP: 10-03 06:54:28.264 27333 27333 I flutter : FRZ ptrUp #17
+06:54:30 PDOWN: 10-03 06:54:28.323 27333 27333 I flutter : FRZ ptrDown #18 kind=PointerDeviceKind.touch
+06:54:30 PUP: 10-03 06:54:28.424 27333 27333 I flutter : FRZ ptrUp #18
+06:54:30 PDOWN: 10-03 06:54:28.497 27333 27333 I flutter : FRZ ptrDown #19 kind=PointerDeviceKind.touch
+06:54:30 PUP: 10-03 06:54:28.711 27333 27333 I flutter : FRZ ptrUp #19
+06:54:30 PDOWN: 10-03 06:54:28.824 27333 27333 I flutter : FRZ ptrDown #20 kind=PointerDeviceKind.touch
+06:54:30 PUP: 10-03 06:54:29.040 27333 27333 I flutter : FRZ ptrUp #20
+06:54:30 PDOWN: 10-03 06:54:29.110 27333 27333 I flutter : FRZ ptrDown #21 kind=PointerDeviceKind.touch
+06:54:30 PUP: 10-03 06:54:29.344 27333 27333 I flutter : FRZ ptrUp #21
+06:54:31 PDOWN: 10-03 06:54:29.441 27333 27333 I flutter : FRZ ptrDown #22 kind=PointerDeviceKind.touch
+06:54:31 PUP: 10-03 06:54:29.841 27333 27333 I flutter : FRZ ptrUp #22
+06:54:32 PDOWN: 10-03 06:54:29.932 27333 27333 I flutter : FRZ ptrDown #23 kind=PointerDeviceKind.touch
+06:54:32 PUP: 10-03 06:54:30.373 27333 27333 I flutter : FRZ ptrUp #23
+06:54:32 PDOWN: 10-03 06:54:30.431 27333 27333 I flutter : FRZ ptrDown #24 kind=PointerDeviceKind.touch
+06:54:32 PUP: 10-03 06:54:30.648 27333 27333 I flutter : FRZ ptrUp #24
+06:54:48 PDOWN: 10-03 06:54:47.524 27333 27333 I flutter : FRZ ptrDown #25 kind=PointerDeviceKind.touch
+06:54:50 PUP: 10-03 06:54:48.017 27333 27333 I flutter : FRZ ptrUp #25
+06:54:50 PDOWN: 10-03 06:54:48.069 27333 27333 I flutter : FRZ ptrDown #26 kind=PointerDeviceKind.touch
+06:54:50 PUP: 10-03 06:54:48.171 27333 27333 I flutter : FRZ ptrUp #26
+06:54:56 PDOWN: 10-03 06:54:55.007 27333 27333 I flutter : FRZ ptrDown #27 kind=PointerDeviceKind.touch
+06:54:56 PUP: 10-03 06:54:55.281 27333 27333 I flutter : FRZ ptrUp #27
+06:54:56 PDOWN: 10-03 06:54:55.292 27333 27333 I flutter : FRZ ptrDown #28 kind=PointerDeviceKind.touch
+06:54:56 PUP: 10-03 06:54:55.388 27333 27333 I flutter : FRZ ptrUp #28
+06:54:56 PDOWN: 10-03 06:54:55.477 27333 27333 I flutter : FRZ ptrDown #29 kind=PointerDeviceKind.touch
+06:54:56 PUP: 10-03 06:54:55.581 27333 27333 I flutter : FRZ ptrUp #29
+06:55:14 PDOWN: 10-03 06:55:12.371 27333 27333 I flutter : FRZ ptrDown #30 kind=PointerDeviceKind.touch
+06:55:14 PUP: 10-03 06:55:12.629 27333 27333 I flutter : FRZ ptrUp #30
+06:55:14 PDOWN: 10-03 06:55:12.735 27333 27333 I flutter : FRZ ptrDown #31 kind=PointerDeviceKind.touch
+06:55:14 PUP: 10-03 06:55:12.902 27333 27333 I flutter : FRZ ptrUp #31
+06:55:40 PDOWN: 10-03 06:55:39.335 27333 27333 I flutter : FRZ ptrDown #32 kind=PointerDeviceKind.touch
+06:55:40 PUP: 10-03 06:55:39.521 27333 27333 I flutter : FRZ ptrUp #32
+06:55:40 PDOWN: 10-03 06:55:39.611 27333 27333 I flutter : FRZ ptrDown #33 kind=PointerDeviceKind.touch
+06:55:40 PUP: 10-03 06:55:39.753 27333 27333 I flutter : FRZ ptrUp #33
+06:56:05 PDOWN: 10-03 06:56:03.249 27333 27333 I flutter : FRZ ptrDown #34 kind=PointerDeviceKind.touch
+06:56:05 PUP: 10-03 06:56:03.671 27333 27333 I flutter : FRZ ptrUp #34
+06:56:05 PDOWN: 10-03 06:56:03.762 27333 27333 I flutter : FRZ ptrDown #35 kind=PointerDeviceKind.touch
+06:56:05 PUP: 10-03 06:56:03.863 27333 27333 I flutter : FRZ ptrUp #35
+06:56:14 PDOWN: 10-03 06:56:12.732  5981  5981 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:56:14 IMLEC KAPANDI
+06:56:14 IMLEC KAPANDI
+06:56:14 PUP: 10-03 06:56:13.042  5981  5981 I flutter : FRZ ptrUp #1
+06:56:14 PDOWN: 10-03 06:56:13.088  5981  5981 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+06:56:14 PUP: 10-03 06:56:13.301  5981  5981 I flutter : FRZ ptrUp #2
+06:56:14 PDOWN: 10-03 06:56:13.556  5981  5981 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+06:56:14 PUP: 10-03 06:56:13.783  5981  5981 I flutter : FRZ ptrUp #3
+06:56:16 PDOWN: 10-03 06:56:13.978  5981  5981 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+06:56:16 PUP: 10-03 06:56:14.200  5981  5981 I flutter : FRZ ptrUp #4
+06:56:16 PDOWN: 10-03 06:56:14.273  5981  5981 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+06:56:16 PUP: 10-03 06:56:14.435  5981  5981 I flutter : FRZ ptrUp #5
+06:56:16 PDOWN: 10-03 06:56:14.547  5981  5981 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+06:56:16 PUP: 10-03 06:56:14.735  5981  5981 I flutter : FRZ ptrUp #6
+06:56:16 PDOWN: 10-03 06:56:15.317  5981  5981 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+06:56:18 PUP: 10-03 06:56:15.553  5981  5981 I flutter : FRZ ptrUp #7
+06:56:18 PDOWN: 10-03 06:56:15.643  5981  5981 I flutter : FRZ ptrDown #8 kind=PointerDeviceKind.touch
+06:56:18 PUP: 10-03 06:56:15.876  5981  5981 I flutter : FRZ ptrUp #8
+06:56:18 PDOWN: 10-03 06:56:15.908  5981  5981 I flutter : FRZ ptrDown #9 kind=PointerDeviceKind.touch
+06:56:18 PUP: 10-03 06:56:16.043  5981  5981 I flutter : FRZ ptrUp #9
+06:56:24 PDOWN: 10-03 06:56:23.435  5981  5981 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:56:24 IMLEC KAPANDI
+06:56:24 IMLEC KAPANDI
+06:56:24 IMLEC KAPANDI
+06:56:26 PUP: 10-03 06:56:23.690  5981  5981 I flutter : FRZ ptrUp #1
+06:56:26 PDOWN: 10-03 06:56:23.897  5981  5981 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+06:56:26 IMLEC KAPANDI
+06:56:26 IMLEC KAPANDI
+06:56:26 PUP: 10-03 06:56:24.107  5981  5981 I flutter : FRZ ptrUp #2
+06:56:31 PDOWN: 10-03 06:56:29.346  5981  5981 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:56:31 IMLEC KAPANDI
+06:56:31 IMLEC KAPANDI
+06:56:31 PUP: 10-03 06:56:29.600  5981  5981 I flutter : FRZ ptrUp #1
+06:56:45 PDOWN: 10-03 06:56:43.879  6260  6260 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:56:45 IMLEC KAPANDI
+06:56:45 IMLEC KAPANDI
+06:56:45 PUP: 10-03 06:56:44.110  6260  6260 I flutter : FRZ ptrUp #1
+06:56:45 PDOWN: 10-03 06:56:44.173  6260  6260 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+06:56:47 PUP: 10-03 06:56:44.381  6260  6260 I flutter : FRZ ptrUp #2
+06:56:47 PDOWN: 10-03 06:56:44.441  6260  6260 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+06:56:47 PUP: 10-03 06:56:44.645  6260  6260 I flutter : FRZ ptrUp #3
+06:56:47 PDOWN: 10-03 06:56:44.710  6260  6260 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+06:56:47 PUP: 10-03 06:56:44.846  6260  6260 I flutter : FRZ ptrUp #4
+06:56:47 PDOWN: 10-03 06:56:44.920  6260  6260 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+06:56:47 PUP: 10-03 06:56:45.050  6260  6260 I flutter : FRZ ptrUp #5
+06:56:47 PDOWN: 10-03 06:56:45.116  6260  6260 I flutter : FRZ ptrDown #6 kind=PointerDeviceKind.touch
+06:56:47 PUP: 10-03 06:56:45.260  6260  6260 I flutter : FRZ ptrUp #6
+06:56:51 PDOWN: 10-03 06:56:49.198  6260  6260 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+06:56:51 IMLEC KAPANDI
+06:56:51 IMLEC KAPANDI
+06:56:51 PUP: 10-03 06:56:49.471  6260  6260 I flutter : FRZ ptrUp #1
+06:56:51 PDOWN: 10-03 06:56:49.545  6260  6260 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+06:56:51 PUP: 10-03 06:56:49.755  6260  6260 I flutter : FRZ ptrUp #2
+06:56:51 PDOWN: 10-03 06:56:49.820  6260  6260 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+06:56:51 PUP: 10-03 06:56:50.002  6260  6260 I flutter : FRZ ptrUp #3
+06:56:53 PDOWN: 10-03 06:56:51.044  6260  6260 I flutter : FRZ ptrDown #7 kind=PointerDeviceKind.touch
+06:56:53 PUP: 10-03 06:56:51.128  6260  6260 I flutter : FRZ ptrUp #7
+06:56:53 IMLEC KAPANDI
+07:04:16 PDOWN: 10-03 07:04:14.699  8643  8643 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+07:04:16 IMLEC KAPANDI
+07:04:16 IMLEC KAPANDI
+07:04:16 PUP: 10-03 07:04:15.069  8643  8643 I flutter : FRZ ptrUp #1
+07:04:16 PDOWN: 10-03 07:04:15.128  8643  8643 I flutter : FRZ ptrDown #2 kind=PointerDeviceKind.touch
+07:04:16 PUP: 10-03 07:04:15.400  8643  8643 I flutter : FRZ ptrUp #2
+07:04:18 PDOWN: 10-03 07:04:15.719  8643  8643 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.touch
+07:04:18 PUP: 10-03 07:04:15.932  8643  8643 I flutter : FRZ ptrUp #3
+07:04:18 PDOWN: 10-03 07:04:16.061  8643  8643 I flutter : FRZ ptrDown #4 kind=PointerDeviceKind.touch
+07:04:18 PUP: 10-03 07:04:16.285  8643  8643 I flutter : FRZ ptrUp #4
+07:04:18 PDOWN: 10-03 07:04:16.361  8643  8643 I flutter : FRZ ptrDown #5 kind=PointerDeviceKind.touch
+07:04:18 PUP: 10-03 07:04:16.480  8643  8643 I flutter : FRZ ptrUp #5
+07:14:13 PDOWN: 10-03 07:14:10.890 11370 11370 I flutter : FRZ ptrDown #1 kind=PointerDeviceKind.touch
+07:14:13 IMLEC KAPANDI
+07:14:13 IMLEC KAPANDI
+07:14:13 PUP: 10-03 07:14:11.277 11370 11370 I flutter : FRZ ptrUp #1
+07:38:01 izleyici bitti

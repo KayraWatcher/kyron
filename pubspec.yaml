@@ -1,0 +1,49 @@
+name: gold
+description: "GOLD - Türkiye piyasaları için finans ve piyasa takip uygulaması."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Yerelleştirme: Türkçe sayı/tarih formatları ve Material TR destegi
+  flutter_localizations:
+    sdk: flutter
+
+  # Durum yonetimi: tip guvenli, test edilebilir, codegen gerektirmez
+  flutter_riverpod: ^3.4.3
+
+  # Ag: hafif, kararli HTTP istemcisi
+  http: ^1.6.0
+
+  # Yerel depolama: portfoy, alarmlar, ayarlar ve veri onbellekleri
+  shared_preferences: ^2.5.5
+
+  # Sayi/tarih bicimlendirme (tr_TR) - intl ayni zamanda flutter_localizations gereksinimidir
+  intl: ^0.20.3
+
+  # TCMB XML yanitlarinin ayristirilmasi
+  xml: ^7.1.0
+
+  # Cevrimdisi durum tespiti
+  connectivity_plus: 7.3.1
+
+  # Haberin orijinal kaynagini dis tarayicida acma
+  url_launcher: ^6.3.2
+
+  # Simge ikonlari
+  cupertino_icons: ^1.0.8
+  flutter_local_notifications: 22.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

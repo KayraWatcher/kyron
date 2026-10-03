@@ -1,0 +1,25 @@
+﻿temel FRZ sayisi: 0
+p0 alindi
+A) longpress+surukleme: gorsel fark piksel=   FRZ delta=0
+B) hizli pan:          gorsel fark piksel=   FRZ delta=0
+C) tek dokunma:        gorsel fark piksel=   FRZ delta=12
+D) interval 5 dk:      gorsel fark piksel=   FRZ delta=0
+E) interval+longpress: gorsel fark piksel=   FRZ delta=0
+F) Geri butonu:        gorsel fark piksel=   FRZ delta=0
+TOPLAM FRZ: 12 (temel 0)
+FRZ zinciri (son 40):
+  10-03 07:54:26.324 21139 21139 I flutter : FRZ emit false->true tool:DrawingTool.none->DrawingTool.none idx=152
+  10-03 07:54:26.324 21139 21139 I flutter : FRZ parent show:false->true idx=152 tool=DrawingTool.none
+  10-03 07:54:26.324 21139 21139 I flutter : FRZ pick time=1778567400000 close=16812.900390625
+  10-03 07:54:26.326 21139 21139 I flutter : FRZ ptrDown #3 kind=PointerDeviceKind.unknown
+  10-03 07:54:26.336 21139 21139 I flutter : FRZ build #20 show=true first=0 vis=251
+  10-03 07:54:26.359 21139 21139 I flutter : FRZ ptrUp #3
+  10-03 07:54:26.361 21139 21139 I flutter : FRZ longCancel
+  10-03 07:54:26.362 21139 21139 I flutter : FRZ releaseCrosshair (show=true)
+  10-03 07:54:26.362 21139 21139 I flutter : FRZ emit true->false tool:DrawingTool.none->DrawingTool.none idx=null
+  10-03 07:54:26.362 21139 21139 I flutter : FRZ parent show:true->false idx=null tool=DrawingTool.none
+  10-03 07:54:26.362 21139 21139 I flutter : FRZ pick time=null close=null
+  10-03 07:54:26.667 21139 21139 I flutter : FRZ tapUp tool=DrawingTool.none
+NON-FRZ flutter loglari (son 30):
+  --------- beginning of system
+  --------- beginning of main

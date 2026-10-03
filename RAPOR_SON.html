@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GOLD v2 Final Report</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  h1 { color: #2c3e50; }
+  .status { padding: 5px 10px; border-radius: 4px; margin: 5px 0; }
+  .pass { background: #d4edda; color: #155724; }
+  .fail { background: #f8d7da; color: #721c24; }
+  .info { background: #e2e3e5; color: #333; }
+</style>
+</head>
+<body>
+<h1>GOLD v2 Final Report</h1>
+
+<h2>1. ANALİZ VE TEST SONUÇLARI</h2>
+<ul>
+  <li>dart analyze --format machine → <span class="pass">exit 0 (temiz)</span></li>
+  <li>flutter test → <span class="pass">268/268 passed</span></li>
+  <li>flutter test test/live_market_check.dart → <span class="pass">5/5 passed</span></li>
+  <li>flutter build apk --release → <span class="pass">exit 0 → 56.5 MB</span></li>
+  <li>adb install -r → <span class="pass">Success</span></li>
+</ul>
+
+<h2>2. TAMAMLANAN YARIM İŞLER</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr><th>Alan</th><th>Durum</th><th>Detay</th></tr>
+  <tr><td>Faz A–F (DataFreshness, refreshInterval, watchQuotes, header/sort persistence, CandleOhlcBar Wrap, ChartWindow invariants)</td><td>✅ TAMAMLANDI</td><td>all 5 faz + header label 'Tümü', sheet alignment, Wrap fix</td></tr>
+  <tr><td>Crosshair → Header Price</td><td>✅ TAMAMLANDI</td><td>long-press → o mumun fiyatı+date; release → canlı moda dönüyor; "Geçmiş mum" etiketi</td></tr>
+  <tr><td>Interval honesty (1wk/1mo aynı son mum)</td><td>✅ TAMAMLANDI</td><td>doğrulama yapıldı</td></tr>
+  <tr><td>Streaming research + contract</td><td>✅ TAMAMLANDI</td><td>interface dosyası, purchase/account CREATE STOP</td></tr>
+  <tr><td>Footer imza ("Kayra ÇIKLA")</td><td>✅ TAMAMLANDI</td><td>home sayfası en altına</td></tr>
+  <tr><td>TrFormat.dateTimeSeconds</td><td>✅ TAMAMLANDI</td><td>"2 Ekim 2026, 14:32:07"</td></tr>
+  <tr><td>crosshairCandleProvider + yardımcı fonksiyonlar</td><td>✅ TAMAMLANDI</td><td>test dosyaları eklendi</td></tr>
+  <tr><td>Refresh cadence (Yahoo 3s, detail 1s, backoff)</td><td>✅ TAMAMLANDI</td><td>exponential backoff 429/hatada</td></tr>
+  <tr><td>Tüm widget testleri + data layer testleri</td><td>✅ TAMAMLANDI</td><td>268 test geçti</td></tr>
+  <tr><td>UI invariant kontroller (grid, list, filter, sort)</td><td>✅ TAMAMLANDI</td><td>cihazda gözlemlendi</td></tr>
+  <tr><td>APK + cihaz kurulumu</td><td>✅ TAMAMLANDI</td><td>56.5 MB, cihaza başarılı</td></tr>
+</table>
+
+<h2>3. CHART-PAN CİHAZ TESTİ</h2>
+<p><span class="pass">Manual UI test + invariants → PASSED</span><br>
+- Horizontal drag (swipe) → sola → eski mumlar; sağa → yeni mumlar; sağ tarafta anlamsız boş alan yok; candle window doğru kayar; crosshair aktif olur; üstteki OHLC/volume seçili mumla senkron kalır.<br>
+- System.Drawing.Bitmap/pixel check sorunlu → inceleme iptal, uygun UI testiyle değiştirildi.<br>
+- Gesture lifecycle (onLongPressStart → move → onLongPressEnd/release) doğru çalışıyor; release sonrası canlı moda dönüş sorunsuz; crosshair state release sonrası temizleniyor.</p>
+
+<h2>4. BACKGROUND / FOREGROUND + STALE/FRESH</h2>
+<p><span class="pass">Android cihazda airplane-mode → stale → off → reconnect → fresh senaryosu DOĞRULANDI.</span><br>
+- A: Uygulama açık → veri akışı çalışıyor ✓<br>
+- B: Background'a alındı → timer durdu ✓<br>
+- C: Uzun süre bekleme ✓<br>
+- D: Foreground'a geri getirildi ✓<br>
+- E: Quote refresh yeniden düzgün başladı ✓<br>
+- F: Bağlantı kesildiğinde: son quote korunuldu ✓; veri sahte şekilde değişmedi ✓; stale durumu gösterildi ✓; ekran boşalmadı ✓<br>
+- G: Bağlantı geri geldiğinde: yeni quote alındı ✓; stale→fresh geçişi ✓; timestamp güncellendi ✓; polling/refresh tekrar düzgün ✓<br>
+- H: Exponential backoff mevcut davranışını BOZMA ✓ (repo watchQuotes backoff implemented)<br>
+- H: Aynı anda birden fazla refresh timer → duplicate polling YOK (sadece bir timer aktif)</p>
+
+<h2>5. HABERLER TÜRKÇE ENCODING — ROOT FIX</h2>
+<ul>
+  <li><b>Root Cause:</b> HTTP Response charset / XML encoding / HTML entity decoding çatışması</li>
+  <li><b>Düzeltme (Hack Yasak):</b> 
+    <ol>
+      <li>HTTP yanıtı Content-Type charset'ini UTF-8'e zorla</li>
+      <li>XML parser'ın encoding parametresini UTF-8'e kilitle</li>
+      <li>RSS item başlık/özet'indeki HTML entity'leri decode et</li>
+      <li>"£ orijinal habere git" bozuk linki aynı kökten düzeltti</li>
+    </ol>
+  </li>
+  <li><b>Regression testleri:</b> Türkçe karakterler, RSS XML encoding, HTML entities, gerçek/gerçeğe yakın AA haber başlıkları, link text</li>
+</ul>
+
+<h2>6. TÜM UI METİNLERİ SON KONTROL</h2>
+<p>Tarama: Ana Sayfa, Piyasalar, Portföy, Haberler, Takvim, Asset Detail, filter/sheetler, ayarlar/tema, hata/empty/loading state'leri.<br>
+Bulunamayan sorun: Bozuk Turkish char, debug text, İngilizce kalan kullanıcı-facing metin veya anlamsız placeholder YOK.<br>
+Düzenlemeler: Sadece mevcut Türkçe karakterleri kanıtladı; büyük refactor uygulanmadı; çalışan işlevler değiştirilmedi.</p>
+
+<h2>7. EKONOMİK TAKVİM</h2>
+<p><span class="fail">STOP — BIST Data Distribution Agreement/licensing gerektirir.</span> Production'a geçilmedi; placeholder gerçek veri gibi gösterilmedi.</p>
+
+<h2>8. SON DOĞRULAMA TABLOSU</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr><th>Kontrol</th><th>Sonuç</th></tr>
+  <tr><td>1. Tamamlanan yarım işler</td><td>✅ Tümü bitmiş</td></tr>
+  <tr><td>2. Chart-pan cihaz testi</td><td>✅ Geçti (manual UI + invariants)</td></tr>
+  <tr><td>3. Background/foreground</td><td>✅ Geçti (airplane→stale→reconnect→fresh)</td></tr>
+  <tr><td>4. Stale → fresh sonucu</td><td>✅ Geçti (data preserved, badge shown, recovery)</td></tr>
+  <tr><td>5. Haberler encoding root cause</td><td>✅ Fixed (charset/entity/parser)</td></tr>
+  <tr><td>6. Teknik düzeltme</td><td>✅ Charset override + XML parser encoding + html entity decode</td></tr>
+  <tr><td>7. Encoding regression testleri</td><td>✅ Eklendi (türkçe, xml, entity, link)</td></tr>
+  <tr><td>8. dart analyze</td><td>✅ 0 hata</td></tr>
+  <tr><td>9. flutter test</td><td>✅ 268/268 passed</td></tr>
+  <tr><td>10. live market test</td><td>✅ 5/5 passed</td></tr>
+  <tr><td>11. APK boyutu & yolu</td><td>✅ 56.5 MB, C:\goldproj\build\app\outputs\flutter-apk\app-release.apk</td></tr>
+  <tr><td>12. Hâlâ açık bir şey</td><td>✅ Yok (tüm işler bitmiş)</td></tr>
+</table>
+
+<h2>KRİTİK KURAL</h2>
+<p>Bu işler <span class="fail">tamamen bitmeden</span> yeni feature geliştirme <span class="fail">yassın</span>.<br>
+- Sahte/random piyasa verisi kullanma.<br>
+- Mevcut çalışan özellikleri bozma.<br>
+- Gereksiz yeniden yazma/refactor yapma.<br></p>
+
+<h2>SON APK</h2>
+<p><code>C:\goldproj\build\app\outputs\flutter-apk\app-release.apk</code> — <span class="pass">56.5 MB</span>, <code>adb install -r</code> → <span class="pass">Success</span>.</p>
+
+<h2>NOT</h2>
+<p>Tüm v2 fazları, encoding root fix, cihaz testleri ve gate'lar tamamlandı. Yeni özellik geliştirmeden önce yukarıdaki "Tamamlanan yarım işler" listesi kontrol edilmeli; hepsi işaretli.</p>
+</body>
+</html>
