@@ -153,6 +153,9 @@ class _NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    // Yalnizca haberin kategorisinden dogrulanabilen iliskiler gosterilir;
+    // basliga gore anahtar kelime taramasiyla tahmin uretilmez.
+    final affectedMarkets = _affectedMarketsFor(item.category);
 
     return Material(
       color: theme.colorScheme.surface,
@@ -244,6 +247,11 @@ class _NewsCard extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
+              // ---- Etkilenen Piyasalar ----
+              if (affectedMarkets.isNotEmpty) ...[
+                _AffectedMarketsRow(markets: affectedMarkets),
+                const SizedBox(height: 10),
+              ],
               Row(
                 children: [
                   Icon(
@@ -265,6 +273,90 @@ class _NewsCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Haber kategorisine gore etkilenen piyasalar.
+///
+/// **Dogrulama politikasi:** Iliski yalnizca haberin editoryal kategorisinden
+/// uretilir; baslik/ozet uzerinden anahtar kelime taramasi yapilmaz.
+/// Kategori varligi dogrulanamayan piyasalar (Son Dakika, Ekonomi,
+/// Sirketler, Merkez Bankasi, Dunya Ekonomisi) hic gosterilmez.
+List<String> _affectedMarketsFor(NewsCategory category) {
+  switch (category) {
+    case NewsCategory.altin:
+      return const ['Ons Altın', 'Gram Altın'];
+    case NewsCategory.gumus:
+      return const ['Ons Gümüş', 'Gram Gümüş'];
+    case NewsCategory.doviz:
+      return const ['USD/TRY', 'EUR/TRY'];
+    case NewsCategory.borsa:
+      return const ['BIST 100'];
+    case NewsCategory.sonDakika:
+    case NewsCategory.ekonomi:
+    case NewsCategory.sirketler:
+    case NewsCategory.merkezBankasi:
+    case NewsCategory.dunyaEkonomisi:
+      return const [];
+  }
+}
+
+/// "Etkilenen piyasalar" etiket satiri (salt bilgi, etkilesimsiz).
+class _AffectedMarketsRow extends StatelessWidget {
+  const _AffectedMarketsRow({required this.markets});
+
+  final List<String> markets;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Icon(
+              Icons.link_rounded,
+              size: 14,
+              color: AppPalette.goldDeep,
+            ),
+            const SizedBox(width: 6),
+            Text(
+              'Etkilenen piyasalar',
+              style: theme.textTheme.labelSmall?.copyWith(
+                fontWeight: FontWeight.w700,
+                color: AppPalette.goldDeep,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        Wrap(
+          spacing: 6,
+          runSpacing: 4,
+          children: markets
+              .map((m) => Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8, vertical: 3),
+                    decoration: BoxDecoration(
+                      color: AppPalette.gold.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: AppPalette.gold.withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Text(
+                      m,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: AppPalette.goldDeep,
+                      ),
+                    ),
+                  ))
+              .toList(),
+        ),
+      ],
     );
   }
 }

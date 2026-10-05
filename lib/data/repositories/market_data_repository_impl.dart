@@ -135,6 +135,15 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
     return null;
   }
 
+  /// Asset'i dogrudan destekleyen EN ONCELI provider'i dondurur.
+  /// Provider listesi zaten priority sirasinda (TCMB -> Anlik -> Yahoo).
+  MarketDataProvider? _quoteSourceForDirect(String assetId) {
+    for (final s in sources) {
+      if (s.supports(assetId)) return s;
+    }
+    return null;
+  }
+
   // ---------------------------------------------------------------------------
   // QUOTE
   // ---------------------------------------------------------------------------
@@ -173,41 +182,43 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
     }
     if (missing.isEmpty) return Success(result);
 
-    // 2) Dogrudan + hesaplanan olarak ayir.
-    final directRequested = <String>[];
-    final derivedRequested = <String>[];
-    for (final id in missing) {
-      final asset = AssetCatalog.byId(id);
-      if (asset == null) continue; // Tanimsiz varlik: deger uretilmez.
-      if (asset.isCalculated) {
-        derivedRequested.add(id);
-      } else {
-        directRequested.add(id);
-      }
-    }
-
     Failure? lastFailure;
 
-    // 3) Dogrudan kaynaklar (kaynak basina gruplayip paralel).
-    if (directRequested.isNotEmpty) {
-      final direct = await _fetchDirect(directRequested);
-      result.addAll(direct.quotes);
-      lastFailure = direct.failure;
-    }
+    // 2) HER eksik varlik icin once DOGRUDAN provider dene (isCalculated bagimsiz).
+    // Provider priority: TCMB -> AnlıkAltınFiyatlari -> Yahoo
+    // _fetchDirectTryAll, provider'lari priority sirasiyla dener ve ilk basarili
+    // direct quote'u dondurur. isCalculated true olsa bile direct provider
+    // varsa kullanilir.
+    final directResult = await _fetchDirectTryAll(missing);
+    result.addAll(directResult.quotes);
+    lastFailure = directResult.failure;
 
-    // 4) Hesaplanan (turev) varliklar.
-    if (derivedRequested.isNotEmpty) {
-      final ordered = _expandAncestors(derivedRequested);
+    // 3) Hala eksik olanlar icin: derived/calculated fallback.
+    // Sadece isCalculated==true OLAN assetlerin parent bileşenlerini cekmeye calis.
+    // Non-calculated assetler zaten step 2'de denenmistir.
+    final stillMissing = missing.where((id) => !result.containsKey(id)).toList();
+    if (stillMissing.isNotEmpty) {
+      final ordered = _expandAncestors(stillMissing);
 
-      // Turevlerin dogrudan bilesenleri de cekilmis olmali.
-      final ancestors = <String>[
-        for (final id in ordered)
-          if (!(AssetCatalog.byId(id)?.isCalculated ?? false) &&
-              !result.containsKey(id))
-            id,
-      ];
-      if (ancestors.isNotEmpty) {
-        final r = await _fetchDirect(ancestors);
+      // Sadece calculated assetlerin parent'larini (non-calculated) topla.
+      // Bu, ayni assetin tekrar denenmesini onler.
+      final ancestors = <String>{};
+      for (final id in ordered) {
+        if (AssetCatalog.byId(id)?.isCalculated ?? false) {
+          final parents = AssetCatalog.byId(id)?.parentIds;
+          if (parents != null) {
+            for (final p in parents) {
+              if (!(AssetCatalog.byId(p)?.isCalculated ?? false) && !result.containsKey(p)) {
+                ancestors.add(p);
+              }
+            }
+          }
+        }
+      }
+      final ancestorsList = ancestors.toList();
+
+      if (ancestorsList.isNotEmpty) {
+        final r = await _fetchDirectTryAll(ancestorsList);
         result.addAll(r.quotes);
         lastFailure = r.failure ?? lastFailure;
       }
@@ -223,7 +234,7 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
       });
     }
 
-    // 5) Saglayici istenen sembolu atlattisa (istek **hatasiz** dondu ama
+    // 4) Saglayici istenen sembolu atlattisa (istek **hatasiz** dondu ama
     //    bazi id'ler yanitta yer almuyor): onbellekteki SON deger bayat
     //    olarak geri eklenir. Boylece GC=F / SI=F gecici olarak gelmediginde
     //    varligin verisi silinmez; UI `isStale` ile "son bilinen veriler"
@@ -245,6 +256,40 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
       return Err(lastFailure ?? const NetworkFailure());
     }
     return Success(result);
+  }
+
+  /// Verilen assetler icin oncelikli sirada tum provider'lari dener.
+  /// Ilk basarili direct quote'u dondurur.
+  /// Bu, isCalculated=true olsa bile provider destekliyorsa kullanilmasini saglar.
+  Future<_Fetched> _fetchDirectTryAll(List<String> assetIds) async {
+    final now = DateTime.now();
+    final out = <String, Quote>{};
+    Failure? failure;
+
+    for (final id in assetIds.toSet()) {
+      final cached = _quoteCache[id];
+      if (cached != null && now.difference(cached.at) < _quoteTtlFor(id)) {
+        out[id] = cached.value;
+        continue;
+      }
+
+      // Bu asset'i destekleyen provider'lari oncelik sirasiyla dene
+      final source = _quoteSourceForDirect(id);
+      if (source == null) continue; // Kaynagi olmayan varlik: atlanir.
+
+      final res = await source.fetchQuotes([id]);
+      final map = res.dataOrNull;
+      if (map == null) {
+        failure = res.failureOrNull ?? failure;
+        continue;
+      }
+      map.forEach((id, q) {
+        out[id] = q;
+        _quoteCache[id] = _CacheEntry(q, now);
+      });
+    }
+
+    return (quotes: out, failure: failure);
   }
 
   /// Dogrudan kaynaklardan fiyat ceker (onbellek dahil).
@@ -336,6 +381,12 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
   ///
   /// Girdi olarak gereken bilesenler `quotes` icinde hazir olmali; eksik
   /// bilesen varsa ilgili turev degeri **uretilmez** (null/rastgele degil).
+  ///
+  /// **Onemli**: Eger bir asset icin zaten `quotes` icinde dogrudan provider
+  /// quote'u varsa (ornegin AnlikAltinFiyatlari gibi bir saglayicidan gelmis),
+  /// o zaman hesaplama **yapilmaz** ve mevcut quote korunur.
+  /// Bu, AnlikAltinFiyatlari gibi provider'larin canli fiyatlarinin
+  /// formulle hesaplanan degerler tarafina dusmemesini saglar.
   Map<String, Quote> _deriveAll(
     List<String> orderedDerivedIds,
     Map<String, Quote> quotes,
@@ -349,6 +400,14 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
     for (final id in orderedDerivedIds) {
       final asset = AssetCatalog.byId(id);
       if (asset == null || !asset.isCalculated) continue;
+
+      // Eger bu asset icin zaten dogrudan bir provider quote'su varsa,
+      // formulle hesaplayip uzerine yazma; mevcut quote'u koru.
+      if (quotes.containsKey(id)) {
+        // Zaten dogrudan quote var; hesaplama atla.
+        // Boylece AnlikAltinFiyatlari gibi saglayicilarin canli fiyatlari korunur.
+        continue;
+      }
 
       final price = _derivedPrice(asset, working);
       if (price == null) continue;

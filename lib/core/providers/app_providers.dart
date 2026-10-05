@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../data/providers/anlik_altin_fiyatlari_provider.dart';
 import '../../data/providers/news_rss_provider.dart';
 import '../../data/providers/tcmb_currency_provider.dart';
 import '../../data/providers/tcmb_fx_market_data_provider.dart';
@@ -18,6 +19,7 @@ import '../../domain/repositories/market_data_repository.dart';
 import '../../domain/repositories/news_repository.dart';
 import '../cache/cache_policy.dart';
 import '../network/api_client.dart';
+import '../telemetry/telemetry_service.dart';
 import '../theme/app_theme.dart';
 
 /// Tekil HTTP istemcisi.
@@ -53,6 +55,10 @@ final newsRssProvider = Provider<NewsRssProvider>((ref) {
   return NewsRssProvider(ref.watch(apiClientProvider));
 });
 
+final anlikAltinFiyatlariProvider = Provider<AnlikAltinFiyatlariProvider>((ref) {
+  return AnlikAltinFiyatlariProvider();
+});
+
 // ---------------------------------------------------------------------------
 // REPOSITORIES (UI'nin goruntuledigi tek arayuz)
 // ---------------------------------------------------------------------------
@@ -65,11 +71,14 @@ final newsRssProvider = Provider<NewsRssProvider>((ref) {
 final marketSourcesProvider = Provider<List<MarketDataProvider>>((ref) {
   final tcmb = ref.watch(tcmbProvider);
   final yahoo = ref.watch(yahooProvider);
+  final anlik = ref.watch(anlikAltinFiyatlariProvider);
   return [
     // Döviz: fiyat/alış-satış TCMB (resmi), %değişim Yahoo paritesi.
     TcmbFxMarketDataProvider(tcmb, yahoo: yahoo),
     // BIST + ons metal: dogrudan Yahoo.
     YahooMarketDataProvider(yahoo),
+    // Altın/Gümüş: Anlık Altın Fiyatları (canli ~60sn).
+    anlik,
   ];
 });
 
@@ -183,3 +192,27 @@ class ThemeModeNotifier extends Notifier<ThemeMode> {
     }
   }
 }
+
+// ---------------------------------------------------------------------------
+// ANONIM TELEMETRI
+// ---------------------------------------------------------------------------
+
+
+/// Anonim kurulum telemetrisi (Supabase `telemetry_ping` RPC).
+///
+/// * `--dart-define` ile `SUPABASE_URL` + `SUPABASE_ANON_KEY` verilmemis ise
+///   servis **pasiftir**: ag cagrisi yapmaz, kimlik uretmez.
+/// * UI'dan/finans veri yolundan **bagimsizdir**: hata uygulamayi etkilemez.
+/// * Service-role key bu projede hicbir yerde bulunmaz.
+final telemetryProvider = Provider<TelemetryService>((ref) {
+  final service = TelemetryService(prefs: ref.watch(sharedPreferencesProvider));
+  ref.onDispose(service.dispose);
+  return service;
+});
+
+// NOT: `updateNotifierProvider` BURADA tanimli degildir.
+// Tanim yalnizca `core/update/update_notifier.dart` icinde tek yerde durur.
+// Burada ikinci bir kopyasi bulunmasi, `app_providers.dart`'i `hide
+// updateNotifierProvider` kullanmadan import eden bir dosyayi sessizce FARKLI
+// bir provider instance'ina yonlendirir; boylece UpdateChecker sonucu gormez
+// ve update ekrani hicbir zaman gorunmez.

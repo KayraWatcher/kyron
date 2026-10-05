@@ -15,15 +15,20 @@ import '../../shared/widgets/common.dart'
     show ScreenTitle, SectionHeader, StateSliver;
 import '../../shared/widgets/price_flash.dart';
 import '../../shared/widgets/quote_card.dart';
-import '../../shared/widgets/quote_compact_row.dart';
 import '../../shared/widgets/watch_star.dart';
 import '../alerts/alert_providers.dart';
 import '../news/news_providers.dart';
+import 'away_changes_card.dart';
+import 'away_changes_provider.dart';
 import 'home_display.dart';
 import 'home_display_sheet.dart';
 import 'home_providers.dart';
+import 'market_status_card.dart';
+import 'market_status_provider.dart';
 import 'mini_chart_providers.dart';
 import 'touch_locked_order.dart';
+import 'why_moving_card.dart';
+import 'why_moving_providers.dart';
 
 /// Ana Sayfa - 5 sekmenin ilk bolumu.
 class HomeScreen extends ConsumerWidget {
@@ -38,8 +43,8 @@ class HomeScreen extends ConsumerWidget {
     final watch = ref.watch(watchlistProvider);
 
     // Istenen sira: filtre + siralama (saf fonksiyon, birim testli).
-    // "Öne çıkanlar" kullaniciya aittir: ekleme/cikarma/sira tercihi
-    // [HomeDisplayState.pinned] icinden gelir ve kalıcıdır.
+    // "Öne Çıkanlar" kullaniciya aittir: ekleme/cikarma/sira tercihi
+    // [HomeDisplayState.pinned] icinden gelir ve kalicidir.
     final desired = applyHomeDisplay(
       featured: display.pinned,
       catalog: AssetCatalog.all,
@@ -75,24 +80,12 @@ class HomeScreen extends ConsumerWidget {
               ),
             ),
 
-            // ---- Piyasa Ozeti ----
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
-                child: _MarketSummary(quotes: quotes),
-              ),
-            ),
-
             SliverToBoxAdapter(
               child: SectionHeader(
                 title: 'Piyasalar',
                 action: display.filter == HomeFilter.onecikanlar
                     ? 'Tümü'
                     : display.filter.label,
-                // Varsayilanda etiket "Tümü" = tum piyasalara git. Ozel
-                // filtrede etiket **filtrenin kendisi** oldugu icin tik da
-                // o paneli acar; aksi halde "Altin" yazip baska bir ekrana
-                // gotururdu (etiket ile eylem uyusmazdi).
                 onAction: () {
                   if (display.filter == HomeFilter.onecikanlar) {
                     selectSection(ref, AppSection.markets);
@@ -103,6 +96,14 @@ class HomeScreen extends ConsumerWidget {
               ),
             ),
 
+            // ---- Piyasa Durumu ----
+            SliverToBoxAdapter(child: const MarketStatusCard()),
+
+            // ---- Sen Yokken Ne Oldu? ----
+            SliverToBoxAdapter(child: const AwayChangesCard()),
+
+            // Quote grid dogrudan sliver olarak (StateSliver) eklenir;
+            // SliverToBoxAdapter icine alinamaz (tip protokolu hatasi).
             _quoteGrid(context, ref, quotes, ids, display),
 
             // ---- Takip Listesi (bossa gizlenir: ana sayfa kalabalik olmasin)
@@ -116,6 +117,11 @@ class HomeScreen extends ConsumerWidget {
               ),
               _watchlist(context, ref, quotes),
             ],
+
+            // ---- Neden Hareket Ediyor? (Öne Çıkanlar için) ----
+            SliverToBoxAdapter(
+              child: _WhyMovingSection(ids: ids, quotes: quotes),
+            ),
 
             // ---- Son Dakika ----
             SliverToBoxAdapter(
@@ -162,7 +168,7 @@ class HomeScreen extends ConsumerWidget {
   Widget _viewButton(WidgetRef ref, HomeDisplayState display) {
     final isGrid = display.view == HomeViewMode.grid;
     return IconButton(
-      tooltip: isGrid ? 'Liste görünümüne geç' : 'Izgara görünümüne geç',
+      tooltip: isGrid ? 'Liste görünüme geç' : 'Izgara görünüme geç',
       padding: EdgeInsets.zero,
       onPressed: () => ref
           .read(homeDisplayProvider.notifier)
@@ -229,7 +235,7 @@ class HomeScreen extends ConsumerWidget {
       return '$date · Bağlantı yok — son bilinen veriler';
     }
 
-    // Ekrandaki verilerin en taze olani: "Canlı" yazisi yalnizca saglayici
+    // Ekrandaki verilerin en taze olani: "Canli" yazisi yalnizca saglayici
     // gercek zamanli akis dogruladiginda uretilir (bkz. DataFreshness).
     final fresh = DataFreshness.freshest(map.values.map((q) => q.freshness));
     return '$date · ${fresh.label}';
@@ -269,40 +275,17 @@ class HomeScreen extends ConsumerWidget {
           );
         }
 
-        // Liste gorunumu: kompakt profesyonel satırlar (QuoteCompactRow).
+        // Liste gorunumu: Takip Edilenler ile **AYNI** asset-row deseni
+        // (ortak satir sliver'i - kopya component olusturulmaz).
         if (display.view == HomeViewMode.list) {
-          return SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            sliver: SliverList.separated(
-              itemCount: ids.length,
-              separatorBuilder: (_, _) => const SizedBox(height: 6),
-              itemBuilder: (context, i) {
-                final id = ids[i];
-                return Consumer(
-                  builder: (context, ref, _) {
-                    final spark = ref.watch(miniChartProvider(id));
-                    return QuoteCompactRow(
-                      assetId: id,
-                      quote: map[id]!,
-                      sparkline: spark.value,
-                      showSpread: true,
-                      onTap: () => openAssetDetail(context, id),
-                    );
-                  },
-                );
-              },
-            ),
-          );
+          return _assetRowSliver(ids, map);
         }
 
         return SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           sliver: SliverGrid(
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 340,
-              // Fiyat + degisim + Alis/Satis/Makas satiri birlikte sigmali;
-              // 150 iken doviz kartlarinda alt satir kart sinirini
-              // asiyordu (release modda overflow uyarisi verilmez).
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
               mainAxisExtent: 176,
               crossAxisSpacing: 12,
               mainAxisSpacing: 12,
@@ -319,8 +302,7 @@ class HomeScreen extends ConsumerWidget {
                       assetId: id,
                       quote: map[id]!,
                       sparkline: spark.value,
-                      showSpread: true,
-                      // Yildiz: takip listesine ekle/cikar (kalıcı).
+                      showSpread: false,
                       trailing: WatchStar(assetId: id, size: 20),
                       onTap: () => openAssetDetail(context, id),
                     );
@@ -331,6 +313,24 @@ class HomeScreen extends ConsumerWidget {
             ),
           ),
         );
+      },
+    );
+  }
+
+  /// "Piyasalar" (liste görünümlü) ve "Takip Edilenler" için **ortak** asset
+  /// satırı sliver'ı.
+  ///
+  /// İki bölüm aynı [WatchRow] desenini (kimlik · sparkline · fiyat/değişim),
+  /// aynı ayırıcı aralığı ve aynı kenar boşluğunu kullanır; böylece yan yana
+  /// karşılaştırıldığında aynı varlık-satır sisteminin parçaları gibi görünür.
+  /// Yeni bir satır component'i kopyalanmaz.
+  SliverList _assetRowSliver(List<String> ids, Map<String, Quote> quotes) {
+    return SliverList.separated(
+      itemCount: ids.length,
+      separatorBuilder: (_, _) => const SizedBox(height: 8),
+      itemBuilder: (context, i) {
+        final id = ids[i];
+        return WatchRow(assetId: id, quote: quotes[id]!);
       },
     );
   }
@@ -363,15 +363,7 @@ class HomeScreen extends ConsumerWidget {
             ),
           );
         }
-        return SliverList.separated(
-          itemCount: ids.length,
-          separatorBuilder: (_, _) => const SizedBox(height: 8),
-          itemBuilder: (context, i) {
-            final id = ids[i];
-            final q = map[id]!;
-            return _WatchRow(assetId: id, quote: q);
-          },
-        );
+        return _assetRowSliver(ids, map);
       },
     );
   }
@@ -407,6 +399,50 @@ class HomeScreen extends ConsumerWidget {
 }
 
 // ---------------------------------------------------------------------------
+// "Neden Hareket Ediyor?" bölümü (Öne Çıkan varlıklar için)
+// ---------------------------------------------------------------------------
+
+class _WhyMovingSection extends ConsumerWidget {
+  const _WhyMovingSection({
+    required this.ids,
+    required this.quotes,
+  });
+
+  final List<String> ids;
+  final AsyncValue<Map<String, Quote>> quotes;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final map = quotes.value;
+    if (map == null || map.isEmpty) return const SizedBox.shrink();
+
+    // Sadece % degisimi belirgin olanlari analiz et (> 0.5%)
+    final significant = ids.where((id) {
+      final q = map[id];
+      return q != null &&
+          q.effectiveChangePercent != null &&
+          q.effectiveChangePercent!.abs() > 0.5;
+    }).toList();
+
+    if (significant.isEmpty) return const SizedBox.shrink();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SectionHeader(
+          title: 'Neden Hareket Ediyor?',
+          action: '',
+          onAction: null,
+        ),
+        const SizedBox(height: 4),
+        ...significant.take(3).map((id) => WhyMovingCard(assetId: id)),
+        const SizedBox(height: 8),
+      ],
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Imza
 // ---------------------------------------------------------------------------
 
@@ -424,14 +460,14 @@ class _AppFooter extends StatelessWidget {
           const Divider(height: 1),
           const SizedBox(height: 14),
           Text(
-            'GOLD · Türkiye piyasa takibi',
+            'KYRON · Türkiye Piyasa takibi',
             textAlign: TextAlign.center,
             style: theme.textTheme.labelSmall
                 ?.copyWith(color: AppPalette.neutral),
           ),
           const SizedBox(height: 4),
           Text(
-            'Geliştirici: Kayra ÇIKLA',
+            'Kayra ÇIKLA',
             textAlign: TextAlign.center,
             style: theme.textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w800,
@@ -445,106 +481,17 @@ class _AppFooter extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// Piyasa ozeti serit
+// Ortak asset satiri (Piyasalar-liste + Takip Edilenler)
 // ---------------------------------------------------------------------------
 
-class _MarketSummary extends ConsumerWidget {
-  const _MarketSummary({required this.quotes});
-
-  final AsyncValue<Map<String, Quote>> quotes;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final data = quotes.value;
-    if (data == null || data.isEmpty) {
-      return const SizedBox.shrink();
-    }
-
-    int gain = 0;
-    int loss = 0;
-    int flat = 0;
-    for (final q in data.values) {
-      final p = q.effectiveChangePercent;
-      if (p == null || !p.isFinite || p == 0) {
-        flat++;
-      } else if (p > 0) {
-        gain++;
-      } else {
-        loss++;
-      }
-    }
-
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.surface,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Piyasa Özeti',
-            style: theme.textTheme.labelLarge?.copyWith(
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              _pill(context, 'Yükselen', gain, AppPalette.gain),
-              const SizedBox(width: 8),
-              _pill(context, 'Düşen', loss, AppPalette.loss),
-              const SizedBox(width: 8),
-              _pill(context, 'Değişmeyen', flat, AppPalette.neutral),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _pill(BuildContext context, String label, int count, Color color) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 6),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.12),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          children: [
-            Text(
-              '$count',
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w800,
-                color: color,
-                fontFeatures: const [FontFeature.tabularFigures()],
-              ),
-            ),
-            const SizedBox(height: 2),
-            Text(
-              label,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 10.5, color: color),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Takip satiri
-// ---------------------------------------------------------------------------
-
-class _WatchRow extends ConsumerWidget {
-  const _WatchRow({required this.assetId, required this.quote});
+/// Anasayfanin **ortak asset satiri**.
+///
+/// Hem "Piyasalar" (liste gorunumu) hem "Takip Edilenler" bu satiri kullanir:
+/// [AssetIdentity] (sol) · [Sparkline] (orta) · fiyat + [ChangeBadge] (sağ).
+/// Ayni satir tek yerden gelir; baska bir kopya satir component'i
+/// olusturulmaz. Satir icinde Alis/Satis gosterilmez.
+class WatchRow extends ConsumerWidget {
+  const WatchRow({super.key, required this.assetId, required this.quote});
 
   final String assetId;
   final Quote quote;
@@ -639,40 +586,50 @@ class _NewsTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
           ),
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                item.title,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                  height: 1.35,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  _sourceBadge(context, item.category.label),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      item.source,
-                      maxLines: 1,
+              // Kompakt thumbnail: gerçek görsel varsa o, yoksa fallback.
+              _NewsThumb(url: item.imageUrl ?? ''),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      item.title,
+                      maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.labelSmall?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        height: 1.35,
                       ),
                     ),
-                  ),
-                  Text(
-                    TrFormat.relativeTime(item.publishedAt),
-                    style: theme.textTheme.labelSmall?.copyWith(
-                      color: AppPalette.neutral,
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        _sourceBadge(context, item.category.label),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            item.source,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          TrFormat.relativeTime(item.publishedAt),
+                          style: theme.textTheme.labelSmall?.copyWith(
+                            color: AppPalette.neutral,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
@@ -699,3 +656,68 @@ class _NewsTile extends StatelessWidget {
     );
   }
 }
+
+/// Ana sayfa haber onizleme gorseli (News ekranindaki ile ayni mantik).
+///
+/// Gercek gorsel varsa onu gosterir; yoksa/alinamazsa candlestick
+/// finans ikonu yer tutucusu gosterilir. Sahte gorsel uretilmez.
+class _NewsThumb extends StatelessWidget {
+  const _NewsThumb({required this.url});
+
+  final String url;
+
+  static const double _w = 56;
+  static const double _h = 44;
+
+  @override
+  Widget build(BuildContext context) {
+    final uri = Uri.tryParse(url);
+    final usable =
+        uri != null && (uri.isScheme('http') || uri.isScheme('https'));
+
+    final placeholder = Container(
+      width: _w,
+      height: _h,
+      decoration: BoxDecoration(
+        // Kart zemininden net ayrilan gorunur yer tutucu:
+        // altin tonlu finans kutusu + candlestick ikonu (sahte gorsel degil).
+        color: AppPalette.gold.withValues(alpha: 0.14),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: AppPalette.goldDeep.withValues(alpha: 0.55)),
+      ),
+      child: const Icon(
+        Icons.candlestick_chart_rounded,
+        size: 22,
+        color: AppPalette.gold,
+      ),
+    );
+
+    if (!usable) return placeholder;
+
+    return RepaintBoundary(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.network(
+          url,
+          width: _w,
+          height: _h,
+          fit: BoxFit.cover,
+          cacheWidth: (_w * 3).round(),
+          loadingBuilder: (context, child, progress) =>
+              progress == null ? child : placeholder,
+          errorBuilder: (context, error, stack) => placeholder,
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+

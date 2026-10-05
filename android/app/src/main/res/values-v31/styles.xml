@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 12+ (API 31) sistem splash'i.
+         windowSplashScreen* nitelikleri yalnizca v31+ icin burada tanimlanir;
+         eski surumlerde drawable/launch_background (windowBackground) devreye
+         girer. Gece modunda values-night'ta LaunchTheme olmadigindan bu dosya
+         her iki modda da ayni sekilde kullanilir. -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:windowSplashScreenBackground">@color/kyron_splash_bg</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/kyron_splash</item>
+    </style>
+</resources>

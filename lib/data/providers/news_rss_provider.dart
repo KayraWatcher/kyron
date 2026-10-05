@@ -179,8 +179,13 @@ class NewsRssProvider implements NewsProvider {
   String? _extractMediaThumb(XmlElement item) {
     for (final el in item.childElements) {
       if (el.name.local.contains('thumbnail') || el.name.local.contains('image')) {
+        // Yaygin bicim 1: <media:thumbnail url="https://..." />
         final url = el.getAttribute('url');
         if (url != null && url.startsWith('http')) return url;
+        // Yaygin bicim 2 (AA RSS): <image>https://...jpg</image> -
+        // URL oznitelik degil, **metin** olarak gelir.
+        final text = el.innerText.trim();
+        if (text.startsWith('http')) return text;
       }
     }
     return null;

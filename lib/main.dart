@@ -7,6 +7,7 @@ import 'core/cache/cache_policy.dart';
 import 'core/providers/app_lifecycle_provider.dart';
 import 'core/providers/app_providers.dart';
 import 'core/theme/app_theme.dart';
+import 'core/update/update.dart';
 import 'features/alerts/notification_service.dart';
 import 'features/calendar/calendar_screen.dart';
 import 'features/home/home_screen.dart';
@@ -48,7 +49,7 @@ Future<void> main() async {
   });
 }
 
-/// GOLD uygulama kok widget'i.
+/// KYRON uygulama kok widget'i.
 class GoldApp extends ConsumerWidget {
   const GoldApp({super.key});
 
@@ -57,7 +58,7 @@ class GoldApp extends ConsumerWidget {
     final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp(
-      title: 'GOLD',
+      title: 'KYRON',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
@@ -74,7 +75,9 @@ class GoldApp extends ConsumerWidget {
       ],
       // Hayat dongusu: zamanlayicilar arka planda durur, one donunce
       // hemen bir kez yenilenir (bkz. appInForegroundProvider).
-      home: const AppLifecycleBinder(child: GoldHome()),
+      home: AppLifecycleBinder(
+        child: UpdateChecker(child: const GoldHome()),
+      ),
     );
   }
 }

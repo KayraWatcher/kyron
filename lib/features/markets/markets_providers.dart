@@ -35,6 +35,46 @@ class MarketSearchNotifier extends Notifier<String> {
   void set(String value) => state = value;
 }
 
+/// Piyasalar ekrani gorunum modu: izgara veya liste.
+enum MarketViewMode {
+  grid('Izgara'),
+  list('Liste');
+
+  const MarketViewMode(this.label);
+
+  final String label;
+}
+
+/// Piyasalar gorunum tercihi (kalici).
+final marketViewModeProvider = NotifierProvider<MarketViewModeNotifier, MarketViewMode>(
+  MarketViewModeNotifier.new,
+);
+
+class MarketViewModeNotifier extends Notifier<MarketViewMode> {
+  static const String _prefsKey = 'market_view_mode';
+
+  @override
+  MarketViewMode build() {
+    try {
+      final prefs = ref.read(sharedPreferencesProvider);
+      final raw = prefs.getString(_prefsKey);
+      if (raw == 'list') return MarketViewMode.list;
+    } catch (_) {}
+    return MarketViewMode.grid;
+  }
+
+  void setView(MarketViewMode mode) {
+    if (state == mode) return;
+    state = mode;
+    try {
+      final prefs = ref.read(sharedPreferencesProvider);
+      prefs.setString(_prefsKey, mode.name);
+    } catch (_) {}
+  }
+
+  void toggle() => setView(state == MarketViewMode.grid ? MarketViewMode.list : MarketViewMode.grid);
+}
+
 /// Kategoriye gore cekilen fiyat seti.
 final marketQuotesProvider =
     AsyncNotifierProvider<MarketQuotesNotifier, Map<String, Quote>>(

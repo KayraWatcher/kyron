@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- KYRON splash zemini: uygulamanin koyu finans terminali rengiyle ayni
+         (lib/core/theme/app_theme.dart -> AppTheme.darkBg = #0B0F16). -->
+    <color name="kyron_splash_bg">#0B0F16</color>
+</resources>

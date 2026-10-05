@@ -153,6 +153,10 @@ class ChartWindow {
   }
 
   /// Parmakli olcekleme: yeni gorunur sayi.
+  ///
+  /// Pinch yonu: parmaklar **birbirinden uzaklasirken** (scale > 1)
+  /// gorunur mum sayisi **azalir** -> zoom IN. Parmaklar birbirine
+  /// yaklasirken (scale < 1) sayi artar -> zoom OUT.
   static int scaledVisible({
     required int base,
     required double scale,
@@ -160,7 +164,7 @@ class ChartWindow {
   }) {
     if (n <= 0) return 0;
     if (!scale.isFinite || scale <= 0) return clampVisible(base, n);
-    return clampVisible((base * scale).round(), n);
+    return clampVisible((base / scale).round(), n);
   }
 
   /// Gorunur pencerenin ilk mum indeksini sinirlar.

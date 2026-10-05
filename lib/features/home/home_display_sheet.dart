@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/theme/app_theme.dart';
-import '../../domain/entities/asset_catalog.dart';
+import 'asset_selection_sheet.dart';
 import 'home_display.dart';
 
 /// Ana sayfa "Piyasalar" listesi icin **filtre + siralama** alt sayfasi.
@@ -124,7 +124,7 @@ class _HomeDisplaySheet extends ConsumerWidget {
                 )
               else
                 for (var i = 0; i < state.pinned.length; i++)
-                  _PinRow(
+                  OrderableAssetRow(
                     index: i,
                     assetId: state.pinned[i],
                     isFirst: i == 0,
@@ -132,12 +132,18 @@ class _HomeDisplaySheet extends ConsumerWidget {
                     onUp: () => notifier.pinMove(state.pinned[i], -1),
                     onDown: () => notifier.pinMove(state.pinned[i], 1),
                     onRemove: () => notifier.pinRemove(state.pinned[i]),
+                    removeTooltip: 'Öne çıkarılanlardan kaldır',
                   ),
               const SizedBox(height: 8),
               OutlinedButton.icon(
                 onPressed: notifier.pinCandidates.isEmpty
                     ? null
-                    : () => _showAddPinnedSheet(context, ref),
+                    : () => showAddAssetSheet(
+                          context,
+                          title: 'Öne çıkan varlık ekle',
+                          candidateIds: notifier.pinCandidates,
+                          onAdd: notifier.pinAdd,
+                        ),
                 icon: const Icon(Icons.add_rounded),
                 label: const Text('Varlık ekle'),
               ),
@@ -249,124 +255,6 @@ class _HomeDisplaySheet extends ConsumerWidget {
       ),
     );
   }
-}
-
-/// "Öne çıkanlar" satiri: sira tuslari + kaldirma.
-class _PinRow extends StatelessWidget {
-  const _PinRow({
-    required this.index,
-    required this.assetId,
-    required this.isFirst,
-    required this.isLast,
-    required this.onUp,
-    required this.onDown,
-    required this.onRemove,
-  });
-
-  final int index;
-  final String assetId;
-  final bool isFirst;
-  final bool isLast;
-  final VoidCallback onUp;
-  final VoidCallback onDown;
-  final VoidCallback onRemove;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final name = AssetCatalog.byId(assetId)?.name ?? assetId;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 3),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 24,
-            child: Text(
-              '${index + 1}',
-              textAlign: TextAlign.center,
-              style: theme.textTheme.labelMedium
-                  ?.copyWith(color: AppPalette.neutral),
-            ),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              name,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodyMedium
-                  ?.copyWith(fontWeight: FontWeight.w600),
-            ),
-          ),
-          IconButton(
-            tooltip: 'Yukarı taşı',
-            visualDensity: VisualDensity.compact,
-            onPressed: isFirst ? null : onUp,
-            icon: const Icon(Icons.keyboard_arrow_up_rounded, size: 22),
-          ),
-          IconButton(
-            tooltip: 'Aşağı taşı',
-            visualDensity: VisualDensity.compact,
-            onPressed: isLast ? null : onDown,
-            icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 22),
-          ),
-          IconButton(
-            tooltip: 'Öne çıkarılanlardan kaldır',
-            visualDensity: VisualDensity.compact,
-            onPressed: onRemove,
-            icon: const Icon(Icons.close_rounded, size: 20),
-            color: AppPalette.loss,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// Henuz one cikan olmayan varliklardan secim yapilan alt sayfa.
-Future<void> _showAddPinnedSheet(BuildContext context, WidgetRef ref) {
-  return showModalBottomSheet<void>(
-    context: context,
-    isScrollControlled: true,
-    showDragHandle: true,
-    builder: (context) => SafeArea(
-      top: false,
-      child: ConstrainedBox(
-        constraints: BoxConstraints(
-          maxHeight: MediaQuery.of(context).size.height * 0.7,
-        ),
-        child: ListView(
-          shrinkWrap: true,
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-          children: [
-            Text(
-              'Öne çıkan varlık ekle',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: 12),
-            for (final id
-                in ref.read(homeDisplayProvider.notifier).pinCandidates)
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text(AssetCatalog.byId(id)?.name ?? id),
-                subtitle: Text(
-                  AssetCatalog.byId(id)?.symbol ?? '',
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: AppPalette.neutral,
-                      ),
-                ),
-                trailing: const Icon(Icons.add_circle_outline_rounded),
-                onTap: () {
-                  ref.read(homeDisplayProvider.notifier).pinAdd(id);
-                  Navigator.of(context).pop();
-                },
-              ),
-          ],
-        ),
-      ),
-    ),
-  );
 }
 
 class _ChoicePill extends StatelessWidget {

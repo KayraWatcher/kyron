@@ -48,34 +48,39 @@ class QuoteCompactRow extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
           ),
-          child: Row(
-            children: [
-              // Sol: Varlık adı + sembol + tazelik
-              Expanded(
-                flex: 5,
-                child: _AssetIdentityCompact(
-                  assetId: assetId,
-                  quote: quote,
+          // Alış/satım (döviz) ana satirin DISINDA: Row disi cocuklar
+        // sinirsiz ana eksen kisiti alir; icerik Container sinirina kadar
+        // sigmali. Column altinda kart genisligiyle sinirlidir.
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                // SOL: Mini sparkline / hareket grafiği
+                if (sparkline?.isValid == true) ...[
+                  Sparkline(
+                    data: sparkline,
+                    color: directionColor,
+                    width: 48,
+                    height: 22,
+                  ),
+                  const SizedBox(width: 12),
+                ],
+                // ORTA: Varlık adı + sembol
+                Expanded(
+                  child: _AssetIdentityCompact(
+                    assetId: assetId,
+                    quote: quote,
+                  ),
                 ),
-              ),
-              // Orta: Mini sparkline (varsa)
-              if (sparkline?.isValid == true) ...[
-                const SizedBox(width: 8),
-                SizedBox(
-                  width: 48,
-                  height: 22,
-                  child: Sparkline(data: sparkline, color: directionColor, width: 48, height: 22),
-                ),
-              ],
-              // Sağ: Fiyat + % değişim
-              const SizedBox(width: 10),
-              Expanded(
-                flex: 4,
-                child: Column(
+                // SAĞ: fiyat + günlük değişim (saga hizali)
+                const SizedBox(width: 10),
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Fiyat (PriceFlash ile gerçek değişiklikte animasyon)
                     FittedBox(
                       fit: BoxFit.scaleDown,
                       alignment: Alignment.centerRight,
@@ -90,7 +95,6 @@ class QuoteCompactRow extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 2),
-                    // % Değişim (compact)
                     ChangeBadge(
                       value: changePercent,
                       percent: true,
@@ -99,14 +103,16 @@ class QuoteCompactRow extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              // Alış/Satış (dövizde, showSpread true ise)
-              if (showSpread && (quote.bid != null || quote.ask != null)) ...[
-                const SizedBox(width: 8),
-                _BidAskCompact(quote: quote),
               ],
+            ),
+
+            // Alış/Satış (dövizde, showSpread true ise) - ikinci satır
+            if (showSpread && (quote.bid != null || quote.ask != null)) ...[
+              const SizedBox(height: 4),
+              _BidAskCompact(quote: quote),
             ],
-          ),
+          ],
+        ),
         ),
       ),
     );

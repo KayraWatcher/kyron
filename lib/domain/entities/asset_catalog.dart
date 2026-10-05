@@ -19,6 +19,9 @@ abstract final class AssetCatalog {
   static const String ataAltinId = 'ata-altin';
   static const String bilezik22Id = 'bilezik-22';
   static const String onsAltinId = 'ons-altin';
+  static const String ayar14AltinId = '14-ayar-altin';
+  static const String ayar18AltinId = '18-ayar-altin';
+  static const String resatAltinId = 'resat-altin';
   static const String gramGumusId = 'gram-gumus';
   static const String onsGumusId = 'ons-gumus';
   static const String usdTryId = 'usd-try';
@@ -129,6 +132,42 @@ abstract final class AssetCatalog {
     isCalculated: true,
     parentIds: [gramAltinId],
     description: '22 ayar = 0,916 saflık; gram altının 0,916 katı.',
+  );
+
+  static const AssetDescriptor ayar14Altin = AssetDescriptor(
+    id: ayar14AltinId,
+    symbol: 'AYAR14',
+    name: '14 Ayar Altın',
+    category: AssetCategory.altin,
+    unit: AssetUnit.gram,
+    currency: 'TRY',
+    isCalculated: false,
+    parentIds: [],
+    description: '14 ayar altın (585 saflık) gram cinsinden.',
+  );
+
+  static const AssetDescriptor ayar18Altin = AssetDescriptor(
+    id: ayar18AltinId,
+    symbol: 'AYAR18',
+    name: '18 Ayar Altın',
+    category: AssetCategory.altin,
+    unit: AssetUnit.gram,
+    currency: 'TRY',
+    isCalculated: false,
+    parentIds: [],
+    description: '18 ayar altın (750 saflık) gram cinsinden.',
+  );
+
+  static const AssetDescriptor resatAltin = AssetDescriptor(
+    id: resatAltinId,
+    symbol: 'RESAT',
+    name: 'Reşat Altın',
+    category: AssetCategory.altin,
+    unit: AssetUnit.gram,
+    currency: 'TRY',
+    isCalculated: false,
+    parentIds: [],
+    description: 'Reşat altını (22 ayar, 7.216 g) gram cinsinden.',
   );
 
   // ---------------------------------------------------------------------------
@@ -262,6 +301,9 @@ abstract final class AssetCatalog {
     cumhuriyetAltin,
     ataAltin,
     bilezik22,
+    ayar14Altin,
+    ayar18Altin,
+    resatAltin,
     onsAltin,
     // Gümüş
     gramGumus,
@@ -297,6 +339,9 @@ abstract final class AssetCatalog {
     bist30Id,
     gramAltinId,
     ceyrekAltinId,
+    ayar14AltinId,
+    ayar18AltinId,
+    resatAltinId,
     gramGumusId,
     usdTryId,
     eurTryId,

@@ -1,5 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'app_providers.dart';
+import '../update/update_notifier.dart';
+import '../update/update.dart';
 
 /// Uygulama su an **on planda** mi?
 ///
@@ -49,6 +55,14 @@ class _AppLifecycleBinderState extends ConsumerState<AppLifecycleBinder>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+
+    // Anonim telemetri (FAZ 6): UI acilisini ASLA beklemez; servis tum
+    // hatalari yutar. Yapilandirma yoksa tamamen pasiftir.
+    Future.microtask(_telemetryPing);
+
+    // App update check (FAZ 17): config'i arka planda cek, UI'yi bloklama.
+    // Zorunlu update sonucu gelirse UpdateChecker dialog/ekrani gosterir.
+    Future.microtask(_checkForUpdates);
   }
 
   @override
@@ -59,9 +73,32 @@ class _AppLifecycleBinderState extends ConsumerState<AppLifecycleBinder>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    ref.read(appInForegroundProvider.notifier).set(
-          state == AppLifecycleState.resumed,
-        );
+    final resumed = state == AppLifecycleState.resumed;
+    final wasForeground = ref.read(appInForegroundProvider);
+    ref.read(appInForegroundProvider.notifier).set(resumed);
+    if (resumed && !wasForeground) {
+      // One donus: last_seen guncellenir; event/throttle karari serviste.
+      unawaited(_telemetryPing());
+    }
+  }
+
+  /// Telemetri ping'i: arka planda, hata yutulu (asla rethrow etmez).
+  Future<void> _telemetryPing() async {
+    try {
+      await ref.read(telemetryProvider).trackAppOpen();
+    } catch (_) {
+      // Telemetri uygulamayi asla etkilemez.
+    }
+  }
+
+  /// App update check: config'i arka planda cek, sonuca gore UI goster.
+  Future<void> _checkForUpdates() async {
+    try {
+      await ref.read(updateNotifierProvider.notifier).checkForUpdates();
+      // Sonuc UpdateChecker widget'i tarafindan islenecek.
+    } catch (_) {
+      // Update check hatasi uygulamayi etkilemez.
+    }
   }
 
   @override

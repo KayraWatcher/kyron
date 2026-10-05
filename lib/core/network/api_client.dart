@@ -177,7 +177,15 @@ class ApiClient {
         n == 'turkish') {
       return _decodeTurkish1254(bytes);
     }
-    if (n == 'utf-8' || n == 'utf8') return null; // 2. adimda denendi
+    if (n == 'utf-8' || n == 'utf8') {
+      // Declared charset UTF-8 ama strict decode (adim 2) basarisiz oldu.
+      // allowMalformed: true ile onarimli decode et; latin1 fallback'ine DUSME.
+      try {
+        return utf8.decode(bytes, allowMalformed: true);
+      } on FormatException {
+        return null; // Son care latin1'e birak
+      }
+    }
     if (n == 'iso-8859-1' ||
         n == 'latin1' ||
         n == 'latin-1' ||

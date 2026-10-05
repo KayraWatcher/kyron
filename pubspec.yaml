@@ -2,7 +2,7 @@ name: gold
 description: "GOLD - Türkiye piyasaları için finans ve piyasa takip uygulaması."
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.1.0+2
 
 environment:
   sdk: ^3.13.5
@@ -39,11 +39,20 @@ dependencies:
   # Simge ikonlari
   cupertino_icons: ^1.0.8
   flutter_local_notifications: 22.3.1
+  package_info_plus: ^10.2.2
+  uuid: ^4.6.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  mocktail: ^1.0.4
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21
 
 flutter:
   uses-material-design: true

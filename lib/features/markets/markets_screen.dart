@@ -27,6 +27,7 @@ class MarketsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final index = ref.watch(marketCategoryProvider);
     final quotes = ref.watch(marketQuotesProvider);
+    final viewMode = ref.watch(marketViewModeProvider);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,11 +43,13 @@ class MarketsScreen extends ConsumerWidget {
           onSelected: (i) =>
               ref.read(marketCategoryProvider.notifier).select(i),
         ),
+        _ViewModeToggle(viewMode: viewMode),
         const SizedBox(height: 4),
         Expanded(
           child: _AssetList(
             categoryIndex: index,
             quotes: quotes,
+            viewMode: viewMode,
             onRetry: () => ref.read(marketQuotesProvider.notifier).refresh(),
           ),
         ),
@@ -59,11 +62,13 @@ class _AssetList extends ConsumerWidget {
   const _AssetList({
     required this.categoryIndex,
     required this.quotes,
+    required this.viewMode,
     required this.onRetry,
   });
 
   final int categoryIndex;
   final AsyncValue<Map<String, Quote>> quotes;
+  final MarketViewMode viewMode;
   final VoidCallback onRetry;
 
   static const List<AssetCategory> _map = [
@@ -126,34 +131,94 @@ class _AssetList extends ConsumerWidget {
             icon: Icons.search_off_rounded,
           );
         }
-        return RefreshIndicator(
-          onRefresh: () => ref.read(marketQuotesProvider.notifier).refresh(),
-          child: ListView.separated(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-            physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: visible.length + _footerCount(visible.length),
-            separatorBuilder: (_, _) => const SizedBox(height: 10),
-            itemBuilder: (context, i) {
-              if (i >= visible.length) {
-                return const Padding(
-                  padding: EdgeInsets.only(top: 8),
-                  child: _SourceNote(),
-                );
-              }
-              final asset = visible[i];
-              final q = map[asset.id]!;
-              return QuoteCard(
-                assetId: asset.id,
-                quote: q,
-                showSpread: asset.category == AssetCategory.doviz,
-                // Takip listesi (favori) - kalıcı, tum ekranlarda ortak.
-                trailing: WatchStar(assetId: asset.id, size: 20),
-                onTap: () => openAssetDetail(context, asset.id),
-              );
-            },
-          ),
-        );
+
+        if (viewMode == MarketViewMode.grid) {
+          return _buildGrid(visible, map, searching, ref);
+        }
+        return _buildList(visible, map, searching, ref);
       },
+    );
+  }
+
+  Widget _buildList(List<AssetDescriptor> visible, Map<String, Quote> map, bool searching, WidgetRef ref) {
+    return RefreshIndicator(
+      onRefresh: () => ref.read(marketQuotesProvider.notifier).refresh(),
+      child: ListView.separated(
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+        physics: const AlwaysScrollableScrollPhysics(),
+        itemCount: visible.length + _footerCount(visible.length),
+        separatorBuilder: (_, _) => const SizedBox(height: 10),
+        itemBuilder: (context, i) {
+          if (i >= visible.length) {
+            return const Padding(
+              padding: EdgeInsets.only(top: 8),
+              child: _SourceNote(),
+            );
+          }
+          final asset = visible[i];
+          final q = map[asset.id]!;
+          return QuoteCard(
+            assetId: asset.id,
+            quote: q,
+            showSpread: asset.category == AssetCategory.doviz,
+            trailing: WatchStar(assetId: asset.id, size: 20),
+            onTap: () => openAssetDetail(context, asset.id),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildGrid(List<AssetDescriptor> visible, Map<String, Quote> map, bool searching, WidgetRef ref) {
+    return RefreshIndicator(
+      onRefresh: () => ref.read(marketQuotesProvider.notifier).refresh(),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final crossAxisCount = constraints.maxWidth < 600
+              ? 2
+              : (constraints.maxWidth / 180).floor().clamp(2, 6);
+          return CustomScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            slivers: [
+              SliverPadding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+                sliver: SliverGrid(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    mainAxisExtent: 180,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 12,
+                  ),
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      if (index >= visible.length) {
+                        return const SizedBox.shrink();
+                      }
+                      final asset = visible[index];
+                      final q = map[asset.id]!;
+                      return QuoteCard(
+                        assetId: asset.id,
+                        quote: q,
+                        showSpread: asset.category == AssetCategory.doviz,
+                        trailing: WatchStar(assetId: asset.id, size: 20),
+                        onTap: () => openAssetDetail(context, asset.id),
+                      );
+                    },
+                    childCount: visible.length,
+                  ),
+                ),
+              ),
+              if (searching)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: _SourceNote(),
+                  ),
+                ),
+            ],
+          );
+        },
+      ),
     );
   }
 
@@ -281,6 +346,55 @@ class _SourceNote extends StatelessWidget {
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
               height: 1.5,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Izgara / Liste gorunum degistirici.
+class _ViewModeToggle extends ConsumerWidget {
+  const _ViewModeToggle({required this.viewMode});
+
+  final MarketViewMode viewMode;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text(
+            viewMode.label,
+            style: theme.textTheme.labelMedium?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(width: 8),
+          SegmentedButton<MarketViewMode>(
+            segments: [
+              ButtonSegment<MarketViewMode>(
+                value: MarketViewMode.grid,
+                icon: const Icon(Icons.grid_view_rounded, size: 18),
+                tooltip: 'Izgara',
+              ),
+              ButtonSegment<MarketViewMode>(
+                value: MarketViewMode.list,
+                icon: const Icon(Icons.view_agenda_outlined, size: 18),
+                tooltip: 'Liste',
+              ),
+            ],
+            selected: {viewMode},
+            onSelectionChanged: (Set<MarketViewMode> selection) {
+              ref.read(marketViewModeProvider.notifier).setView(selection.first);
+            },
+            style: ButtonStyle(
+              visualDensity: VisualDensity.compact,
+              padding: WidgetStateProperty.all(const EdgeInsets.symmetric(horizontal: 12, vertical: 6)),
             ),
           ),
         ],

@@ -373,81 +373,97 @@ class QuoteCard extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(14),
-        child: Container(
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
-          ),
-          child: Column(
-            // Dar yukseklikli grid hucrelerinde icerik dikey ortalanir;
-            // liste gorunumunde (sinirsiz yukseklik) davranis degismez.
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            // Dar grid hucrelerinde (genislik < 160) kompakt mod:
+            // azaltik padding, esnek sparkline, kompakt bid/ask.
+            // Yukseklik icin threshold 175: altinda padding/spacing azaltilir.
+            final isNarrow = constraints.maxWidth < 160;
+            final isShort = constraints.maxHeight < 175;
+            final hPadding = isNarrow ? 10.0 : 14.0;
+            final vPadding = isShort ? 6.0 : (isNarrow ? 8.0 : 14.0);
+            final spacing = isShort ? 4.0 : (isNarrow ? 6.0 : 10.0);
+            final sparklineWidth = isNarrow ? 40.0 : 60.0;
+            final sparklineHeight = isNarrow ? 22.0 : 30.0;
+            final priceFontSize = isNarrow ? 18.0 : 22.0;
+
+            return Container(
+              padding: EdgeInsets.symmetric(horizontal: hPadding, vertical: vPadding),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Expanded(
-                    child: AssetIdentity(
-                      assetId: assetId,
-                      subtitle: quote.source.label,
-                      freshness: quote.freshness,
-                      isStale: quote.isStale,
-                    ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: AssetIdentity(
+                          assetId: assetId,
+                          subtitle: quote.source.label,
+                          freshness: quote.freshness,
+                          isStale: quote.isStale,
+                        ),
+                      ),
+                      ?trailing,
+                    ],
                   ),
-                  ?trailing,
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Fiyat metni asla "12.2..." gibi kirpilmaz;
-                        // sinirlanmis kartta FittedBox ile kucultulur.
-                        FittedBox(
-                          fit: BoxFit.scaleDown,
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            _priceText(asset, quote),
-                            maxLines: 1,
-                            style: theme.textTheme.headlineSmall?.copyWith(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w800,
-                              color: theme.colorScheme.onSurface,
-                              fontFeatures: const [
-                                FontFeature.tabularFigures(),
-                              ],
+                  SizedBox(height: spacing),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                _priceText(asset, quote),
+                                maxLines: 1,
+                                style: theme.textTheme.headlineSmall?.copyWith(
+                                  fontSize: priceFontSize,
+                                  fontWeight: FontWeight.w800,
+                                  color: theme.colorScheme.onSurface,
+                                  fontFeatures: const [
+                                    FontFeature.tabularFigures(),
+                                  ],
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(height: (isNarrow || isShort) ? 2 : 4),
+                            ChangeBadge(
+                              value: changePercent,
+                              percent: true,
+                              compact: true,
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 4),
-                        ChangeBadge(
-                          value: changePercent,
-                          percent: true,
-                          compact: true,
-                        ),
-                      ],
-                    ),
+                      ),
+                      Sparkline(
+                        data: sparkline,
+                        color: directionColor,
+                        width: sparklineWidth,
+                        height: sparklineHeight,
+                      ),
+                    ],
                   ),
-                  Sparkline(
-                    data: sparkline,
-                    color: directionColor,
-                    width: 60,
-                    height: 30,
-                  ),
+                  if (showSpread && (quote.bid != null || quote.ask != null)) ...[
+                    SizedBox(height: spacing),
+                    isNarrow
+                        ? _BidAskRowCompact(quote: quote)
+                        : _BidAskRow(quote: quote),
+                  ],
                 ],
               ),
-              if (showSpread && (quote.bid != null || quote.ask != null)) ...[
-                const SizedBox(height: 10),
-                _BidAskRow(quote: quote),
-              ],
-            ],
-          ),
+            );
+          },
         ),
       ),
     );
@@ -458,6 +474,65 @@ class QuoteCard extends StatelessWidget {
     if (p == null || !p.isFinite) return TrFormat.noData;
     final currency = q.currency ?? asset?.currency ?? '';
     return '${TrFormat.price(p)} $currency';
+  }
+}
+
+/// Kompakt alis/satis satiri - dar grid hucreleri icin.
+class _BidAskRowCompact extends StatelessWidget {
+  const _BidAskRowCompact({required this.quote});
+
+  final Quote quote;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        _compactCell(context, 'Al', quote.bid),
+        const SizedBox(width: 4),
+        _compactCell(context, 'Sat', quote.ask),
+        if (quote.spread != null) ...[
+          const SizedBox(width: 4),
+          _compactCell(context, 'Mk', quote.spread, decimals: 4),
+        ],
+      ],
+    );
+  }
+
+  Widget _compactCell(BuildContext context, String label, double? value,
+      {int decimals = 2}) {
+    final theme = Theme.of(context);
+    final text =
+        value == null ? TrFormat.noData : TrFormat.money(value, decimals: decimals);
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            label,
+            maxLines: 1,
+            style: theme.textTheme.labelSmall?.copyWith(
+              color: AppPalette.neutral,
+              fontSize: 9,
+            ),
+          ),
+          const SizedBox(height: 1),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              text,
+              maxLines: 1,
+              style: theme.textTheme.bodySmall?.copyWith(
+                fontWeight: FontWeight.w600,
+                fontSize: 11,
+                fontFeatures: const [FontFeature.tabularFigures()],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
