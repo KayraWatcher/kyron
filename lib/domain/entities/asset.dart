@@ -4,7 +4,8 @@ enum AssetCategory {
   altin('Altın'),
   gumus('Gümüş'),
   doviz('Döviz'),
-  fon('Fonlar');
+  kripto('Kripto'),
+  emtia('Emtia');
 
   const AssetCategory(this.label);
 
@@ -17,7 +18,11 @@ enum AssetUnit {
   gram('gram'),
   ons('ons'),
   para('para'),
-  puan('puan');
+  puan('puan'),
+  varil('varil'),
+  /// Emtia birimleri: bakır USD/libre, doğalgaz USD/MMBtu.
+  libre('libre'),
+  mmbtu('MMBtu');
 
   const AssetUnit(this.label);
 
@@ -37,6 +42,7 @@ class AssetDescriptor {
     required this.unit,
     required this.currency,
     this.providerSymbol,
+    this.chartProviderSymbol,
     this.isCalculated = false,
     this.parentIds = const [],
     this.description,
@@ -58,7 +64,21 @@ class AssetDescriptor {
   final String currency;
 
   /// Provider'a gonderilecek sembol; [symbol]dan farkliysa.
+  ///
+  /// **Fiyat (current price)** istekleri icin kullanilir. SPOT veri veren
+  /// saglayicilar (Gold API `XAU`/`XAG`) ile sembol burada tanimlanir.
   final String? providerSymbol;
+
+  /// Grafik (mum/OHLC) serisi icin farkli sembol gereken varliklarda
+  /// kullanilan sembol; null ise [fetchSymbol] kullanilir.
+  ///
+  /// **Neden ayrildi:** Ons Altin/Ons Gümüş'ün **fiyati** Gold API'den
+  /// SPOT `XAU`/`XAG` olarak gelirken, Yahoo `XAU`/`XAG` chart ucunda
+  /// kalici olarak **HTTP 404** dondurur. Ayni sembolu kullanmak grafiklerin
+  /// (ve onlardan hesaplanan gram altin/gram gumus grafiginin) kirilmasina
+  /// yol aciyordu. Buradaki sembol yalnizca **grafik** icindir; fiyat
+  /// saglayicisini veya spot fiyat etiketini degistirmez.
+  final String? chartProviderSymbol;
 
   /// Dogrudan kaynak verisi degil, bilesenlerden hesaplaniyor mu.
   final bool isCalculated;
@@ -70,6 +90,12 @@ class AssetDescriptor {
 
   /// Kullanimi kolay fetch sembolu.
   String get fetchSymbol => providerSymbol ?? symbol;
+
+  /// Grafik/mum (OHLC) istekleri icin fetch sembolu.
+  ///
+  /// Varsayilan olarak [fetchSymbol] ile aynidir; sembol ayri gerekmedikce
+  /// hicbir varlik icin davranis degismez.
+  String get fetchChartSymbol => chartProviderSymbol ?? fetchSymbol;
 
   @override
   bool operator ==(Object other) => other is AssetDescriptor && other.id == id;

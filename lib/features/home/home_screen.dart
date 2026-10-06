@@ -20,6 +20,7 @@ import '../alerts/alert_providers.dart';
 import '../news/news_providers.dart';
 import 'away_changes_card.dart';
 import 'away_changes_provider.dart';
+import 'dashboard_sections.dart';
 import 'home_display.dart';
 import 'home_display_sheet.dart';
 import 'home_providers.dart';
@@ -37,7 +38,6 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final quotes = ref.watch(homeQuotesProvider);
-    final offline = ref.watch(isOfflineProvider);
     final news = ref.watch(breakingNewsProvider);
     final display = ref.watch(homeDisplayProvider);
     final watch = ref.watch(watchlistProvider);
@@ -69,7 +69,7 @@ class HomeScreen extends ConsumerWidget {
                   Expanded(
                     child: ScreenTitle(
                       title: 'Ana Sayfa',
-                      subtitle: _subtitle(offline, quotes),
+                      subtitle: _subtitle(quotes),
                     ),
                   ),
                   _displayButton(context, ref),
@@ -96,15 +96,18 @@ class HomeScreen extends ConsumerWidget {
               ),
             ),
 
-            // ---- Piyasa Durumu ----
-            SliverToBoxAdapter(child: const MarketStatusCard()),
-
             // ---- Sen Yokken Ne Oldu? ----
             SliverToBoxAdapter(child: const AwayChangesCard()),
 
-            // Quote grid dogrudan sliver olarak (StateSliver) eklenir;
+            // ---- Quote grid dogrudan sliver olarak (StateSliver) eklenir;
             // SliverToBoxAdapter icine alinamaz (tip protokolu hatasi).
             _quoteGrid(context, ref, quotes, ids, display),
+
+            // ---- Günün en çok hareket edenleri ----
+            const SliverToBoxAdapter(child: TopMoversSection()),
+
+            // ---- Kategoriler ----
+            const SliverToBoxAdapter(child: CategoryNavSection()),
 
             // ---- Takip Listesi (bossa gizlenir: ana sayfa kalabalik olmasin)
             if (watch.isNotEmpty) ...[
@@ -222,23 +225,10 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  String _subtitle(bool offline, AsyncValue<Map<String, Quote>> quotes) {
+  String _subtitle(AsyncValue<Map<String, Quote>> quotes) {
     final now = DateTime.now();
     final date = TrFormat.date(now);
-    if (offline) return 'Çevrimdışısınız — son geçerli veriler gösteriliyor';
-
-    final map = quotes.value;
-    if (map == null || map.isEmpty) return '$date · Veriler yükleniyor';
-
-    // Ag koptu: son GERCEK veri gosteriliyor ama guncel degil degil.
-    if (map.values.any((q) => q.isStale)) {
-      return '$date · Bağlantı yok — son bilinen veriler';
-    }
-
-    // Ekrandaki verilerin en taze olani: "Canli" yazisi yalnizca saglayici
-    // gercek zamanli akis dogruladiginda uretilir (bkz. DataFreshness).
-    final fresh = DataFreshness.freshest(map.values.map((q) => q.freshness));
-    return '$date · ${fresh.label}';
+    return date;
   }
 
   Widget _quoteGrid(

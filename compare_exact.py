@@ -1,0 +1,295 @@
+# -*- coding: utf-8 -*-
+with open('lib/shared/widgets/quote_card.dart', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# Find the QuoteCard build method exactly
+idx = content.find('  @override\n  Widget build(BuildContext context) {', 9600)
+print('Found @override + Widget build at:', idx)
+
+# Get from @override to before _priceText
+method_start = idx
+method_end = content.find('\n  String _priceText', 9600)
+actual = content[idx:content.find('\n  String _priceText', 9600)]
+
+print('Actual method from @override length:', len(actual))
+
+# Expected with @override
+expected = '''  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final asset = AssetCatalog.byId(assetId);
+    final changePercent = quote.effectiveChangePercent;
+    final directionColor = AppPalette.direction(changePercent);
+
+    // Düzen: [SOL sparkline] [ORTA varlık adı] [SAĞ fiyat + değişim]
+    final rowChildren = <Widget>[];
+
+    // SOL: Mini sparkline / hareket grafiği
+    if (sparkline?.isValid == true) {
+      rowChildren.add(
+        Sparkline(
+          data: sparkline,
+          color: directionColor,
+          width: 48,
+          height: 28,
+        ),
+      );
+      rowChildren.add(const SizedBox(width: 12));
+    }
+
+    // ORTA: varlık adı + sembol/kaynak (fiyat saga tasindi)
+    rowChildren.add(
+      Expanded(
+        flex: 2,
+        child: AssetIdentity(
+          assetId: assetId,
+          subtitle: quote.source.label,
+          freshness: quote.freshness,
+          isStale: quote.isStale,
+        ),
+      ),
+    )
+
+    // SAĞ: fiyat + gunluk degisim (saga hizali, gereksiz bosluk birakmaz).
+    // FlexFit.tight + FittedBox: dar kartta fiyat+degisim **birlikte**
+    // kuculur (ChangeBadge asla tasmaz), genis kartta blok sag kenara
+    // yapisir; bosluk kalmaz.
+    rowChildren.add(const SizedBox(width: 10))
+    rowChildren.add(
+      Flexible(
+        flex: 3,
+        fit: FlexFit.tight,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerRight,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    _priceText(asset, quote),
+                    maxLines: 1,
+                    style: theme.textTheme.headlineSmall?.copyWith(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                      color: theme.colorScheme.onSurface,
+                      fontFeatures: const [
+                        FontFeature.tabularFigures(),
+                      ],
+                    ),
+                  ),
+                  if (trailing != null) ...[
+                    const SizedBox(width: 8),
+                    trailing!,
+                  ],
+                ],
+              ),
+              const SizedBox(height: 4),
+              ChangeBadge(
+                value: changePercent,
+                percent: true,
+                compact: true,
+              ),
+            ],
+          ),
+        ),
+      ),
+    )
+
+    // Alış/satım ana satirin DISINDA, kartin alt satirinda gosterilir:
+    // Row disi cocuklar sinirsiz (unbounded) ana eksen kisiti alir; Expanded
+    // icerik bu sinirda patlar. Column altinda genislik kart genisligiyle
+    // sinirli oldugundan guvenlidir.
+    final showBidAsk = showSpread && (quote.bid != null || quote.ask != null)
+
+    return Material(
+      color: theme.colorScheme.surface,
+      borderRadius: BorderRadius.circular(14),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(14),
+        child: Container(
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
+          ),
+          child: Column(
+            // Dar yukseklikli grid hucrelerde icerik dikey ortalanir;
+            // liste gorunumunde (sinirsiz yukseklik) davranis degismez.
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: rowChildren,
+              ),
+              if (showBidAsk) ...[
+                const SizedBox(height: 10),
+                _BidAskRow(quote: quote),
+              ],
+            ],
+          ),
+        ),
+      ),
+    )
+  }'''
+
+with open('lib/shared/widgets/quote_card.dart', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# Find the exact @override + Widget build
+idx = content.find('  @override\n  Widget build(BuildContext context) {', 9600)
+print('Found @override + Widget build at:', idx)
+
+if idx >= 0:
+    method_end = content.find('\n  String _priceText', 9600)
+    actual = content[idx:content.find('\n  String _priceText', 9600)]
+    print('Actual method from @override length:', len(actual))
+    
+    # Expected
+    expected = '''  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final asset = AssetCatalog.byId(assetId);
+    final changePercent = quote.effectiveChangePercent;
+    final directionColor = AppPalette.direction(changePercent);
+
+    // Düzen: [SOL sparkline] [ORTA varlık adı] [SAĞ fiyat + değişim]
+    final rowChildren = <Widget>[];
+
+    // SOL: Mini sparkline / hareket grafiği
+    if (sparkline?.isValid == true) {
+      rowChildren.add(
+        Sparkline(
+          data: sparkline,
+          color: directionColor,
+          width: 48,
+          height: 28,
+        ),
+      );
+      rowChildren.add(const SizedBox(width: 12));
+    }
+
+    // ORTA: varlık adı + sembol/kaynak (fiyat saga tasindi)
+    rowChildren.add(
+      Expanded(
+        flex: 2,
+        child: AssetIdentity(
+          assetId: assetId,
+          subtitle: quote.source.label,
+          freshness: quote.freshness,
+          isStale: quote.isStale,
+        ),
+      ),
+    )
+
+    // SAĞ: fiyat + gunluk degisim (saga hizali, gereksiz bosluk birakmaz).
+    // FlexFit.tight + FittedBox: dar kartta fiyat+degisim **birlikte**
+    // kuculur (ChangeBadge asla tasmaz), genis kartta blok sag kenara
+    // yapisir; bosluk kalmaz.
+    rowChildren.add(const SizedBox(width: 10))
+    rowChildren.add(
+      Flexible(
+        flex: 3,
+        fit: FlexFit.tight,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerRight,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    _priceText(asset, quote),
+                    maxLines: 1,
+                    style: theme.textTheme.headlineSmall?.copyWith(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                      color: theme.colorScheme.onSurface,
+                      fontFeatures: const [
+                        FontFeature.tabularFigures(),
+                      ],
+                    ),
+                  ),
+                  if (trailing != null) ...[
+                    const SizedBox(width: 8),
+                    trailing!,
+                  ],
+                ],
+              ),
+              const SizedBox(height: 4),
+              ChangeBadge(
+                value: changePercent,
+                percent: true,
+                compact: true,
+              ),
+            ],
+          ),
+        ),
+      ),
+    )
+
+    // Alış/satım ana satirin DISINDA, kartin alt satirinda gosterilir:
+    // Row disi cocuklar sinirsiz (unbounded) ana eksen kisiti alir; Expanded
+    // icerik bu sinirda patlar. Column altinda genislik kart genisligiyle
+    // sinirli oldugundan guvenlidir.
+    final showBidAsk = showSpread && (quote.bid != null || quote.ask != null)
+
+    return Material(
+      color: theme.colorScheme.surface,
+      borderRadius: BorderRadius.circular(14),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(14),
+        child: Container(
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
+          ),
+          child: Column(
+            // Dar yukseklikli grid hucrelerde icerik dikey ortalanir;
+            // liste gorunumunde (sinirsiz yukseklik) davranis degismez.
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: rowChildren,
+              ),
+              if (showBidAsk) ...[
+                const SizedBox(height: 10),
+                _BidAskRow(quote: quote),
+              ],
+            ],
+          ),
+        ),
+      ),
+    )
+  }'''
+
+    if actual == expected:
+        print('MATCH!')
+    else:
+        print('MISMATCH')
+        print('Actual length:', len(actual))
+        print('Expected length:', len(expected))
+        
+        # Find first difference
+        for i, (a, e) in enumerate(zip(actual, expected)):
+            if a != e:
+                print(f'First diff at pos {i}: actual={repr(a)}, expected={repr(e)}')
+                print(f'Context actual: {repr(actual[max(0,i-20):i+20])}')
+                print(f'Context expected: {repr(expected[max(0,i-20):i+20])}')
+                break
+        if len(actual) != len(expected):
+            print(f'Length diff: actual={len(actual)}, expected={len(expected)}')

@@ -1,0 +1,458 @@
+{
+  "status": "success",
+  "api_key_provided": true,
+  "authenticated_user": {
+    "id": 19,
+    "name": "Kayra Çıkla"
+  },
+  "prices": {
+    "ATA_CEYREK": {
+      "alis": 10862,
+      "satis": 10986.75
+    },
+    "ATA_YARIM": {
+      "alis": 21724,
+      "satis": 21973.5
+    },
+    "ATA_YARIM_ESKI": {
+      "alis": 21692,
+      "satis": 21842
+    },
+    "ATA25": {
+      "alis": 108620,
+      "satis": 109867.5
+    },
+    "GRAMALTIN": {
+      "alis": 6535.26,
+      "satis": 6615.48
+    },
+    "YARIM_YENI": {
+      "alis": 21428,
+      "satis": 21558
+    },
+    "YARIM_ESKI": {
+      "alis": 21034,
+      "satis": 21149
+    },
+    "TEK_YENI": {
+      "alis": 42725,
+      "satis": 42991
+    },
+    "TEK_ESKI": {
+      "alis": 42134,
+      "satis": 42364
+    },
+    "TEK5_ESKI": {
+      "alis": 210670,
+      "satis": 211820
+    },
+    "TEK5_YENI": {
+      "alis": 213625,
+      "satis": 214955
+    },
+    "GREMESE_YENI": {
+      "alis": 106025,
+      "satis": 106966
+    },
+    "GREMESE_ESKI": {
+      "alis": 104907,
+      "satis": 105977
+    },
+    "ATA_ESKI": {
+      "alis": 43383,
+      "satis": 43683
+    },
+    "ATA_YENI": {
+      "alis": 43448,
+      "satis": 43947
+    },
+    "ATA_CEYREK_ESKI": {
+      "alis": 10846,
+      "satis": 10921
+    },
+    "ATA_CEYREK_YENI": {
+      "alis": 10862,
+      "satis": 10987
+    },
+    "ATA25_ESKI": {
+      "alis": 108458,
+      "satis": 109208
+    },
+    "ATA25_YENI": {
+      "alis": 108620,
+      "satis": 109868
+    },
+    "ATA5_ESKI": {
+      "alis": 216915,
+      "satis": 218415
+    },
+    "ATA5_YENI": {
+      "alis": 217240,
+      "satis": 219735
+    },
+    "GUM999_50": {
+      "alis": 4447.5,
+      "satis": 5634.333
+    },
+    "GUM999_100": {
+      "alis": 8895,
+      "satis": 10654.2762
+    },
+    "GUM999_250": {
+      "alis": 22237.5,
+      "satis": 25541.339
+    },
+    "GUM999_500": {
+      "alis": 44475,
+      "satis": 49916.9874
+    },
+    "GUM999_1000": {
+      "alis": 88950,
+      "satis": 98636.2544
+    },
+    "AYAR24_1": {
+      "alis": 6540.2644,
+      "satis": 6608.8814
+    },
+    "AYAR24_25": {
+      "alis": 16350.6609,
+      "satis": 16522.2035
+    },
+    "AYAR24_5": {
+      "alis": 32701.3218,
+      "satis": 33044.4069
+    },
+    "AYAR24_10": {
+      "alis": 65402.6435,
+      "satis": 66088.8138
+    },
+    "AYAR24_20": {
+      "alis": 130805.287,
+      "satis": 132177.6276
+    },
+    "AYAR24_50": {
+      "alis": 327013.2175,
+      "satis": 330444.069
+    },
+    "AYAR24_100": {
+      "alis": 654026.435,
+      "satis": 660888.138
+    },
+    "AYAR8_0_4": {
+      "alis": 4601.191,
+      "satis": 4616.983
+    },
+    "AYAR8_4_8": {
+      "alis": 4272.5345,
+      "satis": 4287.1985
+    },
+    "AYAR8_8_12": {
+      "alis": 4075.3406,
+      "satis": 4089.3278
+    },
+    "AYAR8_12_16": {
+      "alis": 3878.1467,
+      "satis": 3891.4571
+    },
+    "AYAR8_16_20": {
+      "alis": 3779.5498,
+      "satis": 3792.5218
+    },
+    "AYAR8_20_30": {
+      "alis": 3615.2215,
+      "satis": 3627.6295
+    },
+    "AYAR8_30_40": {
+      "alis": 3483.7589,
+      "satis": 3495.7157
+    },
+    "AYAR8_40_plus": {
+      "alis": 3352.2963,
+      "satis": 3363.8019
+    },
+    "AYAR14_0_4": {
+      "alis": 7033.2491,
+      "satis": 7057.3883
+    },
+    "AYAR14_4_8": {
+      "alis": 6573.13,
+      "satis": 6595.69
+    },
+    "AYAR14_8_12": {
+      "alis": 6310.2048,
+      "satis": 6331.8624
+    },
+    "AYAR14_12_16": {
+      "alis": 6047.2796,
+      "satis": 6068.0348
+    },
+    "AYAR14_16_20": {
+      "alis": 5850.0857,
+      "satis": 5870.1641
+    },
+    "AYAR14_20_30": {
+      "alis": 5652.8918,
+      "satis": 5672.2934
+    },
+    "AYAR14_30_40": {
+      "alis": 5389.9666,
+      "satis": 5408.4658
+    },
+    "AYAR14_40_plus": {
+      "alis": 5258.504,
+      "satis": 5276.552
+    },
+    "AYAR18_0_4": {
+      "alis": 8084.9499,
+      "satis": 8112.6987
+    },
+    "AYAR18_4_8": {
+      "alis": 7756.2934,
+      "satis": 7782.9142
+    },
+    "AYAR18_8_12": {
+      "alis": 7493.3682,
+      "satis": 7519.0866
+    },
+    "AYAR18_12_16": {
+      "alis": 7230.443,
+      "satis": 7255.259
+    },
+    "AYAR18_16_20": {
+      "alis": 6901.7865,
+      "satis": 6925.4745
+    },
+    "AYAR18_20_30": {
+      "alis": 6770.3239,
+      "satis": 6793.5607
+    },
+    "AYAR18_30_40": {
+      "alis": 6638.8613,
+      "satis": 6661.6469
+    },
+    "AYAR18_40_plus": {
+      "alis": 6375.9361,
+      "satis": 6397.8193
+    },
+    "AYAR22_0_4": {
+      "alis": 8873.7255,
+      "satis": 8904.1815
+    },
+    "AYAR22_4_8": {
+      "alis": 8676.5316,
+      "satis": 8706.3108
+    },
+    "AYAR22_8_12": {
+      "alis": 8413.6064,
+      "satis": 8442.4832
+    },
+    "AYAR22_12_16": {
+      "alis": 8150.6812,
+      "satis": 8178.6556
+    },
+    "AYAR22_16_20": {
+      "alis": 7953.4873,
+      "satis": 7980.7849
+    },
+    "AYAR22_20_30": {
+      "alis": 7756.2934,
+      "satis": 7782.9142
+    },
+    "AYAR22_30_40": {
+      "alis": 7657.6965,
+      "satis": 7683.9789
+    },
+    "AYAR22_40_plus": {
+      "alis": 7559.0995,
+      "satis": 7585.0435
+    },
+    "CHFTRY": {
+      "alis": 58.679,
+      "satis": 59.234
+    },
+    "ALTIN": {
+      "alis": 6573.13,
+      "satis": 6595.69
+    },
+    "CEYREK_YENI": {
+      "alis": 10714,
+      "satis": 10782
+    },
+    "GUMUSEUR": {
+      "alis": 1611.027,
+      "satis": 1757.614
+    },
+    "CEYREK_ESKI": {
+      "alis": 10517,
+      "satis": 10624
+    },
+    "AYAR14": {
+      "alis": 3590.95,
+      "satis": 4787.2
+    },
+    "AYAR22": {
+      "alis": 5979.55,
+      "satis": 6179.95
+    },
+    "GUMUSUSD": {
+      "alis": 1811.6,
+      "satis": 1973.8
+    },
+    "USDKG": {
+      "alis": 133160,
+      "satis": 133460
+    },
+    "XAUUSD": {
+      "alis": 4139,
+      "satis": 4139.6
+    },
+    "USDJPY": {
+      "alis": 157.832,
+      "satis": 161.359
+    },
+    "EURKG": {
+      "alis": 118410,
+      "satis": 118840
+    },
+    "GUMUSTRY": {
+      "alis": 88.95,
+      "satis": 97.06
+    },
+    "XAGUSD": {
+      "alis": 60.35,
+      "satis": 60.39
+    },
+    "XAGEUR": {
+      "alis": 53.668,
+      "satis": 53.776
+    },
+    "XAGEURGR": {
+      "alis": 1.725,
+      "satis": 1.729
+    },
+    "ATA_YARIM_YENI": {
+      "alis": 21724,
+      "satis": 21974
+    },
+    "XAGEURKG": {
+      "alis": 1725.476,
+      "satis": 1728.926
+    },
+    "XPDUSD": {
+      "alis": 1167.9,
+      "satis": 1175
+    },
+    "XPDEUR": {
+      "alis": 1038.595,
+      "satis": 1046.305
+    },
+    "XPDEURGR": {
+      "alis": 33.392,
+      "satis": 33.639
+    },
+    "XPDEURKG": {
+      "alis": 33391.602,
+      "satis": 33639.472
+    },
+    "RESAT_YENI": {
+      "alis": 47392.27,
+      "satis": 47554.92
+    },
+    "XAUEUR": {
+      "alis": 3680.747,
+      "satis": 3686.198
+    },
+    "RESAT25_YENI": {
+      "alis": 118579.27,
+      "satis": 118986.25
+    },
+    "RESAT5_YENI": {
+      "alis": 236632.68,
+      "satis": 237444.84
+    },
+    "XAUEURGR": {
+      "alis": 118.339,
+      "satis": 118.514
+    },
+    "XAUEURKG": {
+      "alis": 118338.764,
+      "satis": 118514.008
+    },
+    "BTCUSD": {
+      "alis": 0,
+      "satis": 0
+    },
+    "ETHUSD": {
+      "alis": 0,
+      "satis": 0
+    },
+    "XPTUSD": {
+      "alis": 1697.6,
+      "satis": 1701.7
+    },
+    "XPTEUR": {
+      "alis": 1509.649,
+      "satis": 1515.316
+    },
+    "XPTEURGR": {
+      "alis": 48.536,
+      "satis": 48.719
+    },
+    "XPTEURKG": {
+      "alis": 48536.334,
+      "satis": 48718.544
+    },
+    "PLATIN": {
+      "alis": 49580,
+      "satis": 54710
+    },
+    "EURTRY": {
+      "alis": 55.151,
+      "satis": 55.298
+    },
+    "GBPTRY": {
+      "alis": 64.673,
+      "satis": 64.979
+    },
+    "PALADYUM": {
+      "alis": 27550,
+      "satis": 37780
+    },
+    "USDCHF": {
+      "alis": 0.83,
+      "satis": 0.837
+    },
+    "USDCAD": {
+      "alis": 1.428,
+      "satis": 1.439
+    },
+    "GBPUSD": {
+      "alis": 1.317,
+      "satis": 1.321
+    },
+    "USDTRY": {
+      "alis": 49.11,
+      "satis": 49.175
+    },
+    "AUDUSD": {
+      "alis": 0.68,
+      "satis": 0.692
+    },
+    "USDNOK": {
+      "alis": 10.645,
+      "satis": 10.645
+    },
+    "USDSEK": {
+      "alis": 10.855,
+      "satis": 10.855
+    },
+    "USDDKK": {
+      "alis": 6.935,
+      "satis": 6.935
+    },
+    "USDSAR": {
+      "alis": 3.72,
+      "satis": 3.84
+    }
+  }
+}

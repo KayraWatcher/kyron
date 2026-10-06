@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/format/tr_format.dart';
 import '../../core/theme/app_theme.dart';
-import '../../shared/widgets/common.dart' show ScreenTitle;
+import '../../core/utils/navigator_utils.dart';
 import 'why_moving_providers.dart';
 
-/// "Neden Hareket Ediyor?" kartı.
+/// "Neden Hareket Ediyor?" bölümü.
 ///
-/// Bir varlığın günlük değişiminin muhtemel nedenlerini gösterir.
-/// Sadece mevcut gerçek veriler kullanılır; uydurma/yorum yapmaz.
+/// **Görünürlük kuralı:** kanıt yoksa bölüm **hiç gösterilmez** - boş kutu,
+/// "veri yok", "kanıt bulunamadı" gibi yer tutucu metinler yoktur. Yalnızca
+/// gerçek fiyat hareketi veya varlıkla ilişkili güncel haber bulunduğunda
+/// görünür.
+///
+/// **Kanıt türleri (dinamik):** Piyasa Hareketi · Haber · Ekonomik Veri ·
+/// Merkez Bankası · Şirket / Sektör - yalnızca o türden kanıt varsa o başlık
+/// görünür.
+///
+/// **Dil:** etki kesin değildir; "etkileyebilir", "ilişkili olabilir" gibi
+/// temkinli ifadeler kullanılır. Yatırım tavsiyesi değildir.
 class WhyMovingCard extends ConsumerWidget {
   const WhyMovingCard({super.key, required this.assetId});
 
@@ -21,87 +29,46 @@ class WhyMovingCard extends ConsumerWidget {
 
     return async.when(
       data: (data) {
-        if (data.insufficientData) {
-          return _buildCard(
-            context,
-            message: 'Bu hareket için yeterli doğrulanabilir veri bulunamadı.',
-            isInfo: true,
-          );
-        }
-        if (data.errorMessage != null) {
-          return _buildCard(
-            context,
-            message: 'Neden analizi yüklenemedi.',
-            isError: true,
-          );
-        }
-
-        final parts = <Widget>[];
-        if (data.primaryReason != null) {
-          parts.add(_ReasonLine(
-            label: 'Ana etken',
-            value: data.primaryReason!,
-            isPrimary: true,
-          ));
-        }
-        if (data.secondaryReason != null) {
-          parts.add(_ReasonLine(
-            label: 'İkincil etken',
-            value: data.secondaryReason!,
-            isPrimary: false,
-          ));
-        }
-
-        if (parts.isEmpty) {
-          return _buildCard(
-            context,
-            message: 'Bu hareket için yeterli doğrulanabilir veri bulunamadı.',
-            isInfo: true,
-          );
-        }
-
-        return _buildCard(
-          context,
-          children: parts,
-        );
+        // Kanıt yoksa HİÇBİR ŞEY gösterme.
+        if (!data.hasEvidence) return const SizedBox.shrink();
+        return _EvidenceCard(data: data);
       },
-      loading: () => _buildCard(
-        context,
-        message: 'Analiz hazırlanıyor...',
-        isLoading: true,
-      ),
-      error: (e, _) => _buildCard(
-        context,
-        message: 'Neden analizi yüklenemedi.',
-        isError: true,
-      ),
+      // Yükleniyor/hata durumunda da kutu gösterilmez (yer tutucu yasak).
+      loading: () => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
     );
   }
+}
 
-  Widget _buildCard(
-    BuildContext context, {
-    String? message,
-    List<Widget>? children,
-    bool isInfo = false,
-    bool isError = false,
-    bool isLoading = false,
-  }) {
+class _EvidenceCard extends StatelessWidget {
+  const _EvidenceCard({required this.data});
+
+  final WhyMovingData data;
+
+  @override
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
+    // Kanıtları türe göre grupla (gruplama sırası: piyasa → ekonomi → haber).
+    final groups = <WhyEvidenceKind, List<WhyEvidence>>{};
+    for (final e in data.evidences) {
+      groups.putIfAbsent(e.kind, () => []).add(e);
+    }
+    const order = [
+      WhyEvidenceKind.piyasaHareketi,
+      WhyEvidenceKind.merkezBankasi,
+      WhyEvidenceKind.ekonomikVeri,
+      WhyEvidenceKind.sirketHaberi,
+      WhyEvidenceKind.haber,
+    ];
+
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: isError
-            ? AppPalette.lossSoft
-            : isInfo
-                ? AppPalette.gold.withValues(alpha: 0.1)
-                : theme.colorScheme.surface,
+        color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: isError
-              ? AppPalette.loss.withValues(alpha: 0.3)
-              : theme.dividerTheme.color ?? Colors.grey,
-        ),
+        border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,51 +76,41 @@ class WhyMovingCard extends ConsumerWidget {
           Row(
             children: [
               Icon(
-                isError
-                    ? Icons.error_outline_rounded
-                    : isInfo
-                        ? Icons.info_outline_rounded
-                        : isLoading
-                            ? Icons.hourglass_empty_rounded
-                            : Icons.analytics_outlined,
+                Icons.analytics_outlined,
                 size: 18,
-                color: isError
-                    ? AppPalette.loss
-                    : isInfo
-                        ? AppPalette.goldDeep
-                        : theme.colorScheme.primary,
+                color: theme.colorScheme.primary,
               ),
               const SizedBox(width: 8),
               Text(
                 'Neden Hareket Ediyor?',
                 style: theme.textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.w700,
-                  color: isError
-                      ? AppPalette.loss
-                      : isInfo
-                          ? AppPalette.goldDeep
-                          : theme.colorScheme.primary,
+                  color: theme.colorScheme.primary,
                 ),
               ),
             ],
           ),
-          if (message != null) ...[
-            const SizedBox(height: 8),
-            Text(
-              message,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-                height: 1.4,
-              ),
-            ),
-          ],
-          if (children != null) ...[
-            const SizedBox(height: 8),
-            ...children,
-          ],
-          const SizedBox(height: 6),
+          const SizedBox(height: 4),
           Text(
-            'Bu analiz mevcut piyasa verilerine dayanır; yatırım tavsiyesi değildir.',
+            'Aşağıdaki başlıklar yalnızca doğrulanabilir veri içerir; '
+            'haber etkisi kesin değildir.',
+            style: theme.textTheme.labelSmall?.copyWith(
+              color: AppPalette.neutral,
+              fontSize: 10,
+            ),
+          ),
+          const SizedBox(height: 10),
+          for (final kind in order)
+            if (groups[kind] != null) ...[
+              _EvidenceGroupHeader(kind: kind),
+              const SizedBox(height: 4),
+              for (final e in groups[kind]!) _EvidenceLine(evidence: e),
+              const SizedBox(height: 6),
+            ],
+          const SizedBox(height: 2),
+          Text(
+            'Bu bölüm mevcut piyasa verisi ve güncel haberlerden türetilir; '
+            'yatırım tavsiyesi değildir.',
             style: theme.textTheme.labelSmall?.copyWith(
               color: AppPalette.neutral,
               fontSize: 10,
@@ -165,75 +122,107 @@ class WhyMovingCard extends ConsumerWidget {
   }
 }
 
-class _ReasonLine extends StatelessWidget {
-  const _ReasonLine({
-    required this.label,
-    required this.value,
-    required this.isPrimary,
-  });
+IconData _iconFor(WhyEvidenceKind kind) => switch (kind) {
+      WhyEvidenceKind.piyasaHareketi => Icons.show_chart_rounded,
+      WhyEvidenceKind.merkezBankasi => Icons.account_balance_outlined,
+      WhyEvidenceKind.ekonomikVeri => Icons.analytics_outlined,
+      WhyEvidenceKind.sirketHaberi => Icons.business_center_outlined,
+      WhyEvidenceKind.haber => Icons.article_outlined,
+    };
 
-  final String label;
-  final String value;
-  final bool isPrimary;
+/// Türkçeye duyarlı büyük harf dönüşümü.
+///
+/// Dart'ın `toUpperCase()` fonksiyonu noktasız 'ı' harfini ASCII 'I' yapar ve
+/// 'i' harfini 'İ' yapmaz; başlıklar yanlış görünürdü ("PIYASA" / "HAREKETI").
+String _trUpper(String value) =>
+    value.replaceAll('i', 'İ').replaceAll('ı', 'I').toUpperCase();
+
+class _EvidenceGroupHeader extends StatelessWidget {
+  const _EvidenceGroupHeader({required this.kind});
+
+  final WhyEvidenceKind kind;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    // Değerden renk çıkar (varsa + / - prefix)
-    final isPositive = value.contains('+');
-    final isNegative = value.contains('-') && !value.startsWith('-');
+    return Row(
+      children: [
+        Icon(_iconFor(kind), size: 14, color: AppPalette.goldDeep),
+        const SizedBox(width: 6),
+        Text(
+          _trUpper(kind.label),
+          style: theme.textTheme.labelSmall?.copyWith(
+            fontWeight: FontWeight.w800,
+            fontSize: 10,
+            letterSpacing: 0.4,
+            color: AppPalette.goldDeep,
+          ),
+        ),
+      ],
+    );
+  }
+}
 
-    return Padding(
+class _EvidenceLine extends StatelessWidget {
+  const _EvidenceLine({required this.evidence});
+
+  final WhyEvidence evidence;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final url = evidence.newsUrl;
+
+    final content = Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            width: 80,
-            child: Text(
-              label,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: AppPalette.neutral,
-                fontWeight: FontWeight.w500,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Text(
+                  evidence.headline,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    height: 1.35,
+                  ),
+                ),
               ),
-            ),
+              if (url != null)
+                Padding(
+                  padding: const EdgeInsets.only(left: 6),
+                  child: Icon(
+                    Icons.open_in_new_rounded,
+                    size: 13,
+                    color: theme.colorScheme.primary,
+                  ),
+                ),
+            ],
           ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              value,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w700,
-                color: isPrimary
-                    ? (isPositive
-                        ? AppPalette.gain
-                        : isNegative
-                            ? AppPalette.loss
-                            : theme.colorScheme.onSurface)
-                    : theme.colorScheme.onSurfaceVariant,
-                fontFeatures: const [FontFeature.tabularFigures()],
-              ),
-            ),
-          ),
-          if (isPrimary) ...[
-            const SizedBox(width: 8),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(
-                color: AppPalette.gold.withValues(alpha: 0.14),
-                borderRadius: BorderRadius.circular(4),
-              ),
+          if (evidence.detail != null && evidence.detail!.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 2),
               child: Text(
-                'ANA',
+                evidence.detail!,
                 style: theme.textTheme.labelSmall?.copyWith(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 9,
-                  color: AppPalette.goldDeep,
+                  color: AppPalette.neutral,
+                  fontSize: 11,
                 ),
               ),
             ),
-          ],
         ],
       ),
+    );
+
+    if (url == null) return content;
+    return InkWell(
+      onTap: () => launchNewsUrl(url),
+      borderRadius: BorderRadius.circular(8),
+      child: content,
     );
   }
 }

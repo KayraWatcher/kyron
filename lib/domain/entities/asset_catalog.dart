@@ -3,13 +3,24 @@ import 'asset.dart';
 /// Uygulama genelindeki tum varliklarin tek dogruluk kaynagi.
 ///
 /// Semboller gercek kaynaklarla eslestirilir:
-///   * Yahoo Finance  -> `<SEMBOL>.IS` (BIST), `GC=F`/`SI=F` (ons metal),
+///   * CanlıDöviz   -> kod/cid eslemesi `CanlidovizProtocol`'te (anlik akis
+///     + tarihsel mum; ornek `GA`/`XAU/USD`/`XBRUSD`/`COIL`/`DXY`)
+///   * Gold API       -> `XAU` / `XAG` (Ons Altin / Ons Gumus **SPOT fiyat**)
+///   * Yahoo Finance  -> `<SEMBOL>.IS` (BIST), `GC=F`/`SI=F` (ons metal
+///     **grafik/OHLC serisi**), `CL=F`/`BZ=F` (ham petrol - WTI/Brent),
 ///     `USDTRY=X` (doviz paritesi - yalnizca degisim orani icin)
 ///   * TCMB           -> `USD`, `EUR`, `GBP` (serbest piyasa)
 ///
-/// **Not (yasam testi ile dogrulandi):** Yahoo `XAUUSD=X` / `XAGUSD=X`
-/// sembollerini kaldirilmistir (404). Ons altin icin `GC=F`, ons gumus icin
-/// `SI=F` kullanilir - ikisi de canli olarak test edilmistir.
+/// **Not (yasam testi ile dogrulandi, 2026-10-06):** Yahoo `XAUUSD=X` /
+/// `XAGUSD=X` kaldirilmistir (HTTP 404) ve `.../chart/XAU` ile `.../chart/XAG`
+/// **kalici olarak HTTP 404** dondurur ("No data found, symbol may be
+/// delisted"). Bu yuzden **fiyat sembolu ile grafik sembolu ayridir**:
+///   * Fiyat  -> `providerSymbol`     = `XAU` / `XAG` (Gold API spot)
+///   * Grafik -> `chartProviderSymbol` = `GC=F` / `SI=F` (Yahoo OHLC)
+///
+/// `GC=F` / `SI=F` **futures** sembolleridir: ekrandaki fiyat etiketi bunlarla
+/// degil, Gold API spot verisiyle uretilir; bu semboller yalnizca tarihsel mum
+/// serisini besler.
 abstract final class AssetCatalog {
   static const String gramAltinId = 'gram-altin';
   static const String ceyrekAltinId = 'ceyrek-altin';
@@ -31,12 +42,29 @@ abstract final class AssetCatalog {
   static const String jpyTryId = 'jpy-try';
   static const String bist100Id = 'bist-100';
   static const String bist30Id = 'bist-30';
+  static const String wtiCrudeId = 'wti-crude';
+  static const String brentCrudeId = 'brent-crude';
+  // Genisletme (2026-10-06 CanliDoviz kapsam testi ile eklendi):
+  static const String cadTryId = 'cad-try';
+  static const String audTryId = 'aud-try';
+  static const String cnyTryId = 'cny-try';
+  static const String dxyId = 'dxy';
+  static const String sp500Id = 'sp-500';
+  static const String bist50Id = 'bist-50';
+  static const String platinId = 'platin';
+  // 1.2.0 emtia + kripto genislemesi (canli API dogrulamasi 2026-10-06):
+  static const String paladyumId = 'paladyum';
+  static const String bakirId = 'bakir';
+  static const String dogalgazId = 'dogalgaz';
+  static const String platinGramId = 'platin-gram';
+  static const String bitcoinId = 'bitcoin';
+  static const String ethereumId = 'ethereum';
 
   // ---------------------------------------------------------------------------
   // ALTIN
   // ---------------------------------------------------------------------------
 
-  /// Ons altin - dogrudan kaynak verisi (Yahoo: GC=F, COMEX vadeli).
+  /// Ons altin - dogrudan kaynak verisi (Gold API: XAU, LBMA spot).
   static const AssetDescriptor onsAltin = AssetDescriptor(
     id: onsAltinId,
     symbol: 'XAUUSD',
@@ -44,8 +72,13 @@ abstract final class AssetCatalog {
     category: AssetCategory.altin,
     unit: AssetUnit.ons,
     currency: 'USD',
-    providerSymbol: 'GC=F',
-    description: 'Uluslararası ons altın fiyatı (USD/ons).',
+    providerSymbol: 'XAU',
+    // Grafik sembolu FARKLIDIR: Yahoo /v8/finance/chart/XAU ve /XAG kalici
+    // olarak HTTP 404 ("No data found, symbol may be delisted") dondurur;
+    // /GC=F ve /SI=F ise HTTP 200'dur. Fiyat (current price) yine Gold API
+    // SPOT XAU/XAG'ten gelir - bu sembol yalnizca OHLC serisi icindir.
+    chartProviderSymbol: 'GC=F',
+    description: 'Uluslararası ons altın SPOT fiyatı (USD/troy oz).',
   );
 
   /// Gram altin = Ons altin x USD/TRY / 31.1035 -> HESAPLANAN.
@@ -174,7 +207,7 @@ abstract final class AssetCatalog {
   // GUMUS
   // ---------------------------------------------------------------------------
 
-  /// Ons gumus - dogrudan kaynak verisi (Yahoo: SI=F, COMEX vadeli).
+  /// Ons gumus - dogrudan kaynak verisi (Gold API: XAG, LBMA spot).
   static const AssetDescriptor onsGumus = AssetDescriptor(
     id: onsGumusId,
     symbol: 'XAGUSD',
@@ -182,8 +215,10 @@ abstract final class AssetCatalog {
     category: AssetCategory.gumus,
     unit: AssetUnit.ons,
     currency: 'USD',
-    providerSymbol: 'SI=F',
-    description: 'Uluslararası ons gümüş fiyatı (USD/ons).',
+    providerSymbol: 'XAG',
+    // Fiyat SPOT XAG (Gold API); grafik serisi Yahoo /SI=F (200) - /XAG 404.
+    chartProviderSymbol: 'SI=F',
+    description: 'Uluslararası ons gümüş SPOT fiyatı (USD/troy oz).',
   );
 
   static const AssetDescriptor gramGumus = AssetDescriptor(
@@ -212,7 +247,7 @@ abstract final class AssetCatalog {
     category: AssetCategory.doviz,
     unit: AssetUnit.para,
     currency: 'TRY',
-    description: 'TCMB serbest piyasa USD/TRY alış-satış kuru.',
+    description: 'Serbest piyasa USD/TRY alış-satış kuru.',
   );
 
   static const AssetDescriptor eurTry = AssetDescriptor(
@@ -223,7 +258,7 @@ abstract final class AssetCatalog {
     category: AssetCategory.doviz,
     unit: AssetUnit.para,
     currency: 'TRY',
-    description: 'TCMB serbest piyasa EUR/TRY alış-satış kuru.',
+    description: 'Serbest piyasa EUR/TRY alış-satış kuru.',
   );
 
   static const AssetDescriptor gbpTry = AssetDescriptor(
@@ -234,7 +269,7 @@ abstract final class AssetCatalog {
     category: AssetCategory.doviz,
     unit: AssetUnit.para,
     currency: 'TRY',
-    description: 'TCMB serbest piyasa GBP/TRY alış-satış kuru.',
+    description: 'Serbest piyasa GBP/TRY alış-satış kuru.',
   );
 
   static const AssetDescriptor chfTry = AssetDescriptor(
@@ -245,7 +280,7 @@ abstract final class AssetCatalog {
     category: AssetCategory.doviz,
     unit: AssetUnit.para,
     currency: 'TRY',
-    description: 'TCMB serbest piyasa CHF/TRY alış-satış kuru.',
+    description: 'Serbest piyasa CHF/TRY alış-satış kuru.',
   );
 
   static const AssetDescriptor jpyTry = AssetDescriptor(
@@ -256,7 +291,44 @@ abstract final class AssetCatalog {
     category: AssetCategory.doviz,
     unit: AssetUnit.para,
     currency: 'TRY',
-    description: 'TCMB serbest piyasa JPY/TRY alış-satış kuru (100 JPY).',
+    description: 'Serbest piyasa JPY/TRY alış-satış kuru (100 JPY).',
+  );
+
+  static const AssetDescriptor cadTry = AssetDescriptor(
+    id: cadTryId,
+    symbol: 'CAD',
+    providerSymbol: 'CADTRY=X',
+    name: 'Kanada Doları / Türk Lirası',
+    category: AssetCategory.doviz,
+    unit: AssetUnit.para,
+    currency: 'TRY',
+    description: 'Serbest piyasa CAD/TRY alış-satış kuru.',
+  );
+
+  static const AssetDescriptor audTry = AssetDescriptor(
+    id: audTryId,
+    symbol: 'AUD',
+    providerSymbol: 'AUDTRY=X',
+    name: 'Avustralya Doları / Türk Lirası',
+    category: AssetCategory.doviz,
+    unit: AssetUnit.para,
+    currency: 'TRY',
+    description: 'Serbest piyasa AUD/TRY alış-satış kuru.',
+  );
+
+  static const AssetDescriptor cnyTry = AssetDescriptor(
+    id: cnyTryId,
+    symbol: 'CNY',
+    // Yahoo `CNYTRY=X` sembolu 404 (yasam testi 2026-10-06): TCMB yedek
+    // kaynakli degisim yuzdesi bu sembolle alinamaz; CanlıDöviz akisi ve
+    // previousClose kapanisi degisimi karsilar. Grafik TCMB'den degil
+    // CanlıDöviz history'den gelir (supportsCandles).
+    providerSymbol: 'CNYTRY=X',
+    name: 'Çin Yuanı / Türk Lirası',
+    category: AssetCategory.doviz,
+    unit: AssetUnit.para,
+    currency: 'TRY',
+    description: 'Serbest piyasa CNY/TRY alış-satış kuru.',
   );
 
   // ---------------------------------------------------------------------------
@@ -285,6 +357,180 @@ abstract final class AssetCatalog {
     description: 'Borsa İstanbul 30 (bankacılık-dışı likit) endeksi.',
   );
 
+  static const AssetDescriptor bist50 = AssetDescriptor(
+    id: bist50Id,
+    symbol: 'XU050',
+    name: 'BIST 50',
+    category: AssetCategory.borsa,
+    unit: AssetUnit.puan,
+    currency: 'TRY',
+    providerSymbol: 'XU050.IS',
+    description: 'Borsa İstanbul 50 endeksi.',
+  );
+
+  /// Dolar endeksi (DXY) - CanlıDöviz `DXY` (cid 846), yedek Yahoo.
+  static const AssetDescriptor dxy = AssetDescriptor(
+    id: dxyId,
+    symbol: 'DXY',
+    providerSymbol: 'DX-Y.NYB',
+    name: 'Dolar Endeksi (DXY)',
+    category: AssetCategory.borsa,
+    unit: AssetUnit.puan,
+    currency: 'USD',
+    description: 'Doların başlıca para birimlerine karşı gücünü ölçen endeks.',
+  );
+
+  /// S&P 500 - CanlıDöviz `SPX` (cid 1015), yedek Yahoo `^GSPC`.
+  static const AssetDescriptor sp500 = AssetDescriptor(
+    id: sp500Id,
+    symbol: 'SPX',
+    providerSymbol: '^GSPC',
+    name: 'S&P 500 Endeksi',
+    category: AssetCategory.borsa,
+    unit: AssetUnit.puan,
+    currency: 'USD',
+    description: 'ABD\'nin en büyük 500 şirketini kapsayan endeks.',
+  );
+
+  // ---------------------------------------------------------------------------
+  // EMTIA  (Yahoo Energy futures - dogrudan kaynak)
+  // ---------------------------------------------------------------------------
+
+  /// Ham petrol (WTI) - dogrudan kaynak verisi (Yahoo: CL=F, NYMEX vadeli).
+  ///
+  /// **Dogrulama (yasam testi):** `CL=F` -> "Crude Oil Nov 26", USD,
+  /// `America/New_York` oturum bilgisi ile birlikte gelir; boylece
+  /// acik/kapali durumu [DataFreshness] olarak **veriden okunur**.
+  static const AssetDescriptor wtiCrude = AssetDescriptor(
+    id: wtiCrudeId,
+    symbol: 'WTI',
+    name: 'Ham Petrol (WTI)',
+    category: AssetCategory.emtia,
+    unit: AssetUnit.varil,
+    currency: 'USD',
+    providerSymbol: 'CL=F',
+    description: 'ABD ham petrol vadeli fiyatı - NYMEX WTI (USD/varil).',
+  );
+
+  /// Brent ham petrol - dogrudan kaynak verisi (Yahoo: BZ=F, ICE vadeli).
+  ///
+  /// **Dogrulama (yasam testi):** `BZ=F` -> "Brent Crude Oil Last Day
+  /// Financial", USD, `America/New_York` oturum bilgisi ile gelir.
+  static const AssetDescriptor brentCrude = AssetDescriptor(
+    id: brentCrudeId,
+    symbol: 'BRENT',
+    name: 'Brent Petrol',
+    category: AssetCategory.emtia,
+    unit: AssetUnit.varil,
+    currency: 'USD',
+    providerSymbol: 'BZ=F',
+    description: 'Brent ham petrol vadeli fiyatı - ICE (USD/varil).',
+  );
+
+  /// Platin SPOT (XPT/USD) - CanlıDöviz `XPT/USD` (cid 268), yedek Yahoo
+  /// `PL=F` (yasam testi: PL=F 1718 ~ CanlıDöviz 1713 - %0,3 futures
+  /// baz farki, ons-altin/GC=F ile ayni kabul edilen semantik).
+  static const AssetDescriptor platin = AssetDescriptor(
+    id: platinId,
+    symbol: 'XPT/USD',
+    providerSymbol: 'PL=F',
+    name: 'Platin (Spot)',
+    category: AssetCategory.emtia,
+    unit: AssetUnit.ons,
+    currency: 'USD',
+    description: 'Uluslararası platin SPOT fiyatı (USD/troy oz).',
+  );
+
+  /// Paladyum SPOT (XPD/USD) - CanlıDöviz `XPD/USD` (cid 269).
+  ///
+  /// Yedek kaynak **yoktur**: piyasa saglayicilarinda paladyum vadeli
+  /// sembolu bulunmuyor (dogrulama 2026-10-06). Bu yuzden fiyat yalnizca
+  /// CanlıDöviz akışından gelir; akış yoksa **deger uydurulmaz**, onceki
+  /// gecerli deger gosterilir ya da veri bos kalir.
+  static const AssetDescriptor paladyum = AssetDescriptor(
+    id: paladyumId,
+    symbol: 'XPD/USD',
+    name: 'Paladyum (Spot)',
+    category: AssetCategory.emtia,
+    unit: AssetUnit.ons,
+    currency: 'USD',
+    description: 'Uluslararası paladyum SPOT fiyatı (USD/troy oz).',
+  );
+
+  /// Bakır (CanlıDöviz `COPPER`, cid 1056; USD/libre).
+  ///
+  /// Yedek kaynak Yahoo `HG=F` (dogrulama: 6,662 ~ CanlıDöviz kapanış 6,64).
+  /// Bakır akışı yalnız borsa saatlerinde canlıdır (kapalıyken tik gelmez).
+  static const AssetDescriptor bakir = AssetDescriptor(
+    id: bakirId,
+    symbol: 'COPPER',
+    providerSymbol: 'HG=F',
+    name: 'Bakır',
+    category: AssetCategory.emtia,
+    unit: AssetUnit.libre,
+    currency: 'USD',
+    description: 'Bakır fiyatı (USD/libre).',
+  );
+
+  /// Doğalgaz (CanlıDöviz `NGAS`, cid 1064; USD/MMBtu).
+  ///
+  /// Yedek kaynak Yahoo `NG=F` (dogrulama: 3,076 ~ CanlıDöviz kapanış 3,074).
+  static const AssetDescriptor dogalgaz = AssetDescriptor(
+    id: dogalgazId,
+    symbol: 'NGAS',
+    providerSymbol: 'NG=F',
+    name: 'Doğalgaz',
+    category: AssetCategory.emtia,
+    unit: AssetUnit.mmbtu,
+    currency: 'USD',
+    description: 'Doğalgaz fiyatı (USD/MMBtu).',
+  );
+
+  /// Platin gram (CanlıDöviz `GRPLTN`, cid 1012) - **TRY** gram fiyatı.
+  ///
+  /// Gram fiyatinin yedegi yoktur (spot ons fiyatinin gram karşılığı
+  /// uydurulmaz); yalnız CanlıDöviz akışı ve geçmişi kullanılır.
+  static const AssetDescriptor platinGram = AssetDescriptor(
+    id: platinGramId,
+    symbol: 'GRPLTN',
+    name: 'Platin (Gram)',
+    category: AssetCategory.emtia,
+    unit: AssetUnit.gram,
+    currency: 'TRY',
+    description: 'Platin gram fiyatı (TRY).',
+  );
+
+  // ---------------------------------------------------------------------------
+  // KRIPTO  (1.2.0 - CanlıDöviz akışı + history)
+  //
+  // Kripto **kategorisi** geniş tutulmuştur: Bitcoin ve Ethereum dışında
+  // başka kriptolar da aynı kalıpla (cid + abonelik kodu) eklenebilir.
+  // ---------------------------------------------------------------------------
+
+  /// Bitcoin (CanlıDöviz `BTC`, cid 62) - parite **BTC/USD**.
+  static const AssetDescriptor bitcoin = AssetDescriptor(
+    id: bitcoinId,
+    symbol: 'BTC',
+    providerSymbol: 'BTC-USD',
+    name: 'Bitcoin',
+    category: AssetCategory.kripto,
+    unit: AssetUnit.adet,
+    currency: 'USD',
+    description: 'Bitcoin fiyatı (BTC/USD).',
+  );
+
+  /// Ethereum (CanlıDöviz `ETH`, cid 52) - parite **ETH/USD**.
+  static const AssetDescriptor ethereum = AssetDescriptor(
+    id: ethereumId,
+    symbol: 'ETH',
+    providerSymbol: 'ETH-USD',
+    name: 'Ethereum',
+    category: AssetCategory.kripto,
+    unit: AssetUnit.adet,
+    currency: 'USD',
+    description: 'Ethereum fiyatı (ETH/USD).',
+  );
+
   // ---------------------------------------------------------------------------
   // KAYITLAR
   // ---------------------------------------------------------------------------
@@ -293,6 +539,9 @@ abstract final class AssetCatalog {
     // Borsa
     bist100,
     bist30,
+    bist50,
+    dxy,
+    sp500,
     // Altın
     gramAltin,
     ceyrekAltin,
@@ -314,6 +563,20 @@ abstract final class AssetCatalog {
     gbpTry,
     chfTry,
     jpyTry,
+    cadTry,
+    audTry,
+    cnyTry,
+    // Emtia
+    wtiCrude,
+    brentCrude,
+    platin,
+    paladyum,
+    bakir,
+    dogalgaz,
+    platinGram,
+    // Kripto
+    bitcoin,
+    ethereum,
   ];
 
   static final Map<String, AssetDescriptor> _byId = {
@@ -345,5 +608,9 @@ abstract final class AssetCatalog {
     gramGumusId,
     usdTryId,
     eurTryId,
+    wtiCrudeId,
+    brentCrudeId,
+    onsAltinId,
+    onsGumusId,
   ];
 }

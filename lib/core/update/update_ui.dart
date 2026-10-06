@@ -121,7 +121,7 @@ class _OptionalUpdateDialog extends ConsumerWidget {
     // Track download click telemetry
     unawaited(ref.read(telemetryProvider).trackUpdateDownloadClicked(forced: false));
 
-    final url = 'https://kyronapp.pages.dev/';
+    const url = 'https://kayrawatcher.github.io/kyron-web/';
     if (await canLaunchUrl(Uri.parse(url))) {
       await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
     }
@@ -235,7 +235,7 @@ class _ForcedUpdateScreen extends ConsumerWidget {
     // The screen is already shown, so we track the click
     unawaited(ref.read(telemetryProvider).trackUpdateDownloadClicked(forced: true));
 
-    const url = 'https://kyronapp.pages.dev/';
+    const url = 'https://kayrawatcher.github.io/kyron-web/';
     final uri = Uri.parse(url);
 
     try {
@@ -285,15 +285,10 @@ class _UpdateCheckerState extends ConsumerState<UpdateChecker> {
     // hic gosterilmiyordu ve HICBIR exception atilmadigi icin log da
     // gorunmuyordu.
     //
-    // Dinleyici check'ten ONCE kuruldugu icin sonuc hangi yoldan gelirse
-    // gelsin yakalanir; asagidaki `ref.read` ise zaten hazir olan sonuc
-    // kapsar. `_dialogShown` cift gosterimi engeller.
-    ref.listen<UpdateState>(updateNotifierProvider, (previous, next) {
-      if (previous?.isLoading == true && next.isLoading == false) {
-        _presentResult(next.result);
-      }
-    });
-
+    // Dinleyici artik [build] icinde kurulur - bkz. [build] yorumu. Check'in
+    // cevabi ag üzerinden geldigi icin dinleyici her zaman **cok once**
+    // kayitli olur; asagidaki `ref.read` ise zaten hazir olan sonucu kapsar.
+    // `_dialogShown` cift gosterimi engeller.
     try {
       await ref.read(updateNotifierProvider.notifier).checkForUpdates();
 
@@ -332,5 +327,24 @@ class _UpdateCheckerState extends ConsumerState<UpdateChecker> {
   }
 
   @override
-  Widget build(BuildContext context) => widget.child;
+  Widget build(BuildContext context) {
+    // `ref.listen` yalnizca `build` icinde cagrilabilir; `initState`'ten
+    // cagrilmasi `debugDoingBuild` assertion'ini firlatiyordu (Riverpod 3).
+    //
+    // Etki: release build'de assertion'lar kapali oldugu icin uretimde
+    // gorunmuyordu, ancak `widget_test.dart` (5 sekmeli kabuk) debug
+    // modda **her zaman** fail oluyordu.
+    //
+    // Zamanlama degismez: `initState` asenkron check'i baslatir, bu
+    // `build` ayni frame icinde hemen calisir; ag cevabi geldiginde
+    // dinleyici zaten kayitlidir. Tekrarlanan rebuild'lerde Riverpod
+    // build kapsami disindaki dinleyiciyi kendisi yeniler.
+    ref.listen<UpdateState>(updateNotifierProvider, (previous, next) {
+      if (previous?.isLoading == true && next.isLoading == false) {
+        _presentResult(next.result);
+      }
+    });
+
+    return widget.child;
+  }
 }

@@ -1,0 +1,367 @@
+{
+  "updatedAt": "2026-10-03T16:21:32.474Z",
+  "piyasa": "durgun",
+  "kalemler": {
+    "HAS_ALTIN_TRY": {
+      "degisim24s": 0.208,
+      "etiket": "Has Altın",
+      "birim": "TRY",
+      "slug": "has-altin",
+      "alis": 6575,
+      "satis": 6597.18,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GRAM_ALTIN_TRY": {
+      "degisim24s": 0.18,
+      "etiket": "Gram Altın",
+      "birim": "TRY",
+      "slug": "gram-altin",
+      "alis": 6537.5,
+      "satis": 6615.48,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ATA_YENI_TRY": {
+      "degisim24s": 0.383,
+      "etiket": "Ata Altın",
+      "birim": "TRY",
+      "slug": "ata-altin",
+      "alis": 43448,
+      "satis": 44036.13,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "CEYREK_YENI_TRY": {
+      "degisim24s": 0.177,
+      "etiket": "Çeyrek Altın",
+      "birim": "TRY",
+      "slug": "ceyrek-altin",
+      "alis": 10714,
+      "satis": 10782,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "YARIM_YENI_TRY": {
+      "degisim24s": 0.158,
+      "etiket": "Yarım Altın",
+      "birim": "TRY",
+      "slug": "yarim-altin",
+      "alis": 21428,
+      "satis": 21552.98,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "TAM_YENI_TRY": {
+      "degisim24s": 0.078,
+      "etiket": "Tam Altın",
+      "birim": "TRY",
+      "slug": "tam-altin",
+      "alis": 42725,
+      "satis": 42947.63,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GREMESE_YENI_TRY": {
+      "degisim24s": 0.18,
+      "etiket": "Gremse",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 106025,
+      "satis": 106966,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ATA5_YENI_TRY": {
+      "degisim24s": 0.199,
+      "etiket": "Ata Beşli",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 216925.02,
+      "satis": 219776.49,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "AYAR14_TRY": {
+      "degisim24s": 0.161,
+      "etiket": "14 Ayar",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 3590.95,
+      "satis": 4787.2,
+      "guncelleme": "2026-10-03T12:00:00.065Z"
+    },
+    "AYAR18_TRY": {
+      "degisim24s": null,
+      "etiket": "18 Ayar",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 4608.67,
+      "satis": 5390,
+      "guncelleme": "2026-09-26T11:09:14.846Z"
+    },
+    "CEYREK_ESKI_TRY": {
+      "degisim24s": 0.381,
+      "etiket": "Eski Çeyrek",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 10517,
+      "satis": 10641.24,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "YARIM_ESKI_TRY": {
+      "degisim24s": 0.301,
+      "etiket": "Eski Yarım",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 21034,
+      "satis": 21174.62,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "TAM_ESKI_TRY": {
+      "degisim24s": 0.201,
+      "etiket": "Eski Tam",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 42134,
+      "satis": 42364,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GREMESE_ESKI_TRY": {
+      "degisim24s": 0.082,
+      "etiket": "Eski Gremse",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 105000.66,
+      "satis": 105873.12,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GUMUS_TRY": {
+      "degisim24s": 0.155,
+      "etiket": "Gümüş (gram)",
+      "birim": "TRY",
+      "slug": "gumus",
+      "alis": 90.55,
+      "satis": 96.8,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ONS_ALTIN_USD": {
+      "degisim24s": 0.084,
+      "etiket": "Ons Altın",
+      "birim": "USD",
+      "slug": "ons-altin",
+      "alis": 4139.49,
+      "satis": 4141.91,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "USD_TRY": {
+      "degisim24s": 0.012,
+      "etiket": "Dolar",
+      "birim": "TRY",
+      "slug": "dolar",
+      "alis": 49.11,
+      "satis": 49.175,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "EUR_TRY": {
+      "degisim24s": -0.045,
+      "etiket": "Euro",
+      "birim": "TRY",
+      "slug": "euro",
+      "alis": 55.151,
+      "satis": 55.3,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "CHF_TRY": {
+      "degisim24s": 0.05,
+      "etiket": "İsviçre Frangı",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 58.679,
+      "satis": 59.2266,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GBP_TRY": {
+      "degisim24s": 0.053,
+      "etiket": "Sterlin",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 64.673,
+      "satis": 64.979,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "JPY_TRY": {
+      "degisim24s": -0.128,
+      "etiket": "Japon Yeni",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 0.3067,
+      "satis": 0.311,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "SAR_TRY": {
+      "degisim24s": -0.363,
+      "etiket": "Suudi Riyali",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 12.9854,
+      "satis": 13.1466,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "AUD_TRY": {
+      "degisim24s": 0.027,
+      "etiket": "Avustralya Doları",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 33.5204,
+      "satis": 33.9917,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "CAD_TRY": {
+      "degisim24s": -0.01,
+      "etiket": "Kanada Doları",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 34.1539,
+      "satis": 34.4396,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ALTIN_KG_USD": {
+      "degisim24s": 0.178,
+      "etiket": "Altın KG/USD",
+      "birim": "USD",
+      "slug": null,
+      "alis": 133160,
+      "satis": 133460,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ALTIN_KG_EUR": {
+      "degisim24s": 0.211,
+      "etiket": "Altın KG/EUR",
+      "birim": "EUR",
+      "slug": null,
+      "alis": 118410,
+      "satis": 118816.71,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "AYAR22_TRY": {
+      "degisim24s": 0.181,
+      "etiket": "22 Ayar",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 5979.55,
+      "satis": 6179.95,
+      "guncelleme": "2026-10-03T12:00:00.065Z"
+    },
+    "ATA_ESKI_TRY": {
+      "degisim24s": 0.203,
+      "etiket": "Eski Ata",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 43432.25,
+      "satis": 43711.13,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ATA5_ESKI_TRY": {
+      "degisim24s": 0.316,
+      "etiket": "Eski Ata Beşli",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 216771.39,
+      "satis": 218366.6,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GUMUS_ONS_USD": {
+      "degisim24s": 0.399,
+      "etiket": "Gümüş Ons",
+      "birim": "USD",
+      "slug": null,
+      "alis": 60.36,
+      "satis": 60.39,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GUMUS_KG_USD": {
+      "degisim24s": 0.356,
+      "etiket": "Gümüş KG/USD",
+      "birim": "USD",
+      "slug": null,
+      "alis": 1811.11,
+      "satis": 1971.55,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "RESAT_TRY": {
+      "degisim24s": 0.242,
+      "etiket": "Reşat Altın",
+      "birim": "TRY",
+      "slug": "resat-altin",
+      "alis": 43319.22,
+      "satis": 44860.79,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "RESAT5_TRY": {
+      "degisim24s": 0.242,
+      "etiket": "Reşat Beşli (beşi bir yerde)",
+      "birim": "TRY",
+      "slug": "besi-bir-yerde",
+      "alis": 216431.65,
+      "satis": 222984.54,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "RESAT25_TRY": {
+      "degisim24s": 0.206,
+      "etiket": "Reşat İkibuçuk",
+      "birim": "TRY",
+      "slug": "resat-ikibucuk",
+      "alis": 113296.17,
+      "satis": 114909.42,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ATA_CEYREK_YENI_TRY": {
+      "degisim24s": 0.242,
+      "etiket": "Ata Çeyrek",
+      "birim": "TRY",
+      "slug": "ata-ceyrek",
+      "alis": 10890.86,
+      "satis": 11030.48,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ATA_YARIM_YENI_TRY": {
+      "degisim24s": 0.242,
+      "etiket": "Ata Yarım",
+      "birim": "TRY",
+      "slug": "ata-yarim",
+      "alis": 21708.95,
+      "satis": 22034.57,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ATA_CEYREK_ESKI_TRY": {
+      "degisim24s": 0.252,
+      "etiket": "Eski Ata Çeyrek",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 10919.71,
+      "satis": 10984.29,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "ATA_YARIM_ESKI_TRY": {
+      "degisim24s": 0.252,
+      "etiket": "Eski Ata Yarım",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 21707.86,
+      "satis": 21968.59,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GREMSE_YENI_TRY": {
+      "degisim24s": 0.18,
+      "etiket": "Gremse",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 106025,
+      "satis": 106966,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    },
+    "GREMSE_ESKI_TRY": {
+      "degisim24s": 0.082,
+      "etiket": "Eski Gremse",
+      "birim": "TRY",
+      "slug": null,
+      "alis": 105000.66,
+      "satis": 105873.12,
+      "guncelleme": "2026-10-03T16:21:32.473Z"
+    }
+  },
+  "uyari": "API anahtarı zorunlu hâle geliyor: 13 Ekim 2026, anahtar al: https://hesaplialtin.com/altin-fiyati-api/anahtar"
+}

@@ -4,6 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../data/providers/anlik_altin_fiyatlari_provider.dart';
+import '../../data/providers/canlidoviz_provider.dart';
+import '../../data/providers/frankfurter_provider.dart';
+import '../../data/providers/gold_api_provider.dart';
 import '../../data/providers/news_rss_provider.dart';
 import '../../data/providers/tcmb_currency_provider.dart';
 import '../../data/providers/tcmb_fx_market_data_provider.dart';
@@ -55,6 +58,26 @@ final newsRssProvider = Provider<NewsRssProvider>((ref) {
   return NewsRssProvider(ref.watch(apiClientProvider));
 });
 
+final goldApiProvider = Provider<GoldApiProvider>((ref) {
+  return GoldApiProvider();
+});
+
+/// CanlıDöviz - **Ons Altın geçmiş mum (P0) + anlık fiyat akışı (P1)**.
+///
+/// Kaynak listesi oluşturulurken fiyat akışı (WebSocket) başlatılır; böylece
+/// ilk `watchQuotes` ritmi kısa kalır ve ekran akış bağlanır bağlanmaz
+/// CanlıDöviz tiklerine geçer. `dispose` akışı kapatır.
+final canlidovizProvider = Provider<CanlidovizProvider>((ref) {
+  final provider = CanlidovizProvider();
+  ref.onDispose(provider.dispose);
+  provider.startStream();
+  return provider;
+});
+
+final frankfurterProvider = Provider<FrankfurterProvider>((ref) {
+  return FrankfurterProvider();
+});
+
 final anlikAltinFiyatlariProvider = Provider<AnlikAltinFiyatlariProvider>((ref) {
   return AnlikAltinFiyatlariProvider();
 });
@@ -72,12 +95,35 @@ final marketSourcesProvider = Provider<List<MarketDataProvider>>((ref) {
   final tcmb = ref.watch(tcmbProvider);
   final yahoo = ref.watch(yahooProvider);
   final anlik = ref.watch(anlikAltinFiyatlariProvider);
+  final goldApi = ref.watch(goldApiProvider);
+  final canlidoviz = ref.watch(canlidovizProvider);
+  final frankfurter = ref.watch(frankfurterProvider);
   return [
-    // Döviz: fiyat/alış-satış TCMB (resmi), %değişim Yahoo paritesi.
+    // 1. Birincil kaynak (genis kapsam): anlik fiyat (WebSocket) + gecmis
+    //    mum (history API). **Doviz de buna dahil** (kullanici karari:
+    //    FX'te canli interbank birincil, TCMB gunde bir aciklanan resmi
+    //    kur YEDEK olarak korunur). Kapsam: altin ailesi (ons/gram/ceyrek/
+    //    yarim/tam/cumhuriyet/ata/bilezik/resat), gram+ons gumus,
+    //    USD/EUR/GBP/CHF/JPY/CAD/AUD/CNY-TRY, BIST100/30/50, DXY, S&P 500,
+    //    Brent, WTI, Platin - hepsi `CanlidovizProtocol` map'lerinde
+    //    gercek cid/kod dogrulamasiyla. `fetchQuotes` hata dondugunde
+    //    (baglanti yok / tik bayat / akis `CANLIDOVIZ_WS_DISABLED`)
+    //    `_fetchDirectTryAll` siradaki adayi dener: **fallback zinciri
+    //    oldugu gibi korunur**, hicbir yedek kaynak silinmedi.
+    canlidoviz,
+    // 1b. Ons Altin/Gumus SPOT yedek kaynak (Gold API - real-time, no key,
+    //     commercial OK). Ons Gumus artik CanlıDöviz'den de gelir; Gold API
+    //     akis yokken/yetersizken YEDEK olarak siradaki adaydir.
+    goldApi,
+    // 2. Döviz yedek: TCMB (resmi gunde 1-2 kez) - CanlıDöviz akisi
+    //    veremediginde devreye girer; %degisim Yahoo paritesinden gelir.
     TcmbFxMarketDataProvider(tcmb, yahoo: yahoo),
-    // BIST + ons metal: dogrudan Yahoo.
+    // 3. Döviz fallback: Frankfurter (ECB referans, gunluk) - TCMB basarisiz olursa.
+    frankfurter,
+    // 4. Emtia/BIST/Endeks yedek: Yahoo (WTI CL=F, Brent BZ=F, BIST
+    //    XU100.IS/XU030.IS/XU050.IS, DXY DX-Y.NYB, SPX ^GSPC, Platin PL=F).
     YahooMarketDataProvider(yahoo),
-    // Altın/Gümüş: Anlık Altın Fiyatları (canli ~60sn).
+    // 5. Yerel TL altın/gümüş: Anlık Altın Fiyatları (canli ~60sn).
     anlik,
   ];
 });

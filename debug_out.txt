@@ -1,0 +1,5 @@
+QuoteCard build @override at: -1
+Build start at: 14118
+Method end at: -1
+Build method at: 14118
+Context: "  @override\n  Widget build(BuildContext context) {\n    return Row(\n      children: [\n        _cell(context, 'Alış', quote.bid),\n        const SizedBox(width: 8),\n        _cell(context, 'Satış', quote."

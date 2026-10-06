@@ -5,6 +5,7 @@ analyzer:
     - build/**
     - android/**
     - web/**
+    - tool/generate_icon.dart
   errors:
     # Eksik/donuk degerleri derleme aninda yakala
     invalid_assignment: error

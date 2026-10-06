@@ -1,10 +1,11 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/utils/navigator_utils.dart';
 import '../../core/widgets/state_view.dart';
 import '../../domain/entities/asset.dart';
 import '../../domain/entities/asset_catalog.dart';
+import '../../domain/entities/data_freshness.dart';
 import '../../domain/entities/quote.dart';
 import '../../shared/widgets/common.dart';
 import '../../shared/widgets/quote_card.dart';
@@ -15,39 +16,47 @@ import 'markets_providers.dart';
 class MarketsScreen extends ConsumerWidget {
   const MarketsScreen({super.key});
 
-  static const List<String> _categories = [
-    'Borsa',
-    'Altın',
-    'Gümüş',
-    'Döviz',
-    'Fonlar',
-  ];
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final index = ref.watch(marketCategoryProvider);
     final quotes = ref.watch(marketQuotesProvider);
     final viewMode = ref.watch(marketViewModeProvider);
 
+    // Dinamik kategori listesi: AssetCategory enum'indan, katalogda varlığı olanlar.
+    // CategoryNavSection (ana sayfa) ile birebir aynı mantık.
+    final categoryEntries = <(AssetCategory, int, List<AssetDescriptor>)>[];
+    for (var i = 0; i < AssetCategory.values.length; i++) {
+      final cat = AssetCategory.values[i];
+      final assets = AssetCatalog.byCategory(cat);
+      if (assets.isNotEmpty) {
+        categoryEntries.add((cat, i, assets));
+      }
+    }
+
+    // Seçili index'in geçerli olup olmadığını kontrol et (katalog değişirse).
+    final validIndices = categoryEntries.map((e) => e.$2).toSet();
+    final safeIndex = validIndices.contains(index) ? index : (categoryEntries.isNotEmpty ? categoryEntries.first.$2 : 0);
+    final categoryLabels = categoryEntries.map((e) => e.$1.label).toList();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const ScreenTitle(
+        ScreenTitle(
           title: 'Piyasalar',
-          subtitle: 'Borsa, altın, gümüş, döviz ve fonlar',
+          subtitle: categoryLabels.join(', '),
         ),
         const _SearchField(),
         CategoryChipBar(
-          labels: _categories,
-          selectedIndex: index,
+          labels: categoryLabels,
+          selectedIndex: categoryEntries.indexWhere((e) => e.$2 == safeIndex),
           onSelected: (i) =>
-              ref.read(marketCategoryProvider.notifier).select(i),
+              ref.read(marketCategoryProvider.notifier).select(categoryEntries[i].$2),
         ),
         _ViewModeToggle(viewMode: viewMode),
         const SizedBox(height: 4),
         Expanded(
           child: _AssetList(
-            categoryIndex: index,
+            categoryIndex: safeIndex,
             quotes: quotes,
             viewMode: viewMode,
             onRetry: () => ref.read(marketQuotesProvider.notifier).refresh(),
@@ -71,19 +80,30 @@ class _AssetList extends ConsumerWidget {
   final MarketViewMode viewMode;
   final VoidCallback onRetry;
 
-  static const List<AssetCategory> _map = [
-    AssetCategory.borsa,
-    AssetCategory.altin,
-    AssetCategory.gumus,
-    AssetCategory.doviz,
-    AssetCategory.fon,
-  ];
+  // AssetCategory enum indeksine göre kategori getir (katalogda varlığı olanlar).
+  static AssetCategory _categoryForIndex(int index) {
+    var catIndex = 0;
+    for (var i = 0; i < AssetCategory.values.length; i++) {
+      final cat = AssetCategory.values[i];
+      final assets = AssetCatalog.byCategory(cat);
+      if (assets.isNotEmpty) {
+        if (catIndex == index) return cat;
+        catIndex++;
+      }
+    }
+    // Fallback: ilk dolu kategori
+    for (var i = 0; i < AssetCategory.values.length; i++) {
+      final cat = AssetCategory.values[i];
+      if (AssetCatalog.byCategory(cat).isNotEmpty) return cat;
+    }
+    return AssetCategory.borsa;
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final query = ref.watch(marketSearchProvider).trim();
     final searching = query.isNotEmpty;
-    final category = _map[categoryIndex];
+    final category = _categoryForIndex(categoryIndex);
 
     // Arama yapiliyorsa **tum katalog** taranir (kullanici "USD/TRY"
     // yazarken "Döviz" sekmesinde olmak zorunda degil); yoksa kategori.
@@ -123,14 +143,24 @@ class _AssetList extends ConsumerWidget {
           for (final a in pool)
             if (map.containsKey(a.id)) a,
         ];
-        if (visible.isEmpty) {
+        // Fiyati henuz yuklenmemis varliklari da goster (placeholder ile).
+        // Pool'daki varliklardan map'te olmayanlari da ekle (placeholder ile goster).
+        final allVisible = [
+          for (final a in pool)
+            if (map.containsKey(a.id)) a else a,
+        ];
+        // Eger hicbiri map'te yoksa ve arama yoksa empty state goster.
+        if (!searching && allVisible.every((a) => !map.containsKey(a.id))) {
           return EmptyStateView(
-            message: searching
-                ? '"$query" için fiyat verisi bulunamadı.'
-                : 'Bu kategoride fiyat verisi bulunamadı.',
-            icon: Icons.search_off_rounded,
+            message: 'Bu kategoride fiyat verisi yükleniyor...',
+            icon: Icons.hourglass_empty_rounded,
           );
         }
+        // Map'te olmayanlar sona eklensin (placeholder ile gosterilecek).
+        final visibleSorted = [
+          ...allVisible.where((a) => map.containsKey(a.id)),
+          ...allVisible.where((a) => !map.containsKey(a.id)),
+        ];
 
         if (viewMode == MarketViewMode.grid) {
           return _buildGrid(visible, map, searching, ref);
@@ -146,17 +176,11 @@ class _AssetList extends ConsumerWidget {
       child: ListView.separated(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
         physics: const AlwaysScrollableScrollPhysics(),
-        itemCount: visible.length + _footerCount(visible.length),
+        itemCount: visible.length,
         separatorBuilder: (_, _) => const SizedBox(height: 10),
         itemBuilder: (context, i) {
-          if (i >= visible.length) {
-            return const Padding(
-              padding: EdgeInsets.only(top: 8),
-              child: _SourceNote(),
-            );
-          }
           final asset = visible[i];
-          final q = map[asset.id]!;
+          final q = map[asset.id] ?? _placeholderQuote(asset);
           return QuoteCard(
             assetId: asset.id,
             quote: q,
@@ -166,6 +190,17 @@ class _AssetList extends ConsumerWidget {
           );
         },
       ),
+    );
+  }
+
+  Quote _placeholderQuote(AssetDescriptor asset) {
+    return Quote(
+      assetId: asset.id,
+      source: QuoteSourceLabel.market,
+      updatedAt: DateTime.now(),
+      price: null,
+      currency: asset.currency,
+      freshness: DataFreshness.unknown,
     );
   }
 
@@ -195,7 +230,7 @@ class _AssetList extends ConsumerWidget {
                         return const SizedBox.shrink();
                       }
                       final asset = visible[index];
-                      final q = map[asset.id]!;
+                      final q = map[asset.id] ?? _placeholderQuote(asset);
                       return QuoteCard(
                         assetId: asset.id,
                         quote: q,
@@ -208,21 +243,12 @@ class _AssetList extends ConsumerWidget {
                   ),
                 ),
               ),
-              if (searching)
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: _SourceNote(),
-                  ),
-                ),
             ],
           );
         },
       ),
     );
   }
-
-  int _footerCount(int n) => n > 0 ? 1 : 0;
 }
 
 /// Varlik arama kutusu.
@@ -314,45 +340,6 @@ String _normalize(String s) {
   return buf.toString();
 }
 
-class _SourceNote extends StatelessWidget {
-  const _SourceNote();
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.surface,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: theme.dividerTheme.color ?? Colors.grey),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Veri kaynakları',
-            style: theme.textTheme.labelLarge?.copyWith(
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          const SizedBox(height: 6),
-          Text(
-            '• Döviz kurları: TCMB resmi günlük kurları.\n'
-            '• Borsa ve ons metaller: Yahoo Finance piyasa verisi.\n'
-            '• "Hesaplanan" etiketli varlıklar (gram altın, çeyrek vb.) '
-            'bileşenlerden matematiksel olarak türetilir; serbest piyasa '
-            'fiyatı değildir.',
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
-              height: 1.5,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 /// Izgara / Liste gorunum degistirici.
 class _ViewModeToggle extends ConsumerWidget {

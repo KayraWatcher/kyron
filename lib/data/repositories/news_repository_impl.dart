@@ -1,5 +1,6 @@
 import '../../core/error/failures.dart';
 import '../../domain/entities/news_item.dart';
+import '../../domain/news/news_impact.dart';
 import '../../domain/providers/news_provider.dart';
 import '../../domain/repositories/news_repository.dart';
 
@@ -79,45 +80,29 @@ class NewsRepositoryImpl implements NewsRepository {
     final all = await _provider.fetchAll(limit: 200);
     return all.when(
       onSuccess: (items) {
-        final keywords = _keywordsFor(assetIds);
-        if (keywords.isEmpty) return const Err(EmptyFailure());
+        // **Anahtar kelime taramasi yapilmaz.** Iliski [NewsImpact]
+        // kurallariyla (haber kategorisi + spesifik varlik adi + merkez bankasi
+        // olayi) belirlenir; boylece "dolar" kelimesi gecen her haber
+        // USD'ye baglanmaz (onceki `contains` eslesmesi tam olarak bu
+        // spam'i uretiyordu).
+        final ids = assetIds.toSet();
+        final out = <NewsItem>[];
+        for (final item in items) {
+          final links = NewsImpact.linksFor(item);
+          if (links.isEmpty) continue;
+          if (links.any((l) => ids.contains(l.assetId))) out.add(item);
+        }
+        out.sort((a, b) => b.publishedAt.compareTo(a.publishedAt));
 
-        final matched = items
-            .where((i) => keywords.any(
-                (k) => i.title.toLowerCase().contains(k.toLowerCase())))
-            .take(limit)
-            .toList();
-
-        if (matched.isEmpty) {
+        if (out.isEmpty) {
           return const Err(EmptyFailure(
             'Takip ettiğiniz varlıklarla ilgili güncel haber bulunamadı.',
           ));
         }
-        return Success(matched);
+        return Success(out.take(limit).toList());
       },
       onFailure: (f) => Err(f),
     );
-  }
-
-  /// Varlik id'lerinden haber anahtari uretir.
-  static const Map<String, List<String>> _keywordMap = {
-    'bist-100': ['borsa', 'bist', 'endeks'],
-    'bist-30': ['borsa', 'bist', 'endeks'],
-    'gram-altin': ['altın', 'altin'],
-    'ceyrek-altin': ['altın', 'altin'],
-    'ons-altin': ['altın', 'altin'],
-    'gram-gumus': ['gümüş', 'gumus', 'gümüş'],
-    'usd-try': ['dolar', 'döviz', 'kur', 'usd'],
-    'eur-try': ['euro', 'döviz', 'kur'],
-  };
-
-  List<String> _keywordsFor(List<String> assetIds) {
-    final out = <String>{};
-    for (final id in assetIds) {
-      final k = _keywordMap[id];
-      if (k != null) out.addAll(k);
-    }
-    return out.toList();
   }
 
   @override

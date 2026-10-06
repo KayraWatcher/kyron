@@ -1,0 +1,60 @@
+;
+  }
+}
+
+class _BidAskRow extends StatelessWidget {
+  const _BidAskRow({required this.quote});
+
+  final Quote quote;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        _cell(context, 'Alış', quote.bid),
+        const SizedBox(width: 8),
+        _cell(context, 'Satış', quote.ask),
+        const SizedBox(width: 8),
+        if (quote.spread != null)
+          _cell(context, 'Makas', quote.spread, decimals: 4),
+      ],
+    );
+  }
+
+  Widget _cell(BuildContext context, String label, double? value,
+      {int decimals = 2}) {
+    final theme = Theme.of(context);
+    final text =
+        value == null ? TrFormat.noData : TrFormat.money(value, decimals: decimals);
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            maxLines: 1,
+            style: theme.textTheme.labelSmall?.copyWith(
+              color: AppPalette.neutral,
+              fontSize: 11,
+            ),
+          ),
+          const SizedBox(height: 2),
+          // Dar kartta deger iki satira bolunmesin; kirpmak yerine
+          // olcusu kucultulur, boylece "0,0883" aynen gorunur.
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              text,
+              maxLines: 1,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                fontWeight: FontWeight.w600,
+                fontSize: 13,
+                fontFeatures: const [FontFeature.tabularFigures()],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }

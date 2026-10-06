@@ -23,6 +23,7 @@ import '../charts/indicator_engine.dart';
 import '../charts/interactive_chart.dart';
 import '../technical/technical_view.dart';
 import 'asset_detail_providers.dart';
+import 'asset_news_list.dart';
 import 'widgets/candle_ohlc_bar.dart';
 import 'widgets/drawing_toolbar.dart';
 import 'widgets/indicator_sheet.dart';
@@ -137,12 +138,23 @@ class _AssetDetailScreenState extends ConsumerState<AssetDetailScreen> {
             onClearDrawings: () => setState(_drawings.clear),
             fullscreen: _fullscreen,
           ),
-        ] else ...[
+        ] else if (_tab == 1) ...[
           Expanded(
             child: _TechnicalViewTab(
               assetId: widget.assetId,
               interval: interval,
               quote: quote,
+            ),
+          ),
+        ] else ...[
+          // ---- Haberler sekmesi: varlikla **gercekten** iliskili haberler ----
+          // Iliski [NewsImpact] kurallariyla belirlenir (kategori + spesifik
+          // varlik adi + merkez bankasi olayi); anahtar kelime taramasi yok.
+          // Kanit yoksa bos liste gosterilmez.
+          Expanded(
+            child: AssetNewsList(
+              assetId: widget.assetId,
+              parentIds: asset?.parentIds ?? const <String>[],
             ),
           ),
         ],
@@ -221,6 +233,7 @@ class _AssetDetailScreenState extends ConsumerState<AssetDetailScreen> {
         children: [
           _tabBtn(theme, 0, 'Grafik', Icons.candlestick_chart_rounded),
           _tabBtn(theme, 1, 'Teknik Görünüm', Icons.insights_rounded),
+          _tabBtn(theme, 2, 'Haberler', Icons.article_outlined),
         ],
       ),
     );

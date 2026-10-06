@@ -1,0 +1,1597 @@
+{
+  "type": "init",
+  "decimals": {
+    "GUM999_50": 2,
+    "GUM999_100": 2,
+    "GUM999_250": 2,
+    "GUM999_500": 2,
+    "GUM999_1000": 2,
+    "GUMUSEUR": 4,
+    "GUMUSUSD": 4,
+    "GUMUSTRY": 2,
+    "XAGUSD": 4,
+    "XAGEUR": 4,
+    "XAGEURGR": 4,
+    "XAGEURKG": 4,
+    "ATA_CEYREK": 2,
+    "ATA_YARIM": 2,
+    "ATA_YARIM_ESKI": 2,
+    "ATA25": 2,
+    "CEYREK_YENI": 2,
+    "CEYREK_ESKI": 2,
+    "YARIM_YENI": 2,
+    "YARIM_ESKI": 2,
+    "TEK_YENI": 2,
+    "TEK_ESKI": 2,
+    "TEK5_ESKI": 2,
+    "TEK5_YENI": 2,
+    "GREMESE_YENI": 2,
+    "GREMESE_ESKI": 2,
+    "ATA_ESKI": 2,
+    "ATA_YENI": 2,
+    "ATA_YARIM_YENI": 2,
+    "ATA_CEYREK_ESKI": 2,
+    "ATA_CEYREK_YENI": 2,
+    "ATA25_ESKI": 2,
+    "ATA25_YENI": 2,
+    "ATA5_ESKI": 2,
+    "ATA5_YENI": 2,
+    "RESAT_YENI": 2,
+    "RESAT25_YENI": 2,
+    "RESAT5_YENI": 2,
+    "ALTIN": 2,
+    "GRAMALTIN": 2,
+    "AYAR14": 2,
+    "AYAR22": 2,
+    "XAUUSD": 4,
+    "EURKG": 2,
+    "USDKG": 2,
+    "XAUEUR": 2,
+    "XAUEURGR": 2,
+    "XAUEURKG": 2,
+    "AYAR24_1": 2,
+    "AYAR24_25": 2,
+    "AYAR24_5": 2,
+    "AYAR24_10": 2,
+    "AYAR24_20": 2,
+    "AYAR24_50": 2,
+    "AYAR24_100": 2,
+    "AYAR8_0_4": 2,
+    "AYAR8_4_8": 2,
+    "AYAR8_8_12": 2,
+    "AYAR8_12_16": 2,
+    "AYAR8_16_20": 2,
+    "AYAR8_20_30": 2,
+    "AYAR8_30_40": 2,
+    "AYAR8_40_plus": 2,
+    "AYAR14_0_4": 2,
+    "AYAR14_4_8": 2,
+    "AYAR14_8_12": 2,
+    "AYAR14_12_16": 2,
+    "AYAR14_16_20": 2,
+    "AYAR14_20_30": 2,
+    "AYAR14_30_40": 2,
+    "AYAR14_40_plus": 2,
+    "AYAR18_0_4": 2,
+    "AYAR18_4_8": 2,
+    "AYAR18_8_12": 2,
+    "AYAR18_12_16": 2,
+    "AYAR18_16_20": 2,
+    "AYAR18_20_30": 2,
+    "AYAR18_30_40": 2,
+    "AYAR18_40_plus": 2,
+    "AYAR22_0_4": 2,
+    "AYAR22_4_8": 2,
+    "AYAR22_8_12": 2,
+    "AYAR22_12_16": 2,
+    "AYAR22_16_20": 2,
+    "AYAR22_20_30": 2,
+    "AYAR22_30_40": 2,
+    "AYAR22_40_plus": 2,
+    "USDCHF": 4,
+    "CHFTRY": 4,
+    "EURTRY": 4,
+    "EURUSD": 4,
+    "GBPTRY": 4,
+    "USDTRY": 4,
+    "GBPUSD": 4,
+    "AUDUSD": 4,
+    "USDCAD": 4,
+    "USDNOK": 4,
+    "USDSEK": 4,
+    "USDDKK": 4,
+    "USDJPY": 4,
+    "USDSAR": 4,
+    "XPTUSD": 2,
+    "XPDUSD": 2,
+    "XPTEUR": 2,
+    "XPTEURGR": 2,
+    "XPTEURKG": 2,
+    "XPDEUR": 2,
+    "XPDEURGR": 2,
+    "XPDEURKG": 2,
+    "PLATIN": 2,
+    "PALADYUM": 2,
+    "BTCUSD": 2,
+    "ETHUSD": 2
+  },
+  "snapshot": [
+    [
+      1,
+      4447.5,
+      5634.333
+    ],
+    [
+      2,
+      8895.0,
+      10654.2762
+    ],
+    [
+      3,
+      22237.5,
+      25541.339
+    ],
+    [
+      4,
+      44475.0,
+      49916.9874
+    ],
+    [
+      5,
+      88950.0,
+      98636.2544
+    ],
+    [
+      13,
+      10862.0,
+      10986.75
+    ],
+    [
+      14,
+      21724.0,
+      21973.5
+    ],
+    [
+      15,
+      21692.0,
+      21842.0
+    ],
+    [
+      16,
+      108620.0,
+      109867.5
+    ],
+    [
+      49,
+      6540.2644,
+      6608.8814
+    ],
+    [
+      50,
+      16350.6609,
+      16522.2035
+    ],
+    [
+      51,
+      32701.3218,
+      33044.4069
+    ],
+    [
+      52,
+      65402.6435,
+      66088.8138
+    ],
+    [
+      53,
+      130805.287,
+      132177.6276
+    ],
+    [
+      54,
+      327013.2175,
+      330444.069
+    ],
+    [
+      55,
+      654026.435,
+      660888.138
+    ],
+    [
+      56,
+      4601.191,
+      4616.983
+    ],
+    [
+      57,
+      4272.5345,
+      4287.1985
+    ],
+    [
+      58,
+      4075.3406,
+      4089.3278
+    ],
+    [
+      59,
+      3878.1467,
+      3891.4571
+    ],
+    [
+      60,
+      3779.5498,
+      3792.5218
+    ],
+    [
+      61,
+      3615.2215,
+      3627.6295
+    ],
+    [
+      62,
+      3483.7589,
+      3495.7157
+    ],
+    [
+      63,
+      3352.2963,
+      3363.8019
+    ],
+    [
+      64,
+      7033.2491,
+      7057.3883
+    ],
+    [
+      65,
+      6573.13,
+      6595.69
+    ],
+    [
+      66,
+      6310.2048,
+      6331.8624
+    ],
+    [
+      67,
+      6047.2796,
+      6068.0348
+    ],
+    [
+      68,
+      5850.0857,
+      5870.1641
+    ],
+    [
+      69,
+      5652.8918,
+      5672.2934
+    ],
+    [
+      70,
+      5389.9666,
+      5408.4658
+    ],
+    [
+      71,
+      5258.504,
+      5276.552
+    ],
+    [
+      72,
+      8084.9499,
+      8112.6987
+    ],
+    [
+      73,
+      7756.2934,
+      7782.9142
+    ],
+    [
+      74,
+      7493.3682,
+      7519.0866
+    ],
+    [
+      75,
+      7230.443,
+      7255.259
+    ],
+    [
+      76,
+      6901.7865,
+      6925.4745
+    ],
+    [
+      77,
+      6770.3239,
+      6793.5607
+    ],
+    [
+      78,
+      6638.8613,
+      6661.6469
+    ],
+    [
+      79,
+      6375.9361,
+      6397.8193
+    ],
+    [
+      80,
+      8873.7255,
+      8904.1815
+    ],
+    [
+      81,
+      8676.5316,
+      8706.3108
+    ],
+    [
+      82,
+      8413.6064,
+      8442.4832
+    ],
+    [
+      83,
+      8150.6812,
+      8178.6556
+    ],
+    [
+      84,
+      7953.4873,
+      7980.7849
+    ],
+    [
+      85,
+      7756.2934,
+      7782.9142
+    ],
+    [
+      86,
+      7657.6965,
+      7683.9789
+    ],
+    [
+      87,
+      7559.0995,
+      7585.0435
+    ],
+    [
+      92,
+      64.673,
+      64.979
+    ],
+    [
+      88,
+      0.83,
+      0.837
+    ],
+    [
+      90,
+      55.151,
+      55.298
+    ],
+    [
+      89,
+      58.679,
+      59.234
+    ],
+    [
+      39,
+      6573.13,
+      6595.69
+    ],
+    [
+      93,
+      49.11,
+      49.175
+    ],
+    [
+      17,
+      10714.0,
+      10782.0
+    ],
+    [
+      94,
+      1.317,
+      1.321
+    ],
+    [
+      6,
+      1611.027,
+      1757.614
+    ],
+    [
+      18,
+      10517.0,
+      10624.0
+    ],
+    [
+      40,
+      6535.26,
+      6615.48
+    ],
+    [
+      19,
+      21428.0,
+      21558.0
+    ],
+    [
+      95,
+      0.68,
+      0.692
+    ],
+    [
+      20,
+      21034.0,
+      21149.0
+    ],
+    [
+      41,
+      3590.95,
+      4787.2
+    ],
+    [
+      96,
+      1.428,
+      1.439
+    ],
+    [
+      97,
+      10.645,
+      10.645
+    ],
+    [
+      21,
+      42725.0,
+      42991.0
+    ],
+    [
+      42,
+      5979.55,
+      6179.95
+    ],
+    [
+      7,
+      1811.6,
+      1973.8
+    ],
+    [
+      22,
+      42134.0,
+      42364.0
+    ],
+    [
+      98,
+      10.855,
+      10.855
+    ],
+    [
+      23,
+      210670.0,
+      211820.0
+    ],
+    [
+      45,
+      133160.0,
+      133460.0
+    ],
+    [
+      99,
+      6.935,
+      6.935
+    ],
+    [
+      43,
+      4139.0,
+      4139.6
+    ],
+    [
+      24,
+      213625.0,
+      214955.0
+    ],
+    [
+      100,
+      157.832,
+      161.359
+    ],
+    [
+      25,
+      106025.0,
+      106966.0
+    ],
+    [
+      101,
+      3.72,
+      3.84
+    ],
+    [
+      44,
+      118410.0,
+      118840.0
+    ],
+    [
+      8,
+      88.95,
+      97.06
+    ],
+    [
+      9,
+      60.35,
+      60.39
+    ],
+    [
+      26,
+      104907.0,
+      105977.0
+    ],
+    [
+      27,
+      43383.0,
+      43683.0
+    ],
+    [
+      10,
+      53.668,
+      53.776
+    ],
+    [
+      28,
+      43448.0,
+      43947.0
+    ],
+    [
+      11,
+      1.725,
+      1.729
+    ],
+    [
+      29,
+      21724.0,
+      21974.0
+    ],
+    [
+      12,
+      1725.476,
+      1728.926
+    ],
+    [
+      102,
+      1697.6,
+      1701.7
+    ],
+    [
+      30,
+      10846.0,
+      10921.0
+    ],
+    [
+      103,
+      1167.9,
+      1175.0
+    ],
+    [
+      31,
+      10862.0,
+      10987.0
+    ],
+    [
+      104,
+      1509.649,
+      1515.316
+    ],
+    [
+      105,
+      48.536,
+      48.719
+    ],
+    [
+      32,
+      108458.0,
+      109208.0
+    ],
+    [
+      106,
+      48536.334,
+      48718.544
+    ],
+    [
+      33,
+      108620.0,
+      109868.0
+    ],
+    [
+      34,
+      216915.0,
+      218415.0
+    ],
+    [
+      107,
+      1038.595,
+      1046.305
+    ],
+    [
+      35,
+      217240.0,
+      219735.0
+    ],
+    [
+      108,
+      33.392,
+      33.639
+    ],
+    [
+      109,
+      33391.602,
+      33639.472
+    ],
+    [
+      36,
+      47392.27,
+      47554.92
+    ],
+    [
+      46,
+      3680.747,
+      3686.198
+    ],
+    [
+      37,
+      118579.27,
+      118986.25
+    ],
+    [
+      38,
+      236632.68,
+      237444.84
+    ],
+    [
+      47,
+      118.339,
+      118.514
+    ],
+    [
+      48,
+      118338.764,
+      118514.008
+    ],
+    [
+      110,
+      49580.0,
+      54710.0
+    ],
+    [
+      111,
+      27550.0,
+      37780.0
+    ],
+    [
+      112,
+      0.0,
+      0.0
+    ],
+    [
+      113,
+      0.0,
+      0.0
+    ]
+  ],
+  "periods": {
+    "1s": "ticks",
+    "1m": "ohlc",
+    "5m": "ohlc",
+    "30m": "ohlc",
+    "1h": "ohlc",
+    "3h": "ohlc",
+    "5h": "ohlc",
+    "12h": "ohlc",
+    "1d": "ohlc"
+  },
+  "session_prices": {
+    "GUM999_50": {
+      "open": 5039.706749999999,
+      "close": null,
+      "open_alis": 4444.5,
+      "open_satis": 5634.9135,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GUM999_100": {
+      "open": 9772.18695,
+      "close": null,
+      "open_alis": 8889.0,
+      "open_satis": 10655.3739,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GUM999_250": {
+      "open": 23883.235249999998,
+      "close": null,
+      "open_alis": 22222.5,
+      "open_satis": 25543.9705,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GUM999_500": {
+      "open": 47183.565149999995,
+      "close": null,
+      "open_alis": 44445.0,
+      "open_satis": 49922.1303,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GUM999_1000": {
+      "open": 93768.2084,
+      "close": null,
+      "open_alis": 88890.0,
+      "open_satis": 98646.4168,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GUMUSEUR": {
+      "open": 1684.249,
+      "close": null,
+      "open_alis": 1610.884,
+      "open_satis": 1757.614,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GUMUSUSD": {
+      "open": 1892.6999999999998,
+      "close": null,
+      "open_alis": 1811.6,
+      "open_satis": 1973.8,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GUMUSTRY": {
+      "open": 92.97999999999999,
+      "close": null,
+      "open_alis": 88.89,
+      "open_satis": 97.07,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XAGUSD": {
+      "open": 60.370000000000005,
+      "close": null,
+      "open_alis": 60.35,
+      "open_satis": 60.39,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XAGEUR": {
+      "open": 53.72,
+      "close": null,
+      "open_alis": 53.664,
+      "open_satis": 53.776,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XAGEURGR": {
+      "open": 1.727,
+      "close": null,
+      "open_alis": 1.725,
+      "open_satis": 1.729,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XAGEURKG": {
+      "open": 1727.1239999999998,
+      "close": null,
+      "open_alis": 1725.322,
+      "open_satis": 1728.926,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA_CEYREK": {
+      "open": 10892.5,
+      "close": null,
+      "open_alis": 10817.75,
+      "open_satis": 10967.25,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA_YARIM": {
+      "open": 21785.0,
+      "close": null,
+      "open_alis": 21635.5,
+      "open_satis": 21934.5,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA_YARIM_ESKI": {
+      "open": 21703.0,
+      "close": null,
+      "open_alis": 21603.0,
+      "open_satis": 21803.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA25": {
+      "open": 108925.0,
+      "close": null,
+      "open_alis": 108177.5,
+      "open_satis": 109672.5,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "CEYREK_YENI": {
+      "open": 10716.5,
+      "close": null,
+      "open_alis": 10670.0,
+      "open_satis": 10763.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "CEYREK_ESKI": {
+      "open": 10539.5,
+      "close": null,
+      "open_alis": 10474.0,
+      "open_satis": 10605.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "YARIM_YENI": {
+      "open": 21430.5,
+      "close": null,
+      "open_alis": 21341.0,
+      "open_satis": 21520.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "YARIM_ESKI": {
+      "open": 21030.0,
+      "close": null,
+      "open_alis": 20948.0,
+      "open_satis": 21112.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "TEK_YENI": {
+      "open": 42733.0,
+      "close": null,
+      "open_alis": 42551.0,
+      "open_satis": 42915.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "TEK_ESKI": {
+      "open": 42125.0,
+      "close": null,
+      "open_alis": 41961.0,
+      "open_satis": 42289.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "TEK5_ESKI": {
+      "open": 210625.0,
+      "close": null,
+      "open_alis": 209805.0,
+      "open_satis": 211445.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "TEK5_YENI": {
+      "open": 213665.0,
+      "close": null,
+      "open_alis": 212755.0,
+      "open_satis": 214575.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GREMESE_YENI": {
+      "open": 106184.0,
+      "close": null,
+      "open_alis": 105591.0,
+      "open_satis": 106777.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GREMESE_ESKI": {
+      "open": 105133.5,
+      "close": null,
+      "open_alis": 104478.0,
+      "open_satis": 105789.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA_ESKI": {
+      "open": 43405.5,
+      "close": null,
+      "open_alis": 43205.0,
+      "open_satis": 43606.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA_YENI": {
+      "open": 43570.0,
+      "close": null,
+      "open_alis": 43271.0,
+      "open_satis": 43869.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA_YARIM_YENI": {
+      "open": 21785.5,
+      "close": null,
+      "open_alis": 21636.0,
+      "open_satis": 21935.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA_CEYREK_ESKI": {
+      "open": 10851.5,
+      "close": null,
+      "open_alis": 10801.0,
+      "open_satis": 10902.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA_CEYREK_YENI": {
+      "open": 10892.5,
+      "close": null,
+      "open_alis": 10818.0,
+      "open_satis": 10967.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA25_ESKI": {
+      "open": 108514.0,
+      "close": null,
+      "open_alis": 108013.0,
+      "open_satis": 109015.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA25_YENI": {
+      "open": 108925.5,
+      "close": null,
+      "open_alis": 108178.0,
+      "open_satis": 109673.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA5_ESKI": {
+      "open": 217027.5,
+      "close": null,
+      "open_alis": 216025.0,
+      "open_satis": 218030.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ATA5_YENI": {
+      "open": 217850.0,
+      "close": null,
+      "open_alis": 216355.0,
+      "open_satis": 219345.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "RESAT_YENI": {
+      "open": 47334.55,
+      "close": null,
+      "open_alis": 47198.46,
+      "open_satis": 47470.64,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "RESAT25_YENI": {
+      "open": 118434.85500000001,
+      "close": null,
+      "open_alis": 118094.35,
+      "open_satis": 118775.36,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "RESAT5_YENI": {
+      "open": 236344.5,
+      "close": null,
+      "open_alis": 235665.0,
+      "open_satis": 237024.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ALTIN": {
+      "open": 6565.125,
+      "close": null,
+      "open_alis": 6546.25,
+      "open_satis": 6584.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GRAMALTIN": {
+      "open": 6556.135,
+      "close": null,
+      "open_alis": 6508.52,
+      "open_satis": 6603.75,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14": {
+      "open": 4177.75,
+      "close": null,
+      "open_alis": 3575.9,
+      "open_satis": 4779.6,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22": {
+      "open": 6062.025,
+      "close": null,
+      "open_alis": 5955.09,
+      "open_satis": 6168.96,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XAUUSD": {
+      "open": 4139.3,
+      "close": null,
+      "open_alis": 4139.0,
+      "open_satis": 4139.6,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "EURKG": {
+      "open": 118305.0,
+      "close": null,
+      "open_alis": 118000.0,
+      "open_satis": 118610.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDKG": {
+      "open": 132960.0,
+      "close": null,
+      "open_alis": 132710.0,
+      "open_satis": 133210.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XAUEUR": {
+      "open": 3683.309,
+      "close": null,
+      "open_alis": 3680.42,
+      "open_satis": 3686.198,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XAUEURGR": {
+      "open": 118.42099999999999,
+      "close": null,
+      "open_alis": 118.328,
+      "open_satis": 118.514,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XAUEURKG": {
+      "open": 118421.1245,
+      "close": null,
+      "open_alis": 118328.241,
+      "open_satis": 118514.008,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR24_1": {
+      "open": 6555.3434,
+      "close": null,
+      "open_alis": 6513.5188,
+      "open_satis": 6597.168,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR24_25": {
+      "open": 16388.35845,
+      "close": null,
+      "open_alis": 16283.7969,
+      "open_satis": 16492.92,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR24_5": {
+      "open": 32776.7169,
+      "close": null,
+      "open_alis": 32567.5938,
+      "open_satis": 32985.84,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR24_10": {
+      "open": 65553.43375,
+      "close": null,
+      "open_alis": 65135.1875,
+      "open_satis": 65971.68,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR24_20": {
+      "open": 131106.8675,
+      "close": null,
+      "open_alis": 130270.375,
+      "open_satis": 131943.36,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR24_50": {
+      "open": 327767.16875,
+      "close": null,
+      "open_alis": 325675.9375,
+      "open_satis": 329858.4,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR24_100": {
+      "open": 655534.3375,
+      "close": null,
+      "open_alis": 651351.875,
+      "open_satis": 659716.8,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR8_0_4": {
+      "open": 4595.5875,
+      "close": null,
+      "open_alis": 4582.375,
+      "open_satis": 4608.8,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR8_4_8": {
+      "open": 4267.33125,
+      "close": null,
+      "open_alis": 4255.0625,
+      "open_satis": 4279.6,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR8_8_12": {
+      "open": 4070.3775,
+      "close": null,
+      "open_alis": 4058.675,
+      "open_satis": 4082.08,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR8_12_16": {
+      "open": 3873.42375,
+      "close": null,
+      "open_alis": 3862.2875,
+      "open_satis": 3884.56,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR8_16_20": {
+      "open": 3774.9469,
+      "close": null,
+      "open_alis": 3764.0938,
+      "open_satis": 3785.8,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR8_20_30": {
+      "open": 3610.81875,
+      "close": null,
+      "open_alis": 3600.4375,
+      "open_satis": 3621.2,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR8_30_40": {
+      "open": 3479.5162499999997,
+      "close": null,
+      "open_alis": 3469.5125,
+      "open_satis": 3489.52,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR8_40_plus": {
+      "open": 3348.21375,
+      "close": null,
+      "open_alis": 3338.5875,
+      "open_satis": 3357.84,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14_0_4": {
+      "open": 7024.68375,
+      "close": null,
+      "open_alis": 7004.4875,
+      "open_satis": 7044.88,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14_4_8": {
+      "open": 6565.125,
+      "close": null,
+      "open_alis": 6546.25,
+      "open_satis": 6584.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14_8_12": {
+      "open": 6302.52,
+      "close": null,
+      "open_alis": 6284.4,
+      "open_satis": 6320.64,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14_12_16": {
+      "open": 6039.915,
+      "close": null,
+      "open_alis": 6022.55,
+      "open_satis": 6057.28,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14_16_20": {
+      "open": 5842.96125,
+      "close": null,
+      "open_alis": 5826.1625,
+      "open_satis": 5859.76,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14_20_30": {
+      "open": 5646.0075,
+      "close": null,
+      "open_alis": 5629.775,
+      "open_satis": 5662.24,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14_30_40": {
+      "open": 5383.4025,
+      "close": null,
+      "open_alis": 5367.925,
+      "open_satis": 5398.88,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR14_40_plus": {
+      "open": 5252.1,
+      "close": null,
+      "open_alis": 5237.0,
+      "open_satis": 5267.2,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR18_0_4": {
+      "open": 8075.10375,
+      "close": null,
+      "open_alis": 8051.8875,
+      "open_satis": 8098.32,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR18_4_8": {
+      "open": 7746.8475,
+      "close": null,
+      "open_alis": 7724.575,
+      "open_satis": 7769.12,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR18_8_12": {
+      "open": 7484.2425,
+      "close": null,
+      "open_alis": 7462.725,
+      "open_satis": 7505.76,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR18_12_16": {
+      "open": 7221.6375,
+      "close": null,
+      "open_alis": 7200.875,
+      "open_satis": 7242.4,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR18_16_20": {
+      "open": 6893.38125,
+      "close": null,
+      "open_alis": 6873.5625,
+      "open_satis": 6913.2,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR18_20_30": {
+      "open": 6762.078750000001,
+      "close": null,
+      "open_alis": 6742.6375,
+      "open_satis": 6781.52,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR18_30_40": {
+      "open": 6630.77625,
+      "close": null,
+      "open_alis": 6611.7125,
+      "open_satis": 6649.84,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR18_40_plus": {
+      "open": 6368.171249999999,
+      "close": null,
+      "open_alis": 6349.8625,
+      "open_satis": 6386.48,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22_0_4": {
+      "open": 8862.91875,
+      "close": null,
+      "open_alis": 8837.4375,
+      "open_satis": 8888.4,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22_4_8": {
+      "open": 8665.965,
+      "close": null,
+      "open_alis": 8641.05,
+      "open_satis": 8690.88,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22_8_12": {
+      "open": 8403.36,
+      "close": null,
+      "open_alis": 8379.2,
+      "open_satis": 8427.52,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22_12_16": {
+      "open": 8140.755,
+      "close": null,
+      "open_alis": 8117.35,
+      "open_satis": 8164.16,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22_16_20": {
+      "open": 7943.80125,
+      "close": null,
+      "open_alis": 7920.9625,
+      "open_satis": 7966.64,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22_20_30": {
+      "open": 7746.8475,
+      "close": null,
+      "open_alis": 7724.575,
+      "open_satis": 7769.12,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22_30_40": {
+      "open": 7648.37065,
+      "close": null,
+      "open_alis": 7626.3813,
+      "open_satis": 7670.36,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AYAR22_40_plus": {
+      "open": 7549.89375,
+      "close": null,
+      "open_alis": 7528.1875,
+      "open_satis": 7571.6,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDCHF": {
+      "open": 0.8334999999999999,
+      "close": null,
+      "open_alis": 0.83,
+      "open_satis": 0.837,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "CHFTRY": {
+      "open": 58.939,
+      "close": null,
+      "open_alis": 58.638,
+      "open_satis": 59.24,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "EURTRY": {
+      "open": 55.210499999999996,
+      "close": null,
+      "open_alis": 55.112,
+      "open_satis": 55.309,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "EURUSD": {
+      "open": null,
+      "close": null,
+      "open_alis": null,
+      "open_satis": null,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GBPTRY": {
+      "open": 64.8065,
+      "close": null,
+      "open_alis": 64.627,
+      "open_satis": 64.986,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDTRY": {
+      "open": 49.1275,
+      "close": null,
+      "open_alis": 49.075,
+      "open_satis": 49.18,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "GBPUSD": {
+      "open": 1.319,
+      "close": null,
+      "open_alis": 1.317,
+      "open_satis": 1.321,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "AUDUSD": {
+      "open": 0.6859999999999999,
+      "close": null,
+      "open_alis": 0.68,
+      "open_satis": 0.692,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDCAD": {
+      "open": 1.4335,
+      "close": null,
+      "open_alis": 1.428,
+      "open_satis": 1.439,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDNOK": {
+      "open": 10.645,
+      "close": null,
+      "open_alis": 10.645,
+      "open_satis": 10.645,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDSEK": {
+      "open": 10.855,
+      "close": null,
+      "open_alis": 10.855,
+      "open_satis": 10.855,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDDKK": {
+      "open": 6.935,
+      "close": null,
+      "open_alis": 6.935,
+      "open_satis": 6.935,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDJPY": {
+      "open": 159.59550000000002,
+      "close": null,
+      "open_alis": 157.832,
+      "open_satis": 161.359,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "USDSAR": {
+      "open": 3.7800000000000002,
+      "close": null,
+      "open_alis": 3.72,
+      "open_satis": 3.84,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XPTUSD": {
+      "open": 1699.65,
+      "close": null,
+      "open_alis": 1697.6,
+      "open_satis": 1701.7,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XPDUSD": {
+      "open": 1171.45,
+      "close": null,
+      "open_alis": 1167.9,
+      "open_satis": 1175.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XPTEUR": {
+      "open": 1512.415,
+      "close": null,
+      "open_alis": 1509.514,
+      "open_satis": 1515.316,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XPTEURGR": {
+      "open": 48.6255,
+      "close": null,
+      "open_alis": 48.532,
+      "open_satis": 48.719,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XPTEURKG": {
+      "open": 48625.281,
+      "close": null,
+      "open_alis": 48532.018,
+      "open_satis": 48718.544,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XPDEUR": {
+      "open": 1042.404,
+      "close": null,
+      "open_alis": 1038.503,
+      "open_satis": 1046.305,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XPDEURGR": {
+      "open": 33.514,
+      "close": null,
+      "open_alis": 33.389,
+      "open_satis": 33.639,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "XPDEURKG": {
+      "open": 33514.052500000005,
+      "close": null,
+      "open_alis": 33388.633,
+      "open_satis": 33639.472,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "PLATIN": {
+      "open": 52145.0,
+      "close": null,
+      "open_alis": 49580.0,
+      "open_satis": 54710.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "PALADYUM": {
+      "open": 32665.0,
+      "close": null,
+      "open_alis": 27550.0,
+      "open_satis": 37780.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "BTCUSD": {
+      "open": 84646.5,
+      "close": null,
+      "open_alis": 84641.0,
+      "open_satis": 84652.0,
+      "close_alis": null,
+      "close_satis": null
+    },
+    "ETHUSD": {
+      "open": 2676.7,
+      "close": null,
+      "open_alis": 2676.6,
+      "open_satis": 2676.8,
+      "close_alis": null,
+      "close_satis": null
+    }
+  }
+}

@@ -302,5 +302,5 @@ if (-not $finalApk) {
 }
 
 Write-Ok "Release build completed successfully."
-Write-Log "Output: $($finalApk.FullName) ([Math]::Round($($finalApk.Length / 1MB), 1)) MB"
+Write-Log "Output: $($finalApk.FullName) ($([Math]::Round($finalApk.Length / 1MB, 1)) MB)"
 exit 0

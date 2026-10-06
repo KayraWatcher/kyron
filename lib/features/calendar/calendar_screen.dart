@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/theme/app_theme.dart';
@@ -105,7 +105,7 @@ class _Empty extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Ekonomik takvim verileri (TCMB/PPK, TÜİK enflasyon-işsizlik-'
+              'Ekonomik takvim verileri (merkez bankaları, TÜİK enflasyon-işsizlik-'
               'GSYH, cari açık, şirket bilançoları) sağlanıcı bağlandığında '
               'burada görünecek.\n\n'
               'Eksik veri asla tamamlanmaz: beklenti, önceki ve gerçekleşen '

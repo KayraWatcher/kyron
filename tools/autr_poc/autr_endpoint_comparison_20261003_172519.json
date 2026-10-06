@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-10-03T17:25:38.094236",
+  "ws_prices": {
+    "endpoint": "wss://autr.tr/ws/prices?api_key=ak_live_BA6rkyNO0vmkj6Yuf0Jyd0z0QecVzaj9B1C0gdHr",
+    "test_name": "/ws/prices",
+    "connected": true,
+    "init_received": true,
+    "init_snapshot_count": 112,
+    "target_mappings": {
+      "90": {
+        "alis": 55.151,
+        "satis": 55.298,
+        "raw": [
+          90,
+          55.151,
+          55.298
+        ]
+      },
+      "93": {
+        "alis": 49.11,
+        "satis": 49.175,
+        "raw": [
+          93,
+          49.11,
+          49.175
+        ]
+      },
+      "17": {
+        "alis": 10714.0,
+        "satis": 10782.0,
+        "raw": [
+          17,
+          10714.0,
+          10782.0
+        ]
+      },
+      "8": {
+        "alis": 88.95,
+        "satis": 97.06,
+        "raw": [
+          8,
+          88.95,
+          97.06
+        ]
+      }
+    },
+    "updates": [],
+    "update_intervals": [],
+    "errors": [],
+    "clean_shutdown": true,
+    "start_time": null,
+    "end_time": 1791037535.9652245
+  },
+  "ws_live": {
+    "endpoint": "wss://autr.tr/ws/live?api_key=ak_live_BA6rkyNO0vmkj6Yuf0Jyd0z0QecVzaj9B1C0gdHr",
+    "test_name": "/ws/live",
+    "connected": false,
+    "init_received": false,
+    "init_snapshot_count": 0,
+    "target_mappings": {},
+    "updates": [],
+    "update_intervals": [],
+    "errors": [
+      "Connection error: server rejected WebSocket connection: HTTP 403"
+    ],
+    "clean_shutdown": false,
+    "start_time": null,
+    "end_time": null
+  }
+}

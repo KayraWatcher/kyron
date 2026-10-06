@@ -50,7 +50,6 @@ final _catalog = <AssetDescriptor>[
   _a('g2', AssetCategory.altin),
   _a('s1', AssetCategory.gumus),
   _a('d1', AssetCategory.doviz),
-  _a('f1', AssetCategory.fon),
 ];
 
 const _featured = <String>['g1', 'a1', 'd1', 's1'];
@@ -127,33 +126,6 @@ void main() {
       expect(
         _run(quotes: quotes, filter: HomeFilter.doviz),
         <String>['d1'],
-      );
-    });
-
-    test('fon filtresi GERCEK katalogda bos doner (uydurma veri yok)', () {
-      final quotes = <String, Quote>{
-        'bist100': _q('bist100', price: 1),
-        'gram-altin': _q('gram-altin', price: 1000),
-      };
-
-      expect(
-        applyHomeDisplay(
-          featured: AssetCatalog.featuredIds,
-          catalog: AssetCatalog.all,
-          watchlist: const <String>[],
-          quotes: quotes,
-          display: const HomeDisplayState(filter: HomeFilter.fon),
-        ),
-        isEmpty,
-      );
-    });
-
-    test('fon kategorisine sahip kayit varsa listelenir', () {
-      final quotes = <String, Quote>{'f1': _q('f1', price: 7)};
-
-      expect(
-        _run(quotes: quotes, filter: HomeFilter.fon),
-        <String>['f1'],
       );
     });
 

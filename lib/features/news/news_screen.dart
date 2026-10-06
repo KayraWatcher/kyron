@@ -7,6 +7,7 @@ import '../../core/theme/app_theme.dart';
 import '../../core/utils/navigator_utils.dart';
 import '../../core/widgets/state_view.dart';
 import '../../domain/entities/news_item.dart';
+import '../../domain/news/news_impact.dart';
 import '../../shared/widgets/common.dart';
 import 'news_providers.dart';
 
@@ -153,9 +154,10 @@ class _NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    // Yalnizca haberin kategorisinden dogrulanabilen iliskiler gosterilir;
-    // basliga gore anahtar kelime taramasiyla tahmin uretilmez.
-    final affectedMarkets = _affectedMarketsFor(item.category);
+    // Iliskiler [NewsImpact] kurallariyla uretilir (haber kategorisi +
+    // spesifik varlik adi + merkez bankasi olayi). Anahtar kelime taramasi
+    // YAPILMAZ; kanit yoksa bolum **hic gosterilmez**.
+    final impacts = NewsImpact.linksFor(item);
 
     return Material(
       color: theme.colorScheme.surface,
@@ -247,9 +249,9 @@ class _NewsCard extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              // ---- Etkilenen Piyasalar ----
-              if (affectedMarkets.isNotEmpty) ...[
-                _AffectedMarketsRow(markets: affectedMarkets),
+              // ---- Neyi etkileyebilir? (yalnizca kanit varsa) ----
+              if (impacts.isNotEmpty) ...[
+                _ImpactRow(links: impacts),
                 const SizedBox(height: 10),
               ],
               Row(
@@ -277,36 +279,19 @@ class _NewsCard extends StatelessWidget {
   }
 }
 
-/// Haber kategorisine gore etkilenen piyasalar.
+/// "Neyi etkileyebilir?" satiri.
 ///
-/// **Dogrulama politikasi:** Iliski yalnizca haberin editoryal kategorisinden
-/// uretilir; baslik/ozet uzerinden anahtar kelime taramasi yapilmaz.
-/// Kategori varligi dogrulanamayan piyasalar (Son Dakika, Ekonomi,
-/// Sirketler, Merkez Bankasi, Dunya Ekonomisi) hic gosterilmez.
-List<String> _affectedMarketsFor(NewsCategory category) {
-  switch (category) {
-    case NewsCategory.altin:
-      return const ['Ons Altın', 'Gram Altın'];
-    case NewsCategory.gumus:
-      return const ['Ons Gümüş', 'Gram Gümüş'];
-    case NewsCategory.doviz:
-      return const ['USD/TRY', 'EUR/TRY'];
-    case NewsCategory.borsa:
-      return const ['BIST 100'];
-    case NewsCategory.sonDakika:
-    case NewsCategory.ekonomi:
-    case NewsCategory.sirketler:
-    case NewsCategory.merkezBankasi:
-    case NewsCategory.dunyaEkonomisi:
-      return const [];
-  }
-}
+/// Yalnizca [NewsImpact] tarafindan **kanit** uretilen iliskiler icin
+/// gosterilir; basligin icinde "dolar" gibi tek basina belirsiz kelimeler
+/// gecse bile iliski kurulmaz. Rozetler dokunulabilirdir: ilgili varligin
+/// detay ekranini acar.
+///
+/// **Dil tercihi:** etki kesin degildir; bu yuzden baslikta "Neyi
+/// etkileyebilir?" sorusu ve "ilgili olabilir" ibaresi kullanilir.
+class _ImpactRow extends StatelessWidget {
+  const _ImpactRow({required this.links});
 
-/// "Etkilenen piyasalar" etiket satiri (salt bilgi, etkilesimsiz).
-class _AffectedMarketsRow extends StatelessWidget {
-  const _AffectedMarketsRow({required this.markets});
-
-  final List<String> markets;
+  final List<NewsImpactLink> links;
 
   @override
   Widget build(BuildContext context) {
@@ -317,16 +302,24 @@ class _AffectedMarketsRow extends StatelessWidget {
         Row(
           children: [
             Icon(
-              Icons.link_rounded,
+              Icons.account_tree_rounded,
               size: 14,
               color: AppPalette.goldDeep,
             ),
             const SizedBox(width: 6),
             Text(
-              'Etkilenen piyasalar',
+              'Neyi etkileyebilir?',
               style: theme.textTheme.labelSmall?.copyWith(
                 fontWeight: FontWeight.w700,
                 color: AppPalette.goldDeep,
+              ),
+            ),
+            const Spacer(),
+            Text(
+              'ilgili olabilir',
+              style: theme.textTheme.labelSmall?.copyWith(
+                color: AppPalette.neutral,
+                fontSize: 10,
               ),
             ),
           ],
@@ -335,28 +328,72 @@ class _AffectedMarketsRow extends StatelessWidget {
         Wrap(
           spacing: 6,
           runSpacing: 4,
-          children: markets
-              .map((m) => Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 8, vertical: 3),
-                    decoration: BoxDecoration(
-                      color: AppPalette.gold.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: AppPalette.gold.withValues(alpha: 0.3),
-                      ),
-                    ),
-                    child: Text(
-                      m,
-                      style: theme.textTheme.labelSmall?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: AppPalette.goldDeep,
-                      ),
-                    ),
-                  ))
-              .toList(),
+          children: [
+            for (final link in links)
+              _ImpactChip(
+                link: link,
+                onTap: link.assetName == null
+                    ? null
+                    : () => openAssetDetail(context, link.assetId),
+              ),
+          ],
         ),
       ],
+    );
+  }
+}
+
+class _ImpactChip extends StatelessWidget {
+  const _ImpactChip({required this.link, this.onTap});
+
+  final NewsImpactLink link;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final label = link.assetName ?? link.assetId;
+    final strong = link.strength == ImpactStrength.kategori;
+
+    final chip = Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      decoration: BoxDecoration(
+        color: AppPalette.gold.withValues(alpha: strong ? 0.14 : 0.08),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: AppPalette.gold.withValues(alpha: strong ? 0.34 : 0.18),
+        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            label,
+            style: theme.textTheme.labelSmall?.copyWith(
+              fontWeight: FontWeight.w600,
+              color: AppPalette.goldDeep,
+            ),
+          ),
+          if (onTap != null) ...[
+            const SizedBox(width: 4),
+            Icon(
+              Icons.chevron_right_rounded,
+              size: 12,
+              color: AppPalette.goldDeep.withValues(alpha: 0.7),
+            ),
+          ],
+        ],
+      ),
+    );
+
+    if (onTap == null) return chip;
+    return Tooltip(
+      message: link.reason,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(8),
+        child: chip,
+      ),
     );
   }
 }

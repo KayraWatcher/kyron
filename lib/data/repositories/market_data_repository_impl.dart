@@ -135,14 +135,19 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
     return null;
   }
 
-  /// Asset'i dogrudan destekleyen EN ONCELI provider'i dondurur.
-  /// Provider listesi zaten priority sirasinda (TCMB -> Anlik -> Yahoo).
-  MarketDataProvider? _quoteSourceForDirect(String assetId) {
-    for (final s in sources) {
-      if (s.supports(assetId)) return s;
-    }
-    return null;
-  }
+  /// Asset'i dogrudan destekleyen TUM provider'lari **oncelik sirasiyla**
+  /// dondurur.
+  ///
+  /// Provider listesi zaten priority sirasinda (Gold API -> TCMB -> Frankfurter
+  /// -> Yahoo -> Anlik Altin). Yalnizca ILK destekleyiciyi almak, o kaynak
+  /// basarisiz oldugunda (orn. gold-api.com Dart UA'ina 429 donmesi) varligin
+  /// **hic fiyat almamasina** yol aciyordu; siradaki kaynak hic denemiyordu.
+  /// Boylece "TCMB basarisiz olursa Frankfurter fallback" gibi dokumanlanmis
+  /// davranis da gercekten uygulanir.
+  List<MarketDataProvider> _quoteSourcesForDirect(String assetId) => [
+        for (final s in sources)
+          if (s.supports(assetId)) s,
+      ];
 
   // ---------------------------------------------------------------------------
   // QUOTE
@@ -185,9 +190,10 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
     Failure? lastFailure;
 
     // 2) HER eksik varlik icin once DOGRUDAN provider dene (isCalculated bagimsiz).
-    // Provider priority: TCMB -> AnlıkAltınFiyatlari -> Yahoo
-    // _fetchDirectTryAll, provider'lari priority sirasiyla dener ve ilk basarili
-    // direct quote'u dondurur. isCalculated true olsa bile direct provider
+    // Provider priority: Gold API -> TCMB -> Frankfurter -> Yahoo -> Anlik Altin
+    // _fetchDirectTryAll, destekleyen TUM provider'lari bu sirayla dener ve ilk
+    // basarili direct quote'u alir; boylece bir kaynak 429/hata dondugunde
+    // siradaki kaynak devreye girer. isCalculated true olsa bile direct provider
     // varsa kullanilir.
     final directResult = await _fetchDirectTryAll(missing);
     result.addAll(directResult.quotes);
@@ -273,20 +279,31 @@ class MarketDataRepositoryImpl implements MarketDataRepository {
         continue;
       }
 
-      // Bu asset'i destekleyen provider'lari oncelik sirasiyla dene
-      final source = _quoteSourceForDirect(id);
-      if (source == null) continue; // Kaynagi olmayan varlik: atlanir.
+      // Bu asset'i destekleyen provider'lari ONCELIK SIRASIYLA dene:
+      // ilki basarisiz olursa siradaki denenir, ilk basarili quote kabul edilir.
+      final candidates = _quoteSourcesForDirect(id);
+      if (candidates.isEmpty) continue; // Kaynagi olmayan varlik: atlanir.
 
-      final res = await source.fetchQuotes([id]);
-      final map = res.dataOrNull;
-      if (map == null) {
-        failure = res.failureOrNull ?? failure;
-        continue;
+      Failure? assetFailure;
+      var resolved = false;
+      for (final source in candidates) {
+        final res = await source.fetchQuotes([id]);
+        final map = res.dataOrNull;
+        if (map == null || !map.containsKey(id)) {
+          assetFailure = res.failureOrNull ?? assetFailure;
+          continue;
+        }
+        map.forEach((qid, q) {
+          out[qid] = q;
+          _quoteCache[qid] = _CacheEntry(q, now);
+        });
+        resolved = true;
+        break;
       }
-      map.forEach((id, q) {
-        out[id] = q;
-        _quoteCache[id] = _CacheEntry(q, now);
-      });
+      // Yalnizca HICBIR kaynak basarili olmadiysa hata raporlanir; boylece
+      // yedek kaynak calisirken "hata var" diye isaretlenmez ve adim 4'teki
+      // bayat-onbellek geri ekleme gereksiz yere kapanmaz.
+      if (!resolved) failure = assetFailure ?? failure;
     }
 
     return (quotes: out, failure: failure);

@@ -14,7 +14,7 @@ enum HomeFilter {
   altin('Altın'),
   gumus('Gümüş'),
   doviz('Döviz'),
-  fon('Fonlar'),
+  emtia('Emtia'),
   takip('Takip edilenler');
 
   const HomeFilter(this.label);
@@ -278,8 +278,8 @@ List<String> applyHomeDisplay({
         [for (final a in catalog) if (a.category == AssetCategory.gumus) a.id],
       HomeFilter.doviz =>
         [for (final a in catalog) if (a.category == AssetCategory.doviz) a.id],
-      HomeFilter.fon =>
-        [for (final a in catalog) if (a.category == AssetCategory.fon) a.id],
+      HomeFilter.emtia =>
+        [for (final a in catalog) if (a.category == AssetCategory.emtia) a.id],
     },
   ].where(quotes.containsKey).toList();
 

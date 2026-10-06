@@ -147,7 +147,7 @@ class YahooMarketDataProvider implements MarketDataProvider {
     }
 
     final res = await _yahoo.fetchCandles(
-      symbol: asset.fetchSymbol,
+      symbol: asset.fetchChartSymbol,
       interval: interval,
       limit: limit,
     );

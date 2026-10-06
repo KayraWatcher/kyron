@@ -24,12 +24,14 @@ class RssFeed {
 
 /// Acik RSS beslemelerinden haber ceken provider.
 ///
+/// **Coklu kaynak:** tek beslemeye bagimli degildir. Varsayilan olarak
+/// Anadolu Ajansi, Bloomberg HT, Foreks, Ekonomim ve Sabah beslemeleri
+/// **paralel ve bagimsiz** cekilir; biri hata/timeout/429 aldiginda
+/// digerlerinin sonucu kaybolmaz.
+///
 /// **Telif:** Yalnizca `<title>`, `<description>` (ozet), `<pubDate>`,
 /// `<link>`, `<guid>` ve `<image>` alanlari okunur. Haber metninin
 /// tamami asla istenmez, okunmaz veya depolanmaz.
-///
-/// AA (Anadolu Ajansi) RSS beslemesi - yalnizca baslik/ozet/kaynak/zaman/
-/// kategori/gorsel tasir, tam metin degil.
 class NewsRssProvider implements NewsProvider {
   NewsRssProvider(this._client, {List<RssFeed>? feeds})
       : feeds = feeds ?? defaultFeeds;
@@ -41,44 +43,22 @@ class NewsRssProvider implements NewsProvider {
   String get id => 'aa-rss';
 
   @override
-  String get displayName => 'Anadolu Ajansı';
+  String get displayName => 'RSS Beslemeleri (çoklu kaynak)';
 
-  /// Anadolu Ajansi ekonomi - dogrulanmis, calisan besleme.
-  static final RssFeed aaEkonomi = RssFeed(
-    url: Uri.parse('https://www.aa.com.tr/tr/rss/default?cat=ekonomi'),
-    defaultCategory: NewsCategory.ekonomi,
-    sourceName: 'Anadolu Ajansı',
-    categoryMap: const {
-      'Borsa': NewsCategory.borsa,
-      'Döviz': NewsCategory.doviz,
-      'Altın': NewsCategory.altin,
-      'Merkez Bankası': NewsCategory.merkezBankasi,
-      'Ekonomi': NewsCategory.ekonomi,
-    },
-  );
-
-  static final List<RssFeed> defaultFeeds = [aaEkonomi];
-
-  /// Bir beslemeyi cekip normalize eder.
-  Future<Result<List<NewsItem>>> fetchFeed(RssFeed feed, {int limit = 30}) async {
-    final res = await _client.getXmlText(
-      feed.url,
-      headers: const {'Accept': 'application/rss+xml, application/xml, text/xml'},
-      overrideTimeout: const Duration(seconds: 15),
-    );
-
-    return res.when(
-      onSuccess: (body) => _parse(body, feed, limit),
-      onFailure: (f) => Err(f),
-    );
-  }
-
-  /// Tum beslemeleri paralel ceker; tek besleme hatali olsa bile
-  /// digerlerinin sonucunu kaybetmeyiz.
+  /// Tum beslemeleri **paralel ve bagimsiz** ceker.
+  ///
+  /// Hata izolasyonu:
+  ///  * Her besleme kendi try/caku icinde calisir ([_fetchFeedIsolated]);
+  ///    bir besleme firlaticak olsa bile `Future.wait` tumunu iptal etmez.
+  ///  * En az **bir** besleme basariliysa sonuc `Success` doner; hatali
+  ///    beslemeler yalnizca `lastFailure` olarak taşınir.
+  ///  * Hepsi hataliysa son hata doner (arayuz `Err` bekler) - ancak
+  ///    repository onbellekteki son gecerli haberleri geri sunar.
+  ///  * `limit` besleme sayisina degil **toplam** haber sayisina uygulanir.
   @override
   Future<Result<List<NewsItem>>> fetchAll({int limit = 30}) async {
     final responses = await Future.wait(
-      feeds.map((f) => fetchFeed(f, limit: limit)),
+      feeds.map((f) => _fetchFeedIsolated(f, limit: limit)),
     );
 
     final items = <NewsItem>[];
@@ -96,17 +76,207 @@ class NewsRssProvider implements NewsProvider {
 
     if (!ok) return Err(lastFailure ?? const NetworkFailure());
 
-    // En yeni en ustte, tekrar eden id'leri ayikla.
-    final seen = <String>{};
-    final deduped = <NewsItem>[];
-    for (final item in items) {
-      if (seen.add(item.id)) deduped.add(item);
-    }
-    deduped.sort((a, b) => b.publishedAt.compareTo(a.publishedAt));
+    // 1) En yeni en ustte.
+    items.sort((a, b) => b.publishedAt.compareTo(a.publishedAt));
+    // 2) Kaynaklar-arasi tekrar eden haberleri azalt (ayni id, ayni baslik
+    //    ya da basligin uzatilmis hali).
+    final deduped = deduplicate(items);
 
     if (deduped.isEmpty) return const Err(EmptyFailure());
     return Success(deduped.take(limit).toList());
   }
+
+  /// Anadolu Ajansi ekonomi - dogrulanmis, calisan besleme.
+  static final RssFeed aaEkonomi = RssFeed(
+    url: Uri.parse('https://www.aa.com.tr/tr/rss/default?cat=ekonomi'),
+    defaultCategory: NewsCategory.ekonomi,
+    sourceName: 'Anadolu Ajansı',
+    categoryMap: const {
+      'Borsa': NewsCategory.borsa,
+      'Döviz': NewsCategory.doviz,
+      'Altın': NewsCategory.altin,
+      'Merkez Bankası': NewsCategory.merkezBankasi,
+      'Ekonomi': NewsCategory.ekonomi,
+    },
+  );
+
+  // ---------------------------------------------------------------------------
+  // IKINCI KAYNAKLAR
+  //
+  // Tek kaynaga bagimlilik kaldirilir. Her besleme **bagimsiz** cekilir;
+  // biri hata/timeout/429 aldiginda digerleri sonucunu kaybetmez.
+  //
+  // Secim kriterleri (hepsi yasam testi ile dogrulandi):
+  //  * RSS 2.0 + `title`/`link`/`pubDate` alani mevcut
+  //    (mevcut [NewsRssProvider._parse] birebir calisir),
+  //  * RFC 822 tarih bicimi (var olan [_parseDate] ile uyumlu),
+  //  * ucretsiz, anahtarsiz, resmi RSS,
+  //  * tazelik: en yeni haber 0,1 - 5 saat arasinda.
+  //
+  // Not: Hürriyet/Milliyet/NTV/Investing denendi ama **elendi**:
+  //  * Hürriyet ekonomi beslemesi 2 yillik "nasil yapilir" yazilari donduruyor,
+  //  * Milliyet `<link>` yerine `atom:link` atiyor (mevcut ayristirici atlar),
+  //  * NTV Atom biciminde, Investing tarihi RFC 822 disi.
+  // ---------------------------------------------------------------------------
+
+  /// Bloomberg HT - Turk finans medyasi, ~50 guncel haber (RSS 2.0).
+  static final RssFeed bloombergHt = RssFeed(
+    url: Uri.parse('https://www.bloomberght.com/rss'),
+    defaultCategory: NewsCategory.ekonomi,
+    sourceName: 'Bloomberg HT',
+    categoryMap: const {'Haberler': NewsCategory.ekonomi},
+  );
+
+  /// Foreks (ForInvest) - Turk finansal veri/takuas ajansi, ~100 guncel haber.
+  static final RssFeed foreks = RssFeed(
+    url: Uri.parse('https://www.foreks.com/rss/haberler.xml'),
+    defaultCategory: NewsCategory.ekonomi,
+    sourceName: 'Foreks',
+    categoryMap: const {'Economy': NewsCategory.ekonomi},
+  );
+
+  /// Ekonomim - Turk ekonomi gazetesi, ~25 guncel haber.
+  static final RssFeed ekonomim = RssFeed(
+    url: Uri.parse('https://www.ekonomim.com/rss/ekonomi.xml'),
+    defaultCategory: NewsCategory.ekonomi,
+    sourceName: 'Ekonomim',
+  );
+
+  /// Sabah Ekonomi - ~10 guncel ekonomi haberi (kategori etiketi ile gelir).
+  static final RssFeed sabahEkonomi = RssFeed(
+    url: Uri.parse('https://www.sabah.com.tr/rss/ekonomi.xml'),
+    defaultCategory: NewsCategory.ekonomi,
+    sourceName: 'Sabah',
+    categoryMap: const {'Ekonomi': NewsCategory.ekonomi},
+  );
+
+  /// Aktif beslemeler. Sira **oncelik** degildir: hepsi paralel cekilir,
+  /// sonuclar birlestirilir ve yenilik sirasina gore siralanir.
+  static final List<RssFeed> defaultFeeds = [
+    aaEkonomi,
+    bloombergHt,
+    foreks,
+    ekonomim,
+    sabahEkonomi,
+  ];
+
+  /// Beslemeyi **hicbir sekilde firlatmadan** ceker.
+  ///
+  /// Hata izolasyonu: beklenmeyen bir istisna (ag kutuphanesi, kodlama,
+  /// xml paketleyici) bile olsa yalnizca o beslemeyi devre disi birakir;
+  /// diger beslemlerin sonucu korunur.
+  Future<Result<List<NewsItem>>> _fetchFeedIsolated(
+    RssFeed feed, {
+    required int limit,
+  }) async {
+    try {
+      return await fetchFeed(feed, limit: limit);
+    } catch (e) {
+      return Err(UnknownFailure('${feed.sourceName} beslemesi okunamadı.', e));
+    }
+  }
+
+  /// Bir beslemeyi cekip normalize eder.
+  Future<Result<List<NewsItem>>> fetchFeed(RssFeed feed, {int limit = 30}) async {
+    final res = await _client.getXmlText(
+      feed.url,
+      headers: const {'Accept': 'application/rss+xml, application/xml, text/xml'},
+      overrideTimeout: const Duration(seconds: 15),
+    );
+
+    return res.when(
+      onSuccess: (body) => _parse(body, feed, limit),
+      onFailure: (f) => Err(f),
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // KAYNAKLAR-ARASI TEKRAR (DUPLICATE) AZALTMA
+  //
+  // Ayni olay farkli ajanslar tarafindan farkli basliklarla gecabilir;
+  // birebir ayni baslik da yaygin bir sekilde syndicate edilir. Burada
+  // **korumaci** bir eslesme yapilir: yanlis birlestirme (farkli haberin
+  // kaybolmasi) yanlis ayirma'dan (ayni haberin iki kez gorunmesinden)
+  // daha kotudur.
+  //
+  // Kural 1: ayni `id` (guid)      -> tekrar
+  // Kural 2: normalize edilmis baslik birebir ayni -> tekrar
+  // Kural 3: bir baslik digerinin **icinde** geciyorsa (kaynak/sufiks
+  //          eklenmis hali) -> tekrar. Bu kural ters anlami DEGISTIRMEZ:
+  //          "yukselisle" ve "dususle" birbirinin icinde gecmez.
+  // ---------------------------------------------------------------------------
+
+  /// Basligi karsilastirma icin normalize eder.
+  ///
+  /// Kucuk harf + Turkce harf katlamasi (ı->i, İ->i, ş->s, ğ->g, ü->u,
+  /// ö->o, ç->c) yapilir; noktalama isaretleri silinir, rakamlar **korunur**
+  /// (BIST 100 ile BIST 30 ayni sayilmamali), bosluklar tek bosluga
+  /// indirgenir.
+  static String normalizeTitle(String title) {
+    const fold = {
+      'ı': 'i', 'İ': 'i', 'I': 'i', 'i': 'i',
+      'ş': 's', 'Ş': 's',
+      'ğ': 'g', 'Ğ': 'g',
+      'ü': 'u', 'Ü': 'u',
+      'ö': 'o', 'Ö': 'o',
+      'ç': 'c', 'Ç': 'c',
+    };
+    final buffer = StringBuffer();
+    for (final ch in title.toLowerCase().split('')) {
+      buffer.write(fold[ch] ?? ch);
+    }
+    return buffer
+        .toString()
+        .replaceAll(RegExp(r'[^a-z0-9\s]'), ' ')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+  }
+
+  /// Tekrar eden haberleri azaltir. Girdi sirasi korunur.
+  static List<NewsItem> deduplicate(List<NewsItem> items) {
+    final seenIds = <String>{};
+    final keptNorm = <String>[];
+    final out = <NewsItem>[];
+
+    for (final item in items) {
+      if (!seenIds.add(item.id)) continue;
+
+      final norm = normalizeTitle(item.title);
+      if (norm.isNotEmpty) {
+        var duplicated = false;
+        for (final prev in keptNorm) {
+          if (_isSameStory(prev, norm)) {
+            duplicated = true;
+            break;
+          }
+        }
+        if (duplicated) continue;
+        keptNorm.add(norm);
+      }
+
+      out.add(item);
+    }
+    return out;
+  }
+
+  /// Iki normalize edilmis basligin ayni habere ait olup olmadigi.
+  static bool _isSameStory(String a, String b) {
+    if (a == b) return true;
+
+    final shorter = a.length <= b.length ? a : b;
+    final longer = a.length <= b.length ? b : a;
+
+    // Cok kisa basliklar fazla ozeldir (yanlis eslesme riski yuksek).
+    if (shorter.length < _minDedupLength) return false;
+    // Uzunluk farki orantili degilse (bir baslik bambaşka bir haberin
+    // uzantisi degilse) tekrar sayilmaz.
+    if (longer.length - shorter.length > longer.length * 0.4) return false;
+
+    return longer.contains(shorter);
+  }
+
+  /// Kapsayan-baslik kurali icin en kisa kabul edilen baslik uzunlugu.
+  static const int _minDedupLength = 20;
 
   Result<List<NewsItem>> _parse(String body, RssFeed feed, int limit) {
     try {
@@ -170,8 +340,18 @@ class NewsRssProvider implements NewsProvider {
 
     final desc = _text(item, 'description');
     if (desc != null) {
-      final match = RegExp(r'<img[^>]+src="([^"]+)"').firstMatch(desc);
-      if (match != null) return match.group(1);
+      // **TEK TIRNAK DESTEĞI ZORUNLU:** Foreks `<img ... src='...'>` tek
+      // tirnak kullanir; yalnizca cift tirnak arayan ifade gorseli bulamaz
+      // ve haberler gorselsiz kalirdi (canli dogrulama 2026-10-06: Foreks
+      // beslemesindeki 100 haberin 100'unde gorsel var; hotlink/401 yok).
+      final match = RegExp(
+        r'''<img[^>]*?\ssrc\s*=\s*(?:"([^"]+)"|'([^']+)')''',
+        caseSensitive: false,
+      ).firstMatch(desc);
+      if (match != null) {
+        final url = (match.group(1) ?? match.group(2))?.trim();
+        if (url != null && url.startsWith('http')) return url;
+      }
     }
     return null;
   }

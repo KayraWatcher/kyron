@@ -9,7 +9,7 @@ import '../../core/providers/app_providers.dart';
 import '../../domain/entities/asset_catalog.dart';
 import '../../domain/entities/quote.dart';
 
-/// Secili kategori indeksi: 0=Borsa 1=Altın 2=Gümüş 3=Döviz 4=Fonlar
+/// Secili kategori indeksi: 0=Borsa 1=Altın 2=Gümüş 3=Döviz 4=Fonlar 5=Emtia
 final marketCategoryProvider =
     NotifierProvider<MarketCategoryNotifier, int>(MarketCategoryNotifier.new);
 

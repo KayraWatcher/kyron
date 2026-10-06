@@ -135,6 +135,10 @@ void main() {
       reason: 'katalog disi varlik listelenemez',
     );
 
+    // Katalog genisledigi icin aday listesi daha uzun olabilir; satir
+    // gorunur degilse once kaydirilir (aksi halde dokunma iskalanir).
+    await tester.ensureVisible(find.text(addName));
+    await tester.pumpAndSettle();
     await tester.tap(find.text(addName));
     await tester.pumpAndSettle();
 
